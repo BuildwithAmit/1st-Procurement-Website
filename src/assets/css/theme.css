@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+}
+/*  */
+ul{list-style: none;padding: 0;}
+.bg-primary{background-color: #45D3A1;}
+.text-primary{color: #45D3A1;}
+.bg-secondary{background-color: #192442;}
+.text-secondary{color: #192442;}
+.hero-s-text{font-size: 3.75rem;}
+.header-text{font-size: 3rem;}
+.logo{height: 2rem;}
