@@ -5,12 +5,12 @@
     </div>
     <div>
       <ul class="flex items-center gap-x-8 text-sm">
-        <li class="capitalize"><a class="nav-links active" href="">home</a></li>
-        <li class="capitalize"><a class="nav-links " href="">Find Raw Matrial</a></li>
-        <li class="capitalize"><a class="nav-links " href="">Be a Partner</a></li>
-        <li class="capitalize"><a class="nav-links " href="">About us</a></li>
-        <li class="capitalize"><a class="nav-links " href="">Conatct Us</a></li>
-        <li class="capitalize"><a class="bg-secondary text-white px-5 py-2 rounded-full" href="">join Beta</a></li>
+        <li class="capitalize"><a class="nav-links " routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">home</a></li>
+        <li class="capitalize"><a class="nav-links " routerLink="/find-a-rawmatrial" routerLinkActive="active" >Find Raw Matrial</a></li>
+        <li class="capitalize"><a class="nav-links " routerLink="/be-a-partner" routerLinkActive="active">Be a Partner</a></li>
+        <li class="capitalize"><a class="nav-links " routerLink="/about-us" routerLinkActive="active">About us</a></li>
+        <li class="capitalize"><a class="nav-links " routerLink="/contact-us" routerLinkActive="active">Conatct Us</a></li>
+        <li class="capitalize"><a class="bg-secondary text-white px-5 py-2 rounded-full" routerLink="/join-beta">join Beta</a></li>
       </ul>
     </div>
   </div>
