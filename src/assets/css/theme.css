@@ -12,6 +12,7 @@ ul{list-style: none;padding: 0;}
 .bg-secondary{background-color: #192442;}
 .text-secondary{color: #192442;}
 .text-white-tint{color:#E3E3E3}
+.card-bg-color{background-color: #F3F3F3;}
 .hero-s-text{font-size: 3.75rem;}
 .header-text{font-size: 3rem;}
 .logo{height: 2rem;}
