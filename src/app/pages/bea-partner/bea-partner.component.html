@@ -4,7 +4,7 @@
 <div class="flex flex-col items-center w-full h-[80vh] relative">
   <h1 class="hero-s-text mt-52 leading-[4rem] capitalize font-semibold text-center">Be part of our journey to success. <br/> Become a partner today.</h1>
   <p class="text-sm mt-10 mt-6 font-normal max-w-4xl text-center text-zinc-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- <button class="bg-secondary text-white mt-5 px-8 py-2 rounded-md">Register Now</button>
+ <button class="bg-secondary text-white mt-7 px-12 py-3 rounded-md">Register Now</button>
 </div>
 <!-- end of header -->
 
@@ -51,15 +51,12 @@
 <div class="flex flex-col justify-center items-center min-h-[100vh] my-4">
   <h2 class="header-text font-semibold capitalize text-center">Benefits of ProducTRY <br/> Partnership</h2>
   <div class="flex flex-row flex-wrap justify-center p-16 gap-5">
-    <app-partnership-card></app-partnership-card>
-    <app-partnership-card></app-partnership-card>
-    <app-partnership-card></app-partnership-card>
-    <app-partnership-card></app-partnership-card>
-    <app-partnership-card></app-partnership-card>
-    <app-partnership-card></app-partnership-card>
-    <app-partnership-card></app-partnership-card>
+   <div class="flex flex-col gap-6 w-80 h-96  p-10 rounded-xl card-bg-color" *ngFor="let item of data">
+    <h3 class="text-xl capitalize font-semibold">{{item.title}}</h3>
+    <p class="text-sm text-normal text-zinc-600 text-justify">{{item.content}}</p>
+</div> 
   </div>
-   <button class="bg-secondary text-white mt-5 px-8 py-2 rounded-md">Register Now</button>
+   <button class="bg-secondary text-white mt-5 px-12 py-3 rounded-md">Register Now</button>
 </div>
 <!-- end of section 4 -->
 
@@ -67,30 +64,30 @@
 <section class="flex justify-center items-center h-[120vh] w-full">
   <div class="flex flex-col justify-start p-8 items-center h-3/4 w-10/12 bg-secondary rounded-[50px]">
      <h2 class="header-text font-semibold capitalize text-center text-white">How our partnership model <br/> work</h2>
-      <p class="text-sm font-normal mt-6  max-w-4xl text-center text-[#E3E3E3]">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type </p>
+      <p class="text-sm font-normal mt-6  max-w-4xl text-center text-white-tint">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type </p>
       <div class="flex flex-row justify-between items-center mt-12 w-full">
         <div class="flex flex-col justify-center items-center w-52">
           <img class="h-28 w-28" src="../../../assets/asserts/svgs/buy.svg" alt="buy-svg">
-          <p class="text-xl font-semibold capitalize text-white">buy</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center  w-52 text-[#E3E3E3]">Lorem Ipsum is simply dummy text of the printing </p>
+          <p class="text-xl font-semibold capitalize text-white mt-7">buy</p>
+          <p class="text-sm font-normal mt-6  max-w-4xl text-center  w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
         </div>
        <img class="h-7 w-9" src="../../../assets/asserts/svgs/right-arrow.svg" alt="arrow-svg">
         <div class="flex flex-col justify-center items-center w-52">
           <img class="h-28 w-28" src="../../../assets/asserts/svgs/upload.svg" alt="upload-svg">
-          <p class="text-xl font-semibold capitalize text-white">upload</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-[#E3E3E3]">Lorem Ipsum is simply dummy text of the printing </p>
+          <p class="text-xl font-semibold capitalize text-white mt-7">upload</p>
+          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
         </div>
        <img class="h-7 w-9" src="../../../assets/asserts/svgs/right-arrow.svg" alt="arrow-svg">
         <div class="flex flex-col justify-center items-center w-52">
           <img class="h-28 w-28" src="../../../assets/asserts/svgs/sell.svg" alt="sell-svg">
-          <p class="text-xl font-semibold capitalize text-white">sell</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-[#E3E3E3]">Lorem Ipsum is simply dummy text of the printing </p>
+          <p class="text-xl font-semibold capitalize text-white mt-7">sell</p>
+          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
         </div>
         <img class="h-7 w-9" src="../../../assets/asserts/svgs/right-arrow.svg" alt="arrow-svg">
         <div class="flex flex-col justify-center items-center w-52">
           <img class="h-28 w-28" src="../../../assets/asserts/svgs/delivery.svg" alt="delivery-svg">
-          <p class="text-xl font-semibold capitalize text-white">delivery</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-[#E3E3E3]">Lorem Ipsum is simply dummy text of the printing </p>
+          <p class="text-xl font-semibold capitalize text-white mt-7">delivery</p>
+          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
         </div>
       </div>
   </div>
