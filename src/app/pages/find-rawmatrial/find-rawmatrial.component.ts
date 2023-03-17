@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class FindRawmatrialComponent {
 
+constructor(){window.scrollTo(0,0)}
+
 }
