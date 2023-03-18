@@ -1,0 +1,22 @@
+.team-section >span{
+    transition: width 1s ease-in-out;
+}
+.team-section:hover >span{
+    width: 76px;
+    height: 6px;
+}
+
+nav ul li a.active {
+  font-weight: bold;
+}
+.spy-scroll-navbar  li{margin: 2rem auto;}
+.spy-scroll-links span{width: .7rem;height: 6px; background: #192442;border-radius: 12px;display: flex;justify-content: center;align-items: center;}
+.spy-scroll-links.active{font-weight: 700;}
+.spy-scroll-links.active span{background: #3E82FC;color: white;}
+
+/* .carousel{
+    display: none;
+}
+.carousel.active{
+    display: flex;
+} */
