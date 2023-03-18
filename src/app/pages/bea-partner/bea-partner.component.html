@@ -38,9 +38,10 @@
 
 
 <!-- start of section 4 -->
-<div class="flex flex-col justify-center items-center min-h-[100vh] my-4">
+<div class="benifit-carousel flex flex-col justify-center items-center min-h-[100vh] my-4">
   <h2 class="header-text font-semibold capitalize text-center">Benefits of ProducTRY <br/> Partnership</h2>
  
+  <!-- <div class="benifit-carousel"> -->
   <owl-carousel-o [options]="customOptions" class="flex flex-row w-full justify-center p-16 gap-5" >
     <ng-container *ngFor="let item of data" >
       <ng-template carouselSlide [id]="item.id">
@@ -51,6 +52,7 @@
       </ng-template>
     </ng-container>
   </owl-carousel-o>
+  <!-- </div> -->
    <button class="btn-dblue mb-5 px-12 py-3 rounded-md">Register Now</button>
 </div>
 <!-- end of section 4 -->
