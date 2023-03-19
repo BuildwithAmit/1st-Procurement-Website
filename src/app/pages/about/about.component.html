@@ -64,16 +64,16 @@
       <div class="col-span-2 flex justify-center relative ">
         <div class="sticky top-16 left-0  h-[25rem]">
           <ul class="spy-scroll-navbar ">
-            <li><a class="spy-scroll-links active " onclick="showTeamData()">
+            <li><a class="spy-scroll-links active">
                 <div class="flex items-center gap-x-5">
                   <span></span>
-                  <p class="text-2xl  font-normal capitalize">Team</p>
+                  <p class="text-2xl cursor-pointer font-normal capitalize" onclick="showTeamData()">Team</p>
                 </div>
               </a></li>
-            <li><a class="spy-scroll-links cursor-pointer" onclick="showMentorsData()">
+            <li><a class="spy-scroll-links ">
                 <div class="flex items-center gap-x-5">
                   <span></span>
-                  <p class="text-2xl  font-normal capitalize">Mentors</p>
+                  <p class="text-2xl cursor-pointer font-normal capitalize" onclick="showMentorsData()">Mentors</p>
                 </div>
               </a></li>
           </ul>
@@ -82,7 +82,7 @@
 
       <div class="col-span-5">
         <div *ngIf="showTeam">
-          <owl-carousel-o [options]="customOptions" class="carousel active flex flex-row w-full justify-center  gap-5">
+          <owl-carousel-o [options]="customOptions" class="flex flex-row w-full justify-center  gap-5">
             <ng-container *ngFor="let item of team_data">
               <ng-template carouselSlide [id]="item.id">
                 <div class="card-img flex flex-col justify-between rounded-3xl  my-4 w-[310px] h-[512px]  relative">
@@ -95,7 +95,7 @@
           </owl-carousel-o>
         </div>
         <div *ngIf="showMentors">
-          <owl-carousel-o [options]="customOptions" class="carousel flex flex-row w-full justify-center gap-5">
+          <owl-carousel-o [options]="customOptions" class=" flex flex-row w-full justify-center gap-5">
             <ng-container *ngFor="let item of mentors_data">
               <ng-template carouselSlide [id]="item.id">
                 <div class="card-img flex flex-col justify-between rounded-3xl  my-4 w-[310px] h-[512px]  relative">

@@ -13,11 +13,11 @@ import { JoinBetaComponent } from './pages/join-beta/join-beta.component';
 
 const routes: Routes = [
 {path:'',component:HomeComponent},
-{path:'be-a-partner',component:BeaPartnerComponent},
-{path:'find-a-rawmatrial',component:FindRawmatrialComponent},
-{path:'about-us',component:AboutComponent},
-{path:'contact-us',component:ContactComponent},
-{path:'join-beta',component:JoinBetaComponent},
+{path:'partner',component:BeaPartnerComponent},
+{path:'rawmatrial',component:FindRawmatrialComponent},
+{path:'about',component:AboutComponent},
+{path:'contact',component:ContactComponent},
+{path:'beta',component:JoinBetaComponent},
 
 
 ];

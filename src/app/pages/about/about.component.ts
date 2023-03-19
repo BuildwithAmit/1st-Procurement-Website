@@ -85,7 +85,7 @@ core_value_data = [
       id: '1',
       name: "Amit Jadhwar",
       designation: 'founder',
-      img: "../../../assets/asserts/team/man-1.png"
+      img: "../../../assets/asserts/team/man-2.png"
     }
     
   ]
@@ -121,7 +121,8 @@ core_value_data = [
     this.showMentors = false
   }
   showMentorsData() {
-    this.showTeam = false
     this.showMentors = true
+    this.showTeam = false
   }
+
 }

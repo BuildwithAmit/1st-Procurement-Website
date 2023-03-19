@@ -14,9 +14,3 @@ nav ul li a.active {
 .spy-scroll-links.active{font-weight: 700;}
 .spy-scroll-links.active span{background: #3E82FC;color: white;}
 
-/* .carousel{
-    display: none;
-}
-.carousel.active{
-    display: flex;
-} */
