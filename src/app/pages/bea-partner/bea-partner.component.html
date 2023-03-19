@@ -3,8 +3,10 @@
 <!-- header -->
 <div class="flex flex-col items-center w-full h-[80vh] relative">
   <h1 class="hero-s-text mt-52 leading-[4rem] capitalize font-semibold text-center">Be part of our journey to success. <br/> Become a partner today.</h1>
-  <p class="text-sm mt-10 mt-6 font-normal max-w-4xl text-center text-zinc-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
- <button class="bg-secondary text-white mt-7 px-12 py-3 rounded-md">Register Now</button>
+  <p class="text-sm mt-10 mt-6 font-normal max-w-4xl text-center text-zinc-600">Join us on path to success and become a
+    partner today, where together, we can achieve even greater heights and make a lasting impact in the world of research
+    and development.</p>
+ <button class="btn-dblue mt-7 px-12 py-3 rounded-md ">Register Now</button>
 </div>
 <!-- end of header -->
 
@@ -14,84 +16,47 @@
 
     <div class="flex flex-col items-center w-1/2">
       <h2 class="header-text font-semibold capitalize">Why to supply raw matrial with ProducTRY</h2>
-      <p class="text-sm text-zinc-600 font-normal mt-6 text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <p class="text-sm text-zinc-600 font-normal mt-6 text-justify">
+        At ProducTRY, we believe that strong relationships with our suppliers are essential
+        to the success of our business. We are committed to working collaboratively with
+        our suppliers to create mutual value and drive long term growth.<br /><br />
+        As a potential supplier, you can expect to receive the highest level of support from
+        our dedicated team. We offer a range of technology tools and resources to help you
+        grow your business, including access to our extensive network of customers and
+        industry experts, as well as opportunities for training and development. <br /><br />
+        We take pride in our commitment to ethical and sustainable practices, and we work
+        closely with our suppliers to ensure that they meet our high standard. Our goal is to
+        build long-lasting partnerships based on trust, transparency, and shared values.<br /><br />
+        If you are interested in becoming a partner with us, we would love to hear from
+        you. Please don't hesitate to reach out to our team today to learn more about the
+        benefits of partnering with ProducTRY. We look for to
+      </p>
     </div>
 </div>
 <!-- end of section 2 -->
 
-<!-- start of section 3 -->
-<div class="flex flex-row justify-between items-center h-[420px] px-20">
-  <div class="flex flex-row  items-center w-[345px] gap-6">
-     <img class="h-24 w-24" src="../../../assets/asserts/svgs/support-icon.svg" alt="support-svg">
-     <div class="flex flex-col w-3/4 justify-center ">
-         <p class="text-xl font-semibold capitalize">24/7 Support</p>
-          <p class="text-sm font-normal mt-2  max-w-4xl text-justify text-zinc-600 w-52 ">Lorem Ipsum is simply dummy text of the printing </p>
-     </div>
-  </div>
-    <span class="h-28 w-0.5 bg-[#CBCBCB]"></span>
-  <div class="flex flex-row  items-center w-[345px] gap-6">
-     <img class="h-24 w-24" src="../../../assets/asserts/svgs/sell-icon.svg" alt="sell-svg">
-     <div class="flex flex-col w-3/4 justify-center ">
-         <p class="text-xl font-semibold capitalize">No hidden cost</p>
-          <p class="text-sm font-normal mt-2  max-w-4xl text-justify text-zinc-600 w-52 ">Lorem Ipsum is simply dummy text of the printing </p>
-     </div>
-  </div>
-  <span class="h-28 w-0.5 bg-[#CBCBCB]"></span>
-  <div class="flex flex-row  items-center w-[345px] gap-6">
-     <img class="h-24 w-24" src="../../../assets/asserts/svgs/cost-icon.svg" alt="cost-svg">
-     <div class="flex flex-col w-3/4 justify-center ">
-         <p class="text-xl font-semibold capitalize">Sell in any part of india</p>
-          <p class="text-sm font-normal mt-2  max-w-4xl text-justify text-zinc-600 w-52 ">Lorem Ipsum is simply dummy text of the printing </p>
-     </div>
-  </div>
-</div>
-<!-- end of section 3 -->
+
 
 <!-- start of section 4 -->
-<div class="flex flex-col justify-center items-center min-h-[100vh] my-4">
+<div class="benifit-carousel flex flex-col justify-center items-center min-h-[100vh] my-4">
   <h2 class="header-text font-semibold capitalize text-center">Benefits of ProducTRY <br/> Partnership</h2>
-  <div class="flex flex-row flex-wrap justify-center p-16 gap-5">
-   <div class="flex flex-col gap-6 w-80 h-96  p-10 rounded-xl card-bg-color" *ngFor="let item of data">
-    <h3 class="text-xl capitalize font-semibold">{{item.title}}</h3>
-    <p class="text-sm text-normal text-zinc-600 text-justify">{{item.content}}</p>
-   </div> 
-  </div>
-   <button class="bg-secondary text-white mt-5 px-12 py-3 rounded-md">Register Now</button>
+ 
+  <!-- <div class="benifit-carousel"> -->
+  <owl-carousel-o [options]="customOptions" class="flex flex-row w-full justify-center p-16 gap-5" >
+    <ng-container *ngFor="let item of data" >
+      <ng-template carouselSlide [id]="item.id">
+          <div class="flex flex-col gap-6 w-80 h-96  p-10 rounded-xl card-bg-color">
+            <h3 class="text-xl capitalize font-semibold">{{item.title}}</h3>
+            <p class="text-sm text-normal text-zinc-600 text-justify">{{item.content}}</p>
+          </div> 
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+  <!-- </div> -->
+   <button class="btn-dblue mb-5 px-12 py-3 rounded-md">Register Now</button>
 </div>
 <!-- end of section 4 -->
 
-<!-- start of section 5 -->
-<section class="flex justify-center items-center h-[120vh] w-full">
-  <div class="flex flex-col justify-start p-8 items-center h-3/4 w-10/12 bg-secondary rounded-[50px]">
-     <h2 class="header-text font-semibold capitalize text-center text-white">How our partnership model <br/> work</h2>
-      <p class="text-sm font-normal mt-6  max-w-4xl text-center text-white-tint">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type </p>
-      <div class="flex flex-row justify-between items-center mt-12 w-full">
-        <div class="flex flex-col justify-center items-center w-52">
-          <img class="h-28 w-28" src="../../../assets/asserts/svgs/buy.svg" alt="buy-svg">
-          <p class="text-xl font-semibold capitalize text-white mt-7">buy</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center  w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
-        </div>
-       <img class="h-7 w-9" src="../../../assets/asserts/svgs/right-arrow.svg" alt="arrow-svg">
-        <div class="flex flex-col justify-center items-center w-52">
-          <img class="h-28 w-28" src="../../../assets/asserts/svgs/upload.svg" alt="upload-svg">
-          <p class="text-xl font-semibold capitalize text-white mt-7">upload</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
-        </div>
-       <img class="h-7 w-9" src="../../../assets/asserts/svgs/right-arrow.svg" alt="arrow-svg">
-        <div class="flex flex-col justify-center items-center w-52">
-          <img class="h-28 w-28" src="../../../assets/asserts/svgs/sell.svg" alt="sell-svg">
-          <p class="text-xl font-semibold capitalize text-white mt-7">sell</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
-        </div>
-        <img class="h-7 w-9" src="../../../assets/asserts/svgs/right-arrow.svg" alt="arrow-svg">
-        <div class="flex flex-col justify-center items-center w-52">
-          <img class="h-28 w-28" src="../../../assets/asserts/svgs/delivery.svg" alt="delivery-svg">
-          <p class="text-xl font-semibold capitalize text-white mt-7">delivery</p>
-          <p class="text-sm font-normal mt-6  max-w-4xl text-center w-52 text-white-tint">Lorem Ipsum is simply dummy text of the printing </p>
-        </div>
-      </div>
-  </div>
-</section>
-<!-- end of section 5 -->
+
 </div>
 <app-footer></app-footer>
