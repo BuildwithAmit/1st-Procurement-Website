@@ -1,0 +1,4 @@
+.elements-name{width: 5rem;height: 5rem;object-fit: contain;}
+.matrial-select{display: none;}
+.matrial-select-label{border: 2px solid rgb(164, 164, 164) !important;color: rgb(164, 164, 164);}
+.matrial-select:checked ~ label{background-color: #3E82FC;color: white;border-color: #3E82FC !important;}

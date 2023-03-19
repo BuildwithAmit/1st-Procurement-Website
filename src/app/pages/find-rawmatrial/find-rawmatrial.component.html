@@ -14,8 +14,30 @@
 
 <!-- sec 1 -->
 <div class="py-10 px-16 ">
-  <div class="w-full h-[20rem] bg-secondary rounded-3xl">
+  <div class="w-full h-[20rem] bg-secondary rounded-3xl flex justify-center items-center">
+    <div class="grid grid-cols-4 place-items-center gap-x-16">
 
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/nominqty.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">No minimum order quantity</p>
+      </div>
+
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/doorstepdelivery.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">Door Devliver</p>
+      </div>
+
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/pan.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">PAN India Service</p>
+      </div>
+
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/shop.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">LOK Retail distributors network</p>
+      </div>
+
+    </div>
   </div>
 </div>
 <!-- sec 1 -->
@@ -38,12 +60,93 @@
 <!-- section 3 -->
 <div class="px-16 p-10">
   <h1 class="header-text text-center font-semibold ">Catagory We provide</h1>
-  <div class="flex justify-center items-center gap-x-5 mt-10">
-    <div class="w-[10rem] h-[10rem] bg-slate-300 rounded-xl" *ngFor="let item of [].constructor(5); let i = index">
+  <div class="flex justify-center items-center gap-x-8 mt-10">
+
+    <div class="w-[10rem] h-[10rem] bg-blue-100 rounded-xl flex justify-center items-center flex-col" *ngFor="let items of elements">
+      <img class="elements-name" src="{{items.icon}}" alt="">
+      <p class="mt-2 font-semibold text-primary capitalize">{{items.name}}</p>
+    </div>
+
+  </div>
+</div>
+<!-- form -->
+<div class="w-100 my-10  relative ">
+  <img class="z-[-1] form-bg-img absolute transform -scale-x-100 w-full h-full img-cover grayscale brightness-75" src="https://images.unsplash.com/photo-1445140402314-ffd9630d0b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt="">
+  <div class="p-10">
+  <div class="flex justify-between items-center" >
+    <div>
+      <div class="w-3/4">
+        <h1 class="header-text font-semibold text-white leading-[3rem]">Customize your Raw Matrials Requirements</h1>
+        <p class="mt-8 text-zinc-400 font-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+    </div>
+    <div class="p-6 bg-white rounded-xl">
+      <p>Select Matrial</p>
+
+      <div class="flex gap-x-2 mt-3">
+        <div class="" *ngFor=" let items of elements">
+          <input class="matrial-select" id="select-{{items.name}}" name="matrial" type="radio">
+          <label class="matrial-select-label text-sm rounded-full px-3 py-1" for="select-{{items.name}}">{{items.name}}</label>
+        </div>
+      </div>
+
+        <div class="mt-3 ">
+          <label for="matrial-desc" class="text-sm text-zinc-400">Matrial Description</label><br>
+          <textarea name="matrial-desc" id="matrial-desc" class="w-full  border-2 rounded-lg border-zinc-300" rows="6"></textarea>
+        </div>
+
+        <div class="flex justify-between mt-3 gap-3">
+          <div>
+            <label for="name" class="text-sm text-zinc-400">Name</label><br>
+            <input type="text" id="name" class=" border-2 rounded-lg border-zinc-300 w-full">
+          </div>
+          <div>
+            <label for="name" class="text-sm text-zinc-400">Name</label><br>
+            <input type="text" id="name" class="border-2 rounded-lg border-zinc-300 ">
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-3 gap-3">
+          <div>
+            <label for="name" class="text-sm text-zinc-400">Phone Number</label><br>
+            <input type="text" id="name" class=" border-2 rounded-lg border-zinc-300 w-full">
+          </div>
+          <div>
+            <label for="name" class="text-sm text-zinc-400">City</label><br>
+            <input type="text" id="name" class="border-2 rounded-lg border-zinc-300 ">
+          </div>
+        </div>
+
+        <div class="mt-3 ">
+          <label for="matrial-desc" class="text-sm text-zinc-400">Address</label><br>
+          <textarea name="matrial-desc" id="matrial-desc" class="w-full  border-2 rounded-lg border-zinc-300" rows="3"></textarea>
+        </div>
+
+        <div class="mt-5 flex justify-end">
+          <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm">Submit</button>
+        </div>
 
     </div>
   </div>
 </div>
+</div>
+<!-- form -->
+<div class="p-16">
+
+<div class="w-full h-[20rem] bg-zinc-200 rounded-3xl flex justify-center p-5">
+  <div class="w-3/4 text-center">
+    <h1 class="header-text font-semibold">We Provide service to bussiness model</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet natus beatae eaque temporibus accusantium itaque repellendus quasi facere earum nihil. Molestias porro nisi sequi. Nesciunt fuga iure iusto nulla necessitatibus.</p>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
 
 </div>
 <app-footer></app-footer>
