@@ -17,9 +17,7 @@ const routes: Routes = [
 {path:'rawmatrial',component:FindRawmatrialComponent},
 {path:'about',component:AboutComponent},
 {path:'contact',component:ContactComponent},
-{path:'beta',component:JoinBetaComponent},
-
-
+{path:'beta',component:JoinBetaComponent}
 ];
 
 @NgModule({
