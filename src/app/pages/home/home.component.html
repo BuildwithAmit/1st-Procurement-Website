@@ -14,22 +14,23 @@
     </div>
 
 
-    <div #myElementRef class="absolute z-0 bottom-[25%] right-[40%]">
+    <div #myElementRef class="absolute z-0 bottom-[25%] right-[40%] rellax" data-rellax-speed="1"
+    data-rellax-percentage="0.5">
       <img class="h-[4.5rem]" src="../../../assets/asserts/3dasserts/lab-dynamic-color.png" alt="">
     </div>
 
-    <div class="absolute z-20 top-[42%] right-[20%]">
+    <div class="absolute z-20 top-[42%] right-[20%] rellax"  data-rellax-speed="-3">
       <img class="h-[5rem]" src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png" alt="">
     </div>
 
 
-    <div class="absolute z-0 bottom-[15%] left-[30%]">
+    <div class="absolute z-0 bottom-[15%] left-[30%] rellax"  data-rellax-speed="4">
       <img class="h-[7rem]" src="../../../assets/asserts/3dasserts/spring-black-4000x4000.png" alt="">
     </div>
 
 
-    <div class="absolute z-0 top-[2.5rem] left-[21%]">
-      <img class="w-[8rem]" src="../../../assets/asserts/3dasserts/Triple knot-gold-4000x4000.png" alt="">
+    <div class="absolute z-0 top-[2.5rem] left-[21%] rellax" data-rellax-speed="-3">
+      <img class="w-[8rem]" src="../../../assets/asserts/3dasserts/Triple knot-gold-4000x4000.png" alt="" >
     </div>
 
   </div>
@@ -42,29 +43,30 @@
       <div class="col-span-1 flex justify-center relative ">
         <div class="sticky top-16 left-0  h-[25rem]">
           <ul class="spy-scroll-navbar ">
-            <li><a class="spy-scroll-links active ">
+            <li><a class="spy-scroll-links cursor-pointer" scrollSpyMenu="menu1" [ssmCurrentContent]="currentMenuId">
                 <div class="flex items-center gap-x-5">
                   <span class="">1</span>
                   <p>Matrial Selection</p>
                 </div>
               </a></li>
-            <li><a href="" class="spy-scroll-links">
+            <li><a  class="spy-scroll-links cursor-pointer" scrollSpyMenu="menu2" [ssmCurrentContent]="currentMenuId">
                 <div class="flex items-center gap-x-5">
                   <span class=" ">2</span>
                   <p>Matrial Procurement</p>
                 </div>
               </a></li>
-            <li><a href="" class="spy-scroll-links">
+            <li><a  class="spy-scroll-links cursor-pointer" scrollSpyMenu="menu3" [ssmCurrentContent]="currentMenuId">
                 <div class="flex items-center gap-x-5">
                   <span class=" ">3</span>
                   <p>Data Measurement</p>
                 </div>
               </a></li>
           </ul>
+
         </div>
       </div>
-      <div class="col-span-2 ">
-        <section id="spy-scroll-sec-{{items.id}}"
+      <div class="col-span-2 " scrollSpyContent="DIV" [(sscCurrentContent)]="currentMenuId"  >
+        <section id="menu{{items.id}}"
           class="bg-zinc-100 max-w-3xl p-10 rounded-2xl relative h-[25rem] mb-10" *ngFor="let items of offers_data">
           <div class="max-w-lg">
             <h1 class="text-2xl  font-medium">{{items.title}}</h1>
@@ -132,7 +134,7 @@
   </div>
   <!-- mobile matrial -->
   <!-- give away -->
-  <div class="py-10 pb-0 relative">
+  <div class="py-10 pb-0 relative ">
     <div class="w-full h-[23rem] bg-gradient-to-r from-[#192442]  to-black flex justify-center items-center">
       <div class="w-1/2 text-center">
         <div class="leading-[3rem]">
@@ -149,7 +151,7 @@
       <img class="h-[4.5rem]" src="../../../assets/asserts/3dasserts/lab-dynamic-color.png" alt="">
     </div>
 
-    <div class="absolute z-20 top-[30%] right-[27%]">
+    <div class="absolute z-20 top-[30%] right-[27%] ">
       <img class="h-[5rem]" src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png" alt="">
     </div>
 

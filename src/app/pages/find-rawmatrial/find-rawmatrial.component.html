@@ -14,8 +14,30 @@
 
 <!-- sec 1 -->
 <div class="py-10 px-16 ">
-  <div class="w-full h-[20rem] bg-secondary rounded-3xl">
+  <div class="w-full h-[20rem] bg-secondary rounded-3xl flex justify-center items-center">
+    <div class="grid grid-cols-4 place-items-center gap-x-16">
 
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/nominqty.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">No minimum order quantity</p>
+      </div>
+
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/doorstepdelivery.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">Door Devliver</p>
+      </div>
+
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/pan.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">PAN India Service</p>
+      </div>
+
+      <div class="  w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
+        <img class="h-[7rem]" src="../../../assets/asserts/svgs/shop.svg" alt="">
+        <p class="text-center mt-3 leading-4 text-white">LOK Retail distributors network</p>
+      </div>
+
+    </div>
   </div>
 </div>
 <!-- sec 1 -->
@@ -38,12 +60,168 @@
 <!-- section 3 -->
 <div class="px-16 p-10">
   <h1 class="header-text text-center font-semibold ">Catagory We provide</h1>
-  <div class="flex justify-center items-center gap-x-5 mt-10">
-    <div class="w-[10rem] h-[10rem] bg-slate-300 rounded-xl" *ngFor="let item of [].constructor(5); let i = index">
+  <div class="flex justify-center items-center gap-x-8 mt-10">
+
+    <div class="w-[10rem] h-[10rem] bg-blue-100 rounded-xl flex justify-center items-center flex-col" *ngFor="let items of elements">
+      <img class="elements-name" src="{{items.icon}}" alt="">
+      <p class="mt-2 font-semibold text-primary capitalize">{{items.name}}</p>
+    </div>
+
+  </div>
+</div>
+<!-- form -->
+<div class="w-100 my-10  relative ">
+  <img class="z-[-1] form-bg-img absolute transform -scale-x-100 w-full h-full img-cover grayscale brightness-75" src="https://images.unsplash.com/photo-1445140402314-ffd9630d0b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt="">
+  <div class="p-10">
+  <div class="flex justify-between items-center" >
+    <div>
+      <div class="w-3/4">
+        <h1 class="header-text font-semibold text-white leading-[3rem]">Customize your Raw Matrials Requirements</h1>
+        <p class="mt-8 text-zinc-400 font-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      </div>
+    </div>
+    <div class="p-6 bg-white rounded-xl">
+      <p>Select Matrial</p>
+
+      <div class="flex gap-x-2 mt-3">
+        <div class="" *ngFor=" let items of elements">
+          <input class="matrial-select" id="select-{{items.name}}" name="matrial" type="radio">
+          <label class="matrial-select-label text-sm rounded-full px-3 py-1" for="select-{{items.name}}">{{items.name}}</label>
+        </div>
+      </div>
+
+        <div class="mt-3 ">
+          <label for="matrial-desc" class="text-sm text-zinc-400">Matrial Description</label><br>
+          <textarea name="matrial-desc" id="matrial-desc" class="w-full  border-2 rounded-lg border-zinc-300" rows="6"></textarea>
+        </div>
+
+        <div class="flex justify-between mt-3 gap-3">
+          <div>
+            <label for="name" class="text-sm text-zinc-400">Name</label><br>
+            <input type="text" id="name" class=" border-2 rounded-lg border-zinc-300 w-full">
+          </div>
+          <div>
+            <label for="name" class="text-sm text-zinc-400">Name</label><br>
+            <input type="text" id="name" class="border-2 rounded-lg border-zinc-300 ">
+          </div>
+        </div>
+
+        <div class="flex justify-between mt-3 gap-3">
+          <div>
+            <label for="name" class="text-sm text-zinc-400">Phone Number</label><br>
+            <input type="text" id="name" class=" border-2 rounded-lg border-zinc-300 w-full">
+          </div>
+          <div>
+            <label for="name" class="text-sm text-zinc-400">City</label><br>
+            <input type="text" id="name" class="border-2 rounded-lg border-zinc-300 ">
+          </div>
+        </div>
+
+        <div class="mt-3 ">
+          <label for="matrial-desc" class="text-sm text-zinc-400">Address</label><br>
+          <textarea name="matrial-desc" id="matrial-desc" class="w-full  border-2 rounded-lg border-zinc-300" rows="3"></textarea>
+        </div>
+
+        <div class="mt-5 flex justify-end">
+          <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm">Submit</button>
+        </div>
 
     </div>
   </div>
 </div>
+</div>
+<!-- form -->
+<!-- provide service -->
+<div class="p-16">
+
+<div class="w-full h-[20rem] bg-zinc-200 rounded-3xl flex justify-center p-5">
+  <div class="w-3/4 text-center">
+    <h1 class="header-text font-semibold">We Provide service to bussiness model</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet natus beatae eaque temporibus accusantium itaque repellendus quasi facere earum nihil. Molestias porro nisi sequi. Nesciunt fuga iure iusto nulla necessitatibus.</p>
+  </div>
+</div>
+
+<div class="flex justify-center items-center mt-[-8rem] gap-x-10">
+
+<div class="bg-white w-[18rem] h-auto p-8 rounded-xl shadow-[rgba(0,_0,_0,_0.2)_0px_60px_40px_-7px]" *ngFor="let items of bussinessMOde">
+  <div class="flex items-center">
+    <div class="w-[4rem] h-[4rem] bg-blue-100  rounded-md p-3">
+      <img class="img-contain" src="{{items.icon}}" alt="">
+    </div>
+    <p class="ml-4 text-xl font-semibold">{{items.title}}</p>
+  </div>
+  <p class="mt-8 text-zinc-400">{{items.content}}</p>
+</div>
+</div>
+</div>
+<!-- provide service -->
+<!-- why us -->
+<div class="flex justify-between items-center p-10 mt-10 ">
+  <div class="w-1/2 flex justify-center">
+    <div class="w-3/4">
+      <h1 class="header-text font-semibold leading-[2.8rem]">Why should you choose US</h1>
+      <p class="mt-10">They build them using various materials and processes.</p>
+      <p class="mt-2">Materials are the core elements of engineering, a source of differentiation in any product or process.</p>
+      <p class="mt-2">In the process of developing a new product or process for material selection and procurement, innovators waste 60-70% of their product development time, money and resources using ‘ trial and error’ methodology.</p>
+    </div>
+  </div>
+  <div class="w-1/2 flex justify-center">
+    <div class="w-[30rem] h-[30rem]">
+      <img class="img-cover rounded-3xl" src="https://images.unsplash.com/photo-1604411853851-8b4d5d910545?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="">
+    </div>
+  </div>
+</div>
+<!-- why us -->
+<!-- our clients -->
+<div class="p-16 mt-10">
+  <h1 class="text-center header-text font-semibold">Our Client</h1>
+  <div class="mt-5">
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide *ngFor="let items of clientLogo">
+      <div class="w-[10rem] h-[7rem]">
+        <img class="img-contain grayscale" src="{{items.logoUrl}}" alt="client logo">
+      </div>
+    </ng-template>
+  </owl-carousel-o>
+</div>
+</div>
+<!-- our clients -->
+<!-- faq -->
+<div class="p-16 mt-10 ">
+  <h1 class="header-text">Frequenty Ask's Questions</h1>
+  <p class="mt-5 text-zinc-500">Everything you need to know about product <br>
+  Can't find answer you looking for? <span class="text-primary font-medium"> Get in touch with our Friendly Team</span></p>
+
+  <div class="grid grid-cols-3 gap-4 mt-10">
+    <div class="p-8  rounded-xl" *ngFor="let item of [].constructor(7); let i = index">
+      <h1 class="font-medium">Lorem ipsum dolor sit amet consectetur ? </h1>
+      <p class="mt-3 text-sm font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsum aspernatur necessitatibus incidunt. Veritatis doloribus sed, in similique laboriosam aliquam rem, quod repellat perferendis natus numquam voluptatem consectetur molestiae totam.</p>
+    </div>
+
+  </div>
+
+</div>
+<!-- faq -->
+<div class="flex justify-center my-10">
+
+  <div class="w-3/4 bg-blue-100  p-5 rounded-2xl flex justify-between items-center">
+    <div class="flex gap-x-5 items-center">
+      <div class="w-[3.5rem] h-[3.5rem]">
+        <img class="img-contain" src="../../../assets/asserts/Avatar.png" alt="">
+      </div>
+      <div>
+        <p class="text-primary text-lg font-medium">Still have questions?</p>
+        <p class="text-sm">Talk to our friendly team</p>
+      </div>
+    </div>
+    <div>
+      <button class="bg-secondary p-3 px-5 rounded-lg text-white">Get in Touch</button>
+    </div>
+  </div>
+
+</div>
+
 
 </div>
 <app-footer></app-footer>

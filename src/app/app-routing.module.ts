@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from 'node_modules/@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { BeaPartnerComponent } from './pages/bea-partner/bea-partner.component';
 import { ContactComponent } from './pages/contact/contact.component';
