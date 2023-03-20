@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -14,6 +15,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { JoinBetaComponent } from './pages/join-beta/join-beta.component';
 import { PartnershipCardComponent } from './components/partnership-card/partnership-card.component';
 
+//third party libraries
+import {SimpleScrollSpyModule} from "angular-simple-scroll-spy";
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,12 +28,16 @@ import { PartnershipCardComponent } from './components/partnership-card/partners
     AboutComponent,
     ContactComponent,
     JoinBetaComponent,
-    PartnershipCardComponent
+    PartnershipCardComponent,
+
   ],
   imports: [
+    SimpleScrollSpyModule,
     BrowserModule,
     AppRoutingModule,
-    CarouselModule 
+    CarouselModule ,
+    BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
