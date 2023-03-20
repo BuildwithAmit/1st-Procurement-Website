@@ -1,15 +1,15 @@
 <app-navbar></app-navbar>
 <div class="min-h-[70vh]">
   <!-- header -->
-  <div class="flex flex-col items-center w-full h-[80vh] relative">
+  <div class="flex flex-col items-center p-2 w-full md:min-h-[80vh] relative">
     <h1
-      class="hero-s-text mt-52 leading-[4rem] capitalize font-semibold text-center"
+      class="hero-s-text-sm md:text-6xl mt-2 md:mt-52 leading-[2rem] md:leading-[4rem] capitalize font-semibold text-center px-2"
     >
       Be part of our journey to success. <br />
       Become a partner today.
     </h1>
     <p
-      class="text-sm mt-10 mt-6 font-normal max-w-4xl text-center text-zinc-600"
+      class="text-sm mt-10 px-4 mt-6 font-normal max-w-4xl text-center text-zinc-600"
     >
       Join us on path to success and become a partner today, where together, we
       can achieve even greater heights and make a lasting impact in the world of
@@ -19,7 +19,7 @@
       <button
         data-modal-target="staticModal"
         data-modal-toggle="staticModal"
-        class="btn-dblue mt-7 px-12 py-3 rounded-md"
+        class="btn-dblue mt-7 px-8 md:px-12 py-3 rounded-md"
       >
         Register Now
       </button>
@@ -107,8 +107,10 @@
   <!-- end of header -->
 
   <!-- start of section 2 -->
-  <div class="flex justify-center items-center w-full h-[100vh] px-36 gap-16">
-    <div class="container w-1/2">
+  <div
+    class="flex flex-col md:flex-row justify-center items-center w-full md:min-h-[100vh] px-2 md:px-36 gap-16"
+  >
+    <div class="container md:w-1/2">
       <img
         class="img-cover h-[37.3rem] w-[37.3rem] rounded-xl"
         src="https://images.unsplash.com/photo-1585201731775-0597e1be4bfb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=415&q=80"
@@ -116,8 +118,8 @@
       />
     </div>
 
-    <div class="flex flex-col items-center w-1/2">
-      <h2 class="header-text font-semibold capitalize">
+    <div class="flex flex-col items-center md:w-1/2">
+      <h2 class="header-text font-semibold capitalize text-center">
         Why to supply raw matrial with ProducTRY
       </h2>
       <p class="text-sm text-zinc-600 font-normal mt-6 text-justify">

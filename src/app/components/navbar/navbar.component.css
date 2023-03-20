@@ -20,6 +20,3 @@ nav{z-index: 50;}
   .slider-menu{position: fixed;background: white;z-index: 105;width: 20rem;height: 100%;right: -20rem; top: 0;transition: all .3s ease-in-out;}
   .slider-menu.active{right: 0 }
 }
-
-
-
