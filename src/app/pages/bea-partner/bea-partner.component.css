@@ -1,6 +1,34 @@
 .benifit-carousel ::ng-deep .owl-prev{
-    background-color: aqua;
+    background-color: #192442;
+}
+.benifit-carousel ::ng-deep .owl-prev:hover{
+    background-color: #273252;
 }
 .benifit-carousel ::ng-deep .owl-next{
-    
+    background-color: #192442;
+}
+.benifit-carousel ::ng-deep .owl-next:hover{
+    background-color: #273252;
+}
+
+@media (max-width: 768px){
+     .sec-2-tab{
+        display: none;
+    }
+}
+@media (min-width: 768px) and (max-width:1024px){
+    .sec-2-full{
+        display: none;
+    }
+    .sec-2-tab{
+        display: block;
+    }
+}
+@media (min-width: 1024px) {
+    .sec-2-tab{
+        display: none;
+    }
+    .sec-2-full{
+        display: block;
+    }
 }

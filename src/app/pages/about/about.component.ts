@@ -1,50 +1,26 @@
 import { Component } from '@angular/core';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  customOptions: OwlOptions = {
-    loop: false,
-    mouseDrag: true,
-    touchDrag: false,
-    pullDrag: false,
-    dots: false,
-    navSpeed: 700,
-    navText: ['', ''],
-    responsive: {
-      0: {
-        items: 1
-      },
-      400: {
-        items: 1
-      },
-      740: {
-        items: 2
-      },
-      940: {
-        items: 3
-      }
-    },
-    nav: true
-  }
+  
 core_value_data = [
   {
       id:1,
-      title:"Core Value 1",
-      content:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."    
+      title:"Collaboration",
+      content:"Teamwork and cooperation are essential for achieving goals and delivering the best possible results.<br/> We encourage open communication, active listening, and a willingness to share ideas, feedback, and insights. By working together, we can achieve more than we ever could alone."    
     },
   {
       id:2,
-      title:"Core Value 2",
-      content:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."    
+      title:"Continuous Improvement",
+      content:"There is always room for growth and that we can always do better. We encourage our team members to think critically, ask questions, and challenge the status quo."    
     },
   {
       id:3,
-      title:"Core Value 3",
-      content:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."    
+      title:"Curiosity",
+      content:"Desire to learn and explore is essential for personal and professional growth. We encourage our team members to stay curious, to seek out new experiences, and to never stop asking questions."    
     }
   ]
    team_data = [
@@ -86,8 +62,13 @@ core_value_data = [
       name: "Amit Jadhwar",
       designation: 'founder',
       img: "../../../assets/asserts/team/man-1.png"
-    }
-    
+    },
+    {
+      id: '1',
+      name: "Sadanand Gore",
+      designation: 'marketing',
+      img: "../../../assets/asserts/team/man-2.png"
+    },
   ]
 
   supporters_data = [
@@ -116,12 +97,19 @@ core_value_data = [
   showTeam: boolean = true
   showMentors: boolean = false
   
+   
+
   showTeamData() {
     this.showTeam = true
     this.showMentors = false
+    document.getElementsByClassName("tab-links")[0].classList.add('active');
+    document.getElementsByClassName("tab-links")[1].classList.remove('active');
   }
   showMentorsData() {
-    this.showTeam = false
     this.showMentors = true
+    this.showTeam = false
+    document.getElementsByClassName("tab-links")[0].classList.remove('active');
+    document.getElementsByClassName("tab-links")[1].classList.add('active');
   }
+
 }
