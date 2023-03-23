@@ -47,7 +47,7 @@ export class HomeComponent {
     {
 
       id: '3',
-      for:'Data Measurement',
+      for:'Dashboards and Analytics',
       title: 'What you can measure, you can improve.',
       content: 'Optimize your hardware Product development process with the help of ProducTry.Make data driven decisions with dashboards and data analytics.',
       img: 'https://images.unsplash.com/photo-1608037222022-62649819f8aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'

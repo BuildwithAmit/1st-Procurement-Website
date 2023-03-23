@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+declare let $: any
+declare let AOS :any;
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.css']
 })
 export class AboutComponent {
-  
+  constructor() { window.scrollTo(0, 0) }
+  ngOnInit(): void{
+  $(document).ready(()=>{
+    AOS.init();
+  })
+}
 core_value_data = [
   {
       id:1,
@@ -94,6 +102,7 @@ core_value_data = [
     },
   ]
 
+ 
   showTeam: boolean = true
   showMentors: boolean = false
   
@@ -102,14 +111,46 @@ core_value_data = [
   showTeamData() {
     this.showTeam = true
     this.showMentors = false
+    console.log(this.showMentors, this.showTeam);
     document.getElementsByClassName("tab-links")[0].classList.add('active');
     document.getElementsByClassName("tab-links")[1].classList.remove('active');
   }
   showMentorsData() {
     this.showMentors = true
     this.showTeam = false
+    console.log(this.showMentors, this.showTeam);
     document.getElementsByClassName("tab-links")[0].classList.remove('active');
     document.getElementsByClassName("tab-links")[1].classList.add('active');
   }
 
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    autoplayTimeout:2000,
+    autoplaySpeed:700,
+    autoplay:true,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 2
+      },
+      400: {
+        items: 3
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 4
+      },
+      1024:{
+        items:5
+      }
+    },
+    nav: false
+  }
 }

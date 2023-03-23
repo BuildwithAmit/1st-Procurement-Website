@@ -10,11 +10,12 @@
       <img
         src="../../../assets/asserts/our-story-bg.png"
         alt="our story"
-        class="flex w-full xl:h-full h-[80vh] "
+        class="flex w-full xl:h-full h-[80vh]"
       />
       <div class="display-side h-full w-full absolute top-0"></div>
       <div
         class="xl:hidden flex flex-col w-full px-8 md:px-16 top-6 absolute items-center justify-center"
+       
       >
         <h1
           class="hero-s-text-sm md:text-6xl mt-4 md:mt-20 xl:mt-52 text-white capitalize font-semibold text-center mb-6"
@@ -43,7 +44,7 @@
     >
       <div
         class="hidden xl:flex xl:flex-col w-full max-w-[500px] bg-white p-8 absolute bottom-[2rem] right-[10rem] rounded-md"
-        
+         data-aos="fade-left"
       >
         <h2 class="header-text text-center font-semibold capitalize">
           Our story
@@ -112,8 +113,8 @@
       class="flex flex-row flex-wrap justify-center px-4 md:p-16 gap-8 mt-4 xl:mt-16 relative"
     >
       <div
-     
         class="flex flex-col gap-6 w-80 h-[439px] p-10 rounded-3xl card-bg-color"
+        data-aos="zoom-out-right"
       >
         <img
           class="h-24 w-24"
@@ -129,6 +130,7 @@
       </div>
       <div
         class="flex flex-col gap-6 w-80 h-[439px] p-10 rounded-3xl card-bg-color xl:relative xl:top-[-80px]"
+        data-aos="fade-up"
       >
         <img
           class="h-24 w-24"
@@ -144,6 +146,7 @@
       </div>
       <div
         class="flex flex-col gap-6 w-80 h-[439px] p-10 rounded-3xl card-bg-color"
+        data-aos="zoom-out-left"
       >
         <img
           class="h-24 w-24"
@@ -162,96 +165,104 @@
   <!-- end of section 4 -->
 
   <!-- start of section 5 -->
-  <div
-    class="md:p-10 px-1 flex flex-col items-center min-h-[80vh] my-4 w-full"
-  >
+  <div class="md:p-10 px-1 min-h-max my-4">
     <h2 class="header-text font-semibold capitalize text-center mb-2">
       our team
     </h2>
-    <div
-      class="flex flex-row items-center justify-around md:justify-between w-full md:w-[20rem]"
-    >
-      <a class="tab-links active">
-        <div class="flex items-center gap-x-5">
-          <span></span>
-          <p
-            class="text-2xl cursor-pointer font-normal capitalize"
-            (click)="showTeamData()"
-          >
-            Team
-          </p>
-        </div>
-      </a>
-      <a class="tab-links">
-        <div class="flex items-center gap-x-5">
-          <span></span>
-          <p
-            class="text-2xl cursor-pointer font-normal capitalize"
-            (click)="showMentorsData()"
-          >
-            Mentors
-          </p>
-        </div>
-      </a>
-    </div>
-    <div *ngIf="showTeam">
-      <div class="flex flex-row flex-wrap justify-center gap-2 md:gap-8 mt-8">
-        <div
-          class="card-img flex flex-col justify-between cursor-pointer rounded-3xl w-[200px] h-[300px] relative"
-          *ngFor="let item of team_data"
-        >
-          <img
-            class="hover:brightness-75 h-full w-full cover-full"
-            src="{{ item.img }}"
-            alt="fonder-img"
-          />
-          <p
-            class="text-sm font-normal text-white capitalize absolute top-0 p-5"
-          >
-            ~ {{ item.designation }}
-          </p>
-          <p
-            class="text-2xl font-normal text-white capitalize absolute bottom-0 p-5"
-          >
-            ~ {{ item.name }}
-          </p>
-        </div>
+    <div class="flex justify-center">
+      <div
+        class="flex flex-row items-center justify-around md:justify-between w-full md:w-[20rem]"
+      >
+        <a class="tab-links active">
+          <div class="flex items-center gap-x-5">
+            <span></span>
+            <p
+              class="text-2xl cursor-pointer font-normal capitalize"
+              (click)="showTeamData()"
+            >
+              Team
+            </p>
+          </div>
+        </a>
+        <a class="tab-links">
+          <div class="flex items-center gap-x-5">
+            <span></span>
+            <p
+              class="text-2xl cursor-pointer font-normal capitalize"
+              (click)="showMentorsData()"
+            >
+              Mentors
+            </p>
+          </div>
+        </a>
       </div>
     </div>
-    <div *ngIf="showMentors">
-      <div class="flex flex-row flex-wrap justify-center gap-2 md:gap-8 mt-8">
-        <div
-          class="card-img flex flex-col justify-between cursor-pointer rounded-3xl w-[200px] h-[300px] relative"
-          *ngFor="let item of mentors_data"
-        >
-          <img
-            class="hover:brightness-75 h-full w-full cover-full"
-            src="{{ item.img }}"
-            alt="fonder-img"
-          />
-          <p
-            class="text-sm font-normal text-white capitalize absolute top-0 p-5"
-          >
-            ~ {{ item.designation }}
-          </p>
-          <p
-            class="text-2xl font-normal text-white capitalize absolute bottom-0 p-5"
-          >
-            ~ {{ item.name }}
-          </p>
-        </div>
+
+    <div class="my-10">
+      <div *ngIf="showTeam">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container class="flex justify-center" *ngFor="let item of team_data" > 
+            <ng-template carouselSlide>
+              <div
+                class="card-img flex flex-col justify-between cursor-pointer rounded-3xl w-[160px] h-[220px] md:w-[200px] md:h-[300px] relative"
+              >
+                <img
+                  class="hover:brightness-75 h-full w-full cover-full"
+                  src="{{ item.img }}"
+                  alt="fonder-img"
+                />
+                <p
+                  class="text-sm font-normal text-white capitalize absolute top-0 md:p-5 p-2"
+                >
+                  ~ {{ item.designation }}
+                </p>
+                <p
+                  class="text-sm md:text-xl font-normal text-white capitalize absolute bottom-0 md:p-5 p-2"
+                >
+                  ~ {{ item.name }}
+                </p>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
+      </div>
+      <div *ngIf="showMentors">
+        <owl-carousel-o [options]="customOptions">
+          <ng-container *ngFor="let item of mentors_data">
+            <ng-template carouselSlide class="flex justify-center">
+              <div
+                class="card-img flex flex-col justify-between cursor-pointer rounded-3xl w-[200px] h-[300px] relative"
+              >
+                <img
+                  class="hover:brightness-75 h-full w-full cover-full"
+                  src="{{ item.img }}"
+                  alt="fonder-img"
+                />
+                <p
+                  class="text-sm font-normal text-white capitalize absolute top-0 p-5"
+                >
+                  ~ {{ item.designation }}
+                </p>
+                <p
+                  class="text-2xl font-normal text-white capitalize absolute bottom-0 p-5"
+                >
+                  ~ {{ item.name }}
+                </p>
+              </div>
+            </ng-template>
+          </ng-container>
+        </owl-carousel-o>
       </div>
     </div>
   </div>
-
   <!-- end of section 5 -->
 
   <!-- start of section 6 -->
-  <div class="flex flex-col items-center min-h-max my-4">
+  <div class="flex flex-col items-center  my-4 min-h-max">
     <h2 class="header-text font-semibold capitalize text-center">
       We are Supported By
     </h2>
-    <div class="flex flex-row flex-wrap justify-between px-10 mb-5 w-full">
+    <div class="flex flex-row flex-wrap items-center min-h-[50vh] justify-between px-10 mb-5 w-full">
       <img
         class="flex w-60 h-28"
         src="{{ item.img }}"
