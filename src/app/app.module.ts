@@ -17,6 +17,7 @@ import { PartnershipCardComponent } from './components/partnership-card/partners
 
 //third party libraries
 import {SimpleScrollSpyModule} from "angular-simple-scroll-spy";
+import { FAQComponent } from './components/faq/faq.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +30,7 @@ import {SimpleScrollSpyModule} from "angular-simple-scroll-spy";
     ContactComponent,
     JoinBetaComponent,
     PartnershipCardComponent,
+    FAQComponent,
 
   ],
   imports: [

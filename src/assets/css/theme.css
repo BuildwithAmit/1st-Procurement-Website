@@ -17,7 +17,7 @@ ul{list-style: none;padding: 0;}
 .hero-s-text-sm{font-size: 2rem;}
 .header-text{font-size: 3rem;}
 .header-text-sm{font-size: 1.5rem;}
-.logo{height: 2rem;}
+.logo{height: 3rem;}
 .btn-dblue{background-color: #192442; color: white;transition: all .05s ease-in;}
 .btn-dblue:hover{background-color: #273252;}
 .img-cover{width: 100%;height: 100%;object-fit: cover;}
