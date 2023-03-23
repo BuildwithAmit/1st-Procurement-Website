@@ -9,8 +9,9 @@
 nav ul li a.active {
   font-weight: bold;
 }
-.spy-scroll-navbar  li{margin: 2rem auto;}
-.spy-scroll-links span{width: .7rem;height: 6px; background: #192442;border-radius: 12px;display: flex;justify-content: center;align-items: center;}
-.spy-scroll-links.active{font-weight: 700;}
-.spy-scroll-links.active span{background: #3E82FC;color: white;}
 
+.tab-links span{width: .7rem;height: 6px; background: #192442;border-radius: 12px;display: flex;justify-content: center;align-items: center;}
+.tab-links.active{font-weight: 700;}
+.tab-links.active span{background: #3E82FC;color: white;}
+
+.display-side{background:linear-gradient(151.84deg, #D9D9D9 -70.53%, #1f74ba9d -70.51%, #192442c3 105.72%)}
