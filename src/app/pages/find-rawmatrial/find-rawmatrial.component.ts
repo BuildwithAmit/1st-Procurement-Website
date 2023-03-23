@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-declare let $:any
+declare let $: any
+declare let AOS :any;
 
 @Component({
   selector: 'app-find-rawmatrial',
@@ -10,7 +11,11 @@ declare let $:any
 export class FindRawmatrialComponent {
 
   constructor() { window.scrollTo(0, 0) }
-
+ngOnInit(): void{
+  $(document).ready(()=>{
+    AOS.init();
+  })
+}
   scrollToSection() {
     $('html,body').animate({
       scrollTop: $("#form").offset().top},
@@ -35,6 +40,11 @@ export class FindRawmatrialComponent {
       content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
     },{
       name: 'ceramics',
+      icon: '../../../assets/asserts/3dasserts/ceramics.png',
+      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
+    },
+    {
+      name: 'NaturalMaterials',
       icon: '../../../assets/asserts/3dasserts/ceramics.png',
       content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
     },

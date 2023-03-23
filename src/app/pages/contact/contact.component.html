@@ -1,65 +1,124 @@
 <app-navbar></app-navbar>
 <!-- wrapper -->
-<div class="contact-from flex ">
-<div class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden">
-  <div class="w-1/2">
-    <div class="flex justify-center">
-      <img class="logo" src="../../../assets/asserts/logo.png" alt="">
-    </div>
-    <p class="mt-5 font-light text-center text-white text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsa fuga! Provident, </p>
-  </div>
-  <div class="absolute bottom-5 left-[50%] transform -translate-x-1/2 -translate-y-1/2">
-    <ul class="flex gap-x-5">
-      <li class="text-white hover:text-blue-600 text-xl"><a href=""><i class="bi bi-facebook"></i></a></li>
-      <li class="text-white hover:text-blue-600 text-xl"><a href=""><i class="bi bi-instagram"></i></a></li>
-      <li class="text-white hover:text-blue-600 text-xl"><a href=""><i class="bi bi-twitter"></i></a></li>
-      <li class="text-white hover:text-blue-600 text-xl"><a href=""><i class="bi bi-youtube"></i></a></li>
-      <li class="text-white hover:text-blue-600 text-xl"><a href=""><i class="bi bi-linkedin"></i></a></li>
-    </ul>
-  </div>
-</div>
-<div class="w-full lg:w-1/2 h-auto p-10 xl:p-24 xl:pt-10">
-  <div class="">
-
-    <h1 class="text-2xl font-medium">Contact Us</h1>
-    <p class="mt-5 text-sm text-zinc-500 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eligendi modi quis animi aperiam atque nulla? Enim corporis impedit repellat magnam facilis veritatis, laudantium fugiat totam assumenda, fuga, inventore optio.</p>
-
-    <div class="form mt-5">
-      <div>
-        <label for="name" class="text-sm text-zinc-400 font-light">Name</label><br>
-        <input type="text" id="name" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your Name">
+<div class="flex min-h-max md:h-[95vh]">
+  <div
+    class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden"
+  >
+    <div class="w-1/2">
+      <div class="flex justify-center">
+        <img class="logo" src="../../../assets/asserts/logo.png" alt="" />
       </div>
-      <div class="flex gap-x-5 mt-3">
-        <div class="w-full">
-          <label for="email" class="text-sm text-zinc-400 font-light">Email</label><br>
-          <input type="email" id="email" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your Email">
+      <p class="mt-5 font-light text-center text-white text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsa
+        fuga! Provident,
+      </p>
+    </div>
+    <div
+      class="absolute bottom-5 left-[50%] transform -translate-x-1/2 -translate-y-1/2"
+    >
+      <ul class="flex gap-x-5">
+        <li class="text-white">
+          <a href=""><i class="bi bi-facebook" target="_blank"></i></a>
+        </li>
+        <li class="text-white">
+          <a
+            href="https://www.instagram.com/build_with_productry/"
+            target="_blank"
+            ><i class="bi bi-instagram"></i
+          ></a>
+        </li>
+        <li class="text-white">
+          <a href=""><i class="bi bi-twitter" target="_blank"></i></a>
+        </li>
+        <li class="text-white">
+          <a href=""><i class="bi bi-youtube" target="_blank"></i></a>
+        </li>
+        <li class="text-white">
+          <a
+            href="https://www.linkedin.com/company/productryindia/"
+            target="_blank"
+            ><i class="bi bi-linkedin"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="w-full lg:w-1/2 h-[auto] p-10 xl:p-24 xl:pt-10">
+    <div class="">
+      <h1 class="text-2xl font-medium">Contact Us</h1>
+      <p class="mt-5 text-sm text-zinc-500">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem eligendi
+        modi quis animi aperiam atque nulla? Enim corporis impedit repellat
+        magnam facilis veritatis, laudantium fugiat totam assumenda, fuga,
+        inventore optio.
+      </p>
+
+      <div class="form mt-5">
+        <div>
+          <label for="name" class="text-sm text-zinc-400 font-light">Name</label
+          ><br />
+          <input
+            type="text"
+            id="name"
+            class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+            placeholder="Enter your Name"
+          />
         </div>
-        <div class="w-full">
-          <label for="phoneno" class="text-sm text-zinc-400 font-light">Phone Number</label><br>
-          <input type="tel" id="phoneno" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your Phone Number">
+        <div class="flex flex-col md:flex-row gap-y-3 gap-x-5 mt-3">
+          <div class="w-full">
+            <label for="email" class="text-sm text-zinc-400 font-light"
+              >Email</label
+            ><br />
+            <input
+              type="email"
+              id="email"
+              class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+              placeholder="Enter your Email"
+            />
+          </div>
+          <div class="w-full">
+            <label for="phoneno" class="text-sm text-zinc-400 font-light"
+              >Phone Number</label
+            ><br />
+            <input
+              type="tel"
+              id="phoneno"
+              class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+              placeholder="Enter your Phone Number"
+            />
+          </div>
+        </div>
+        <div class="mt-3">
+          <label for="sectore" class="text-sm text-zinc-400 font-light"
+            >Company Sector</label
+          ><br />
+          <input
+            type="text"
+            id="sectore"
+            class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+            placeholder="Enter your compnay Sectore"
+          />
+        </div>
+        <div class="mt-3">
+          <label for="companyname" class="text-sm text-zinc-400 font-light"
+            >Company Name</label
+          ><br />
+          <input
+            type="text"
+            id="companyname"
+            class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+            placeholder="Enter your Name"
+          />
+        </div>
+        <div class="mt-6 flex justify-end">
+          <button class="bg-secondary p-3 px-5 rounded-lg text-white">
+            Submit
+          </button>
         </div>
       </div>
-      <div class="mt-3">
-        <label for="sectore" class="text-sm text-zinc-400 font-light">Company Sector</label><br>
-        <input type="text" id="sectore" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your compnay Sectore">
-      </div>
-      <div class="mt-3">
-        <label for="companyname" class="text-sm text-zinc-400 font-light">Company Name</label><br>
-        <input type="text" id="companyname" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your Name">
-      </div>
-
-
-    </div>
-
-    <div class="mt-16 flex justify-end">
-      <button class="bg-secondary p-3 px-5 rounded-lg text-white">Submit</button>
     </div>
   </div>
 </div>
-</div>
-
-
-
 
 <!-- wrapper -->
 <app-footer></app-footer>

@@ -1,254 +1,462 @@
 <app-navbar></app-navbar>
 <div class="min-h-[70vh]">
-
-<!-- header -->
-<div class="flex justify-center items-center w-full h-[70vh] relative px-5">
-  <div class="max-w-6xl text-center relative z-10">
-    <p class="hero-s-text leading-9 lg:leading-[4rem] capitalize font-semibold">Buy Any martial you need for your research or specialty production</p>
-    <p class="mt-5 text-sm text-zinc-600">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever
-      since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book</p>
-    <button (click)="scrollToSection()" class="bg-secondary text-white mt-8 px-8 py-2 rounded-md">Procure Now</button>
-  </div>
-</div>
-<!-- header -->
-
-<!-- sec 1 -->
-<div class="my-10 p-5 lg:px-16 ">
-  <div class="w-full lg:h-[20rem] bg-secondary rounded-3xl flex justify-center items-center">
-    <div class="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-5 lg:gap-x-16">
-
-      <div class="  lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
-        <img class="h-[5rem] lg:h-[7rem]" src="../../../assets/asserts/svgs/nominqty.svg" alt="">
-        <p class="text-center mt-3 leading-4 text-white">No minimum order quantity</p>
-      </div>
-
-      <div class="  lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
-        <img class="h-[5rem] lg:h-[7rem]" src="../../../assets/asserts/svgs/doorstepdelivery.svg" alt="">
-        <p class="text-center mt-3 leading-4 text-white">Door Devliver</p>
-      </div>
-
-      <div class="  lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
-        <img class="h-[5rem] lg:h-[7rem]" src="../../../assets/asserts/svgs/pan.svg" alt="">
-        <p class="text-center mt-3 leading-4 text-white">PAN India Service</p>
-      </div>
-
-      <div class="  lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center" >
-        <img class="h-[5rem] lg:h-[7rem]" src="../../../assets/asserts/svgs/shop.svg" alt="">
-        <p class="text-center mt-3 leading-4 text-white">LOK Retail distributors network</p>
-      </div>
-
-    </div>
-  </div>
-</div>
-<!-- sec 1 -->
-<!-- section 3 -->
-<div class="md:flex justify-between items-center p-5 lg:p-10 ">
-  <div class="md:w-1/2 flex justify-center">
-    <div class="w-11/12">
-      <h1 class="header-text font-semibold leading-[2.8rem]">ProducTRY Technology Base Platform</h1>
-      <p class="mt-10">They build them using various materials and processes.</p>
-      <p class="mt-2">Materials are the core elements of engineering, a source of differentiation in any product or process.</p>
-      <p class="mt-2">In the process of developing a new product or process for material selection and procurement, innovators waste 60-70% of their product development time, money and resources using ‘ trial and error’ methodology.</p>
-    </div>
-  </div>
-  <div class="md:w-1/2 flex justify-center mt-5 md:mt-0">
-    <div class="w-[30rem] h-[30rem]">
-      <img class="img-cover rounded-3xl" src="https://images.unsplash.com/photo-1604411853851-8b4d5d910545?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="">
-    </div>
-  </div>
-</div>
-<!-- section 3 -->
-<div class="p-5 lg:px-16 lg:p-10">
-  <h1 class="header-text text-center font-semibold ">Catagory We provide</h1>
-
-<div class="mt-10">
-  <div class="flex-wrap flex justify-center items-center gap-8 xl:flex-nowrap">
-    <div class="elements-card bg-zinc-100 group-hover hover:bg-zinc-800 w-[16rem] h-[20rem] rounded-2xl relative p-5 z-[-2]" *ngFor="let items of elements">
-      <div class="w-[5rem] h-[5rem]">
-        <img class="img-contain" src="{{items.icon}}" alt="">
-      </div>
-      <h1 class="mt-2 text-xl font-semibold">{{items.name}}</h1>
-      <p class="mt-2 text-zinc-600 text-sm">{{items.content}}</p>
-
-
-      <div class="absolute z-[-1] top-0 left-0">
-        <svg class="w-full h-full " viewBox="0 0 310 377" stroke="#DADADA" xmlns="http://www.w3.org/2000/svg">
-          <path d="M-12.844 260.489L25.0647 268.667L36.9367 305.586L10.9 334.327L-27.0087 326.149L-38.8807 289.23L-12.844 260.489Z" fill="#F4F4F5"  stroke-width="2"/>
-          <path d="M-10.0702 268.456L19.6125 274.859L28.9083 303.767L8.52146 326.271L-21.1612 319.868L-30.4571 290.96L-10.0702 268.456Z" fill="#F4F4F5" stroke-width="2"/>
-          <path d="M17.8535 339.926L34.4567 321.598L58.6303 326.813L66.2009 350.356L49.5977 368.683L25.4241 363.468L17.8535 339.926Z" fill="#F4F4F5" stroke-width="2"/>
-          <path d="M-18.9269 353.124L-6.73692 339.668L11.0113 343.497L16.5696 360.782L4.37964 374.238L-13.3686 370.409L-18.9269 353.124Z" fill="#F4F4F5" stroke-width="2"/>
-          <path d="M-13.3595 354.67L-4.95586 345.394L7.27958 348.033L11.1114 359.949L2.70777 369.226L-9.52767 366.586L-13.3595 354.67Z"  fill="#F4F4F5" stroke-width="2"/>
-          <path d="M253.054 -57.5309L300.118 -30.3582L300.118 23.9871L253.054 51.1597L205.989 23.9871L205.989 -30.3582L253.054 -57.5309Z" fill="#F4F4F5" stroke-width="2"/>
-          <path d="M259.114 60.8498L289.267 43.4408L319.42 60.8498L319.42 95.6678L289.267 113.077L259.114 95.6678L259.114 60.8498Z" fill="#F4F4F5" stroke-width="2"/>
-          <path d="M204.838 62.6631L227.08 49.8217L249.322 62.6631L249.322 88.346L227.08 101.187L204.838 88.346L204.838 62.6631Z" fill="#F4F4F5" stroke-width="2"/>
-          <path d="M211.546 67.0773L227 58.1547L242.454 67.0773L242.454 84.9226L227 93.8453L211.546 84.9226L211.546 67.0773Z" fill="#F4F4F5" stroke-width="2"/>
-          </svg>
-
-      </div>
-
-    </div>
-
-  </div>
-</div>
-
-
-</div>
-<!-- form -->
-<div class="w-100 my-10  relative " id="form">
-  <img class="z-[-1] form-bg-img absolute transform -scale-x-100 w-full h-full img-cover grayscale brightness-50" src="https://images.unsplash.com/photo-1445140402314-ffd9630d0b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80" alt="">
-  <div class="p-5 lg:p-10 pb-7">
-  <div class="lg:flex justify-between items-center" >
+  <!-- header -->
+  <div
+    class="flex justify-center items-center w-full h-[70vh] relative px-5"
+    data-aos="fade-up"
+  >
     <div>
-      <div class="lg:w-3/4">
-        <h1 class="header-text font-semibold text-white lg:leading-[3rem]">Customize your Raw Matrials Requirements</h1>
-        <p class="mt-8 text-white lg:text-zinc-400 font-light">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+      <div class="max-w-6xl text-center relative z-10">
+        <p
+          class="hero-s-text leading-9 lg:leading-[4rem] capitalize font-semibold"
+        >
+          Discover an extensive range of high-quality materials for your
+          research or specialty production needs
+        </p>
+        <p class="mt-5 text-sm text-zinc-600">
+          We offer a wide range of materials to ensure the availability of
+          everything you need for your research/innovation/product. With our
+          comprehensive range of material resources, you can rest assured that
+          the design for the manufacturing (DFM) process will be a breeze.
+        </p>
+        <button
+          (click)="scrollToSection()"
+          class="bg-secondary text-white mt-8 px-8 py-2 rounded-md"
+        >
+          Procure Now
+        </button>
       </div>
     </div>
-    <div class="p-5 bg-white rounded-xl mt-5 mt:mt-0">
-      <p>Select Matrial</p>
+  </div>
+  <!-- header -->
 
-      <div class="overflow-hidden">
-        <div class="overflow-auto p-2 flex gap-x-2 mt-3 scrollbar-hidden">
-          <div class="" *ngFor=" let items of elements">
-            <input class="matrial-select" id="select-{{items.name}}" name="matrial" type="radio">
-            <label class="matrial-select-label text-sm rounded-full px-3 py-1" for="select-{{items.name}}">{{items.name}}</label>
+  <!-- sec 1 -->
+  <div class="my-10 p-5 lg:px-16">
+    <div
+      class="w-full lg:h-[20rem] bg-secondary rounded-3xl flex justify-center items-center"
+    >
+      <div
+        class="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-5 lg:gap-x-16"
+      >
+        <div
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+        >
+          <img
+            class="h-[5rem] lg:h-[7rem]"
+            src="../../../assets/asserts/svgs/nominqty.svg"
+            alt=""
+          />
+          <p class="text-center mt-3 leading-4 text-white">
+            No minimum order quantity
+          </p>
+        </div>
+
+        <div
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+        >
+          <img
+            class="h-[5rem] lg:h-[7rem]"
+            src="../../../assets/asserts/svgs/doorstepdelivery.svg"
+            alt=""
+          />
+          <p class="text-center mt-3 leading-4 text-white">Door Devliver</p>
+        </div>
+
+        <div
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+        >
+          <img
+            class="h-[5rem] lg:h-[7rem]"
+            src="../../../assets/asserts/svgs/pan.svg"
+            alt=""
+          />
+          <p class="text-center mt-3 leading-4 text-white">PAN India Service</p>
+        </div>
+
+        <div
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+        >
+          <img
+            class="h-[5rem] lg:h-[7rem]"
+            src="../../../assets/asserts/svgs/shop.svg"
+            alt=""
+          />
+          <p class="text-center mt-3 leading-4 text-white">
+            10K retailers/Distributors Network
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- sec 1 -->
+  <!-- section 3 -->
+  <div class="md:flex justify-between items-center p-5 lg:p-10">
+    <div class="md:w-1/2 flex justify-center">
+      <div class="w-11/12">
+        <h1 class="header-text font-semibold leading-[2.8rem]">
+          ProducTRY Technology Base Platform
+        </h1>
+        <p class="mt-10">
+          Experience the convenience of our technology-based platform for raw
+          material procurement, which caters to the needs of scientists,
+          innovators, and specialized productions by providing a vast selection
+          of high-quality raw materials, ensuring that you have everything you
+          need to push the boundaries of scientific innovation and development.
+        </p>
+      </div>
+    </div>
+    <div class="md:w-1/2 flex justify-center mt-5 md:mt-0">
+      <div class="w-[30rem] h-[30rem]" data-aos="zoom-out-right">
+        <img
+          class="img-cover rounded-3xl"
+          src="https://images.unsplash.com/photo-1604411853851-8b4d5d910545?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <!-- section 3 -->
+  <div class="p-5 lg:px-16 lg:p-10">
+    <h1 class="header-text text-center font-semibold">Catagory We provide</h1>
+
+    <div class="mt-10">
+      <div
+        class="flex-wrap flex justify-center items-center gap-8 "
+      >
+        <div
+          class="elements-card bg-zinc-100 group-hover hover:bg-zinc-800 w-[16rem] h-[20rem] rounded-2xl relative p-5 z-[-2]"
+          *ngFor="let items of elements"
+          
+        >
+          <div class="w-[5rem] h-[5rem]" data-aos="fade-up">
+            <img class="img-contain" src="{{ items.icon }}" alt="" />
+          </div>
+          <h1 class="mt-2 text-xl font-semibold" data-aos="fade-up">{{ items.name }}</h1>
+          <p class="mt-2 text-zinc-600 text-sm" data-aos="fade-up">{{ items.content }}</p>
+
+          <div class="absolute z-[-1] top-0 left-0">
+            <svg
+              class="w-full h-full"
+              viewBox="0 0 310 377"
+              stroke="#DADADA"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M-12.844 260.489L25.0647 268.667L36.9367 305.586L10.9 334.327L-27.0087 326.149L-38.8807 289.23L-12.844 260.489Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M-10.0702 268.456L19.6125 274.859L28.9083 303.767L8.52146 326.271L-21.1612 319.868L-30.4571 290.96L-10.0702 268.456Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M17.8535 339.926L34.4567 321.598L58.6303 326.813L66.2009 350.356L49.5977 368.683L25.4241 363.468L17.8535 339.926Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M-18.9269 353.124L-6.73692 339.668L11.0113 343.497L16.5696 360.782L4.37964 374.238L-13.3686 370.409L-18.9269 353.124Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M-13.3595 354.67L-4.95586 345.394L7.27958 348.033L11.1114 359.949L2.70777 369.226L-9.52767 366.586L-13.3595 354.67Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M253.054 -57.5309L300.118 -30.3582L300.118 23.9871L253.054 51.1597L205.989 23.9871L205.989 -30.3582L253.054 -57.5309Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M259.114 60.8498L289.267 43.4408L319.42 60.8498L319.42 95.6678L289.267 113.077L259.114 95.6678L259.114 60.8498Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M204.838 62.6631L227.08 49.8217L249.322 62.6631L249.322 88.346L227.08 101.187L204.838 88.346L204.838 62.6631Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+              <path
+                d="M211.546 67.0773L227 58.1547L242.454 67.0773L242.454 84.9226L227 93.8453L211.546 84.9226L211.546 67.0773Z"
+                fill="#F4F4F5"
+                stroke-width="2"
+              />
+            </svg>
           </div>
         </div>
       </div>
-
-        <div class="mt-3 ">
-          <label for="matrial-desc" class="text-sm text-zinc-400">Matrial Description</label><br>
-          <textarea name="matrial-desc" id="matrial-desc" class="w-full  border-2 rounded-lg border-zinc-300 p-3" rows="6"></textarea>
-        </div>
-
-        <div class="md:flex gap-x-5 mt-3">
-          <div class="w-full">
-            <label for="email" class="text-sm text-zinc-400 font-light">Name</label><br>
-            <input type="email" id="email" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your name">
-          </div>
-          <div class="w-full mt-3 md:mt-0">
-            <label for="phoneno" class="text-sm text-zinc-400 font-light">Email</label><br>
-          <input type="tel" id="phoneno" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your Email">
-          </div>
-        </div>
-
-        <div class="md:flex gap-x-5 mt-3">
-          <div class="w-full">
-            <label for="email" class="text-sm text-zinc-400 font-light">Phone Number</label><br>
-            <input type="email" id="email" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your Phone Number">
-          </div>
-          <div class="w-full mt-3 md:mt-0">
-            <label for="phoneno" class="text-sm text-zinc-400 font-light">City</label><br>
-            <input type="tel" id="phoneno" class="w-full border-zinc-300 rounded-md border-2" placeholder="Enter your City">
-          </div>
-        </div>
-
-        <div class="mt-3 ">
-          <label for="matrial-desc" class="text-sm text-zinc-400">Address</label><br>
-          <textarea name="matrial-desc" id="matrial-desc" class="w-full  border-2 rounded-lg border-zinc-300" rows="3"></textarea>
-        </div>
-
-        <div class="mt-5 flex justify-end">
-          <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm">Submit</button>
-        </div>
-
     </div>
   </div>
-</div>
-</div>
-<!-- form -->
-<!-- provide service -->
-<div class="p-5 lg:p-16">
+  <!-- form -->
+  <div class="w-100 my-10 relative" id="form">
+    <img
+      class="z-[-1] form-bg-img absolute transform -scale-x-100 w-full h-full img-cover grayscale brightness-50"
+      src="https://images.unsplash.com/photo-1445140402314-ffd9630d0b19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80"
+      alt=""
+    />
+    <div class="p-5 lg:p-10 pb-7">
+      <div class="lg:flex justify-between items-center">
+        <div>
+          <div class="lg:w-3/4">
+            <h1 class="header-text font-semibold text-white lg:leading-[3rem]">
+              Customize your Raw Matrials Requirements
+            </h1>
+            <p class="mt-8 text-white lg:text-zinc-400 font-light">
+             Tell us what materials you need for your research, and leave the rest to us. Our dedicated team will ensure swift delivery of the highest quality materials, providing you with peace of mind so that you can focus on what matters most - <b>your research</b> 
+            </p>
+          </div>
+        </div>
+        <div class="p-5 bg-white rounded-xl mt-5 mt:mt-0">
+          <p>Select Matrial</p>
 
-<div class="w-full h-[20rem] rounded-3xl flex justify-center p-5">
-  <div class="lg:w-3/4 text-center">
-    <h1 class="header-text font-semibold">We Provide service to bussiness model</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet natus beatae eaque temporibus accusantium itaque repellendus quasi facere earum nihil. Molestias porro nisi sequi. Nesciunt fuga iure iusto nulla necessitatibus.</p>
-  </div>
-</div>
+          <div class="overflow-hidden">
+            <div class="overflow-auto p-2 flex gap-x-2 mt-3 scrollbar-hidden">
+              <div class="" *ngFor="let items of elements">
+                <input
+                  class="matrial-select"
+                  id="select-{{ items.name }}"
+                  name="matrial"
+                  type="radio"
+                />
+                <label
+                  class="matrial-select-label text-sm rounded-full px-3 py-1"
+                  for="select-{{ items.name }}"
+                  >{{ items.name }}</label
+                >
+              </div>
+            </div>
+          </div>
 
+          <div class="mt-3">
+            <label for="matrial-desc" class="text-sm text-zinc-400"
+              >Matrial Description</label
+            ><br />
+            <textarea
+              name="matrial-desc"
+              id="matrial-desc"
+              class="w-full border-2 rounded-lg border-zinc-300 p-3"
+              rows="6"
+            ></textarea>
+          </div>
 
-<div class="flex flex-col lg:flex-row justify-center items-center mt-[-5rem] xl:mt-[-8rem] gap-y-4 gap-x-10">
+          <div class="md:flex gap-x-5 mt-3">
+            <div class="w-full">
+              <label for="name" class="text-sm text-zinc-400 font-light"
+                >Name</label
+              ><br />
+              <input
+                type="text"
+                id="name"
+                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="w-full mt-3 md:mt-0">
+              <label for="emil" class="text-sm text-zinc-400 font-light"
+                >Email</label
+              ><br />
+              <input
+                type="email"
+                id="email"
+                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                placeholder="Enter your Email"
+              />
+            </div>
+          </div>
 
-<div class="bg-white w-3/4 lg:w-[18rem] h-auto p-8 rounded-xl shadow-xl" *ngFor="let items of bussinessMOde">
-  <div class="flex items-center">
-    <div class="w-[4rem] h-[4rem] bg-blue-100  rounded-md p-3">
-      <img class="img-contain" src="{{items.icon}}" alt="">
-    </div>
-    <p class="ml-4 text-xl font-semibold">{{items.title}}</p>
-  </div>
-  <p class="mt-8 text-zinc-400">{{items.content}}</p>
-</div>
-</div>
-</div>
-<!-- provide service -->
-<!-- why us -->
-<div class="flex justify-between items-center p-5 md:p-10 mt-10 ">
-  <div class="md:w-1/2 flex justify-center">
-    <div class="w-4/5 md:w-3/4">
-      <h1 class="header-text font-semibold leading-[2.8rem]">Why should you choose US</h1>
-      <p class="mt-10">They build them using various materials and processes.</p>
-      <p class="mt-2">Materials are the core elements of engineering, a source of differentiation in any product or process.</p>
-      <p class="mt-2">In the process of developing a new product or process for material selection and procurement, innovators waste 60-70% of their product development time, money and resources using ‘ trial and error’ methodology.</p>
-    </div>
-  </div>
-  <div class="w-1/2 hidden md:flex justify-center">
-    <div class="w-[30rem] h-[30rem]">
-      <img class="img-cover rounded-3xl" src="https://images.unsplash.com/photo-1604411853851-8b4d5d910545?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="">
-    </div>
-  </div>
-</div>
-<!-- why us -->
-<!-- our clients -->
-<div class="p-5 lg:p-16 mt-10 our-client">
-  <h1 class="text-center header-text font-semibold">Our Client</h1>
-  <div class="mt-5">
+          <div class="md:flex gap-x-5 mt-3">
+            <div class="w-full">
+              <label for="phoneno" class="text-sm text-zinc-400 font-light"
+                >Phone Number</label
+              ><br />
+              <input
+                type="tel"
+                id="phoneno"
+                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                placeholder="Enter your Phone Number"
+              />
+            </div>
+            <div class="w-full mt-3 md:mt-0">
+              <label for="city" class="text-sm text-zinc-400 font-light "
+                >City</label
+              ><br />
+              <input
+                type="text"
+                id="city"
+                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                placeholder="Enter your City"
+              />
+            </div>
+          </div>
 
-  <owl-carousel-o [options]="customOptions">
-    <ng-template carouselSlide *ngFor="let items of clientLogo" class="flex justify-center">
-      <div class="w-[10rem] h-[7rem]">
-        <img class="img-contain grayscale" src="{{items.logoUrl}}" alt="client logo">
+          <div class="mt-3">
+            <label for="address" class="text-sm text-zinc-400"
+              >Address</label
+            ><br />
+            <textarea
+              name="address"
+              id="address"
+              class="w-full border-2 rounded-lg border-zinc-300"
+              rows="3"
+            ></textarea>
+          </div>
+
+          <div class="mt-5 flex justify-end">
+            <button
+              class="bg-secondary px-5 py-2 rounded-lg text-white text-sm"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
       </div>
-    </ng-template>
-  </owl-carousel-o>
-</div>
-</div>
-<!-- our clients -->
-<!-- faq -->
-<div class="p-5 lg:p-16 mt-10 ">
-  <h1 class="header-text">Frequenty Ask's Questions</h1>
-  <p class="mt-5 text-zinc-500">Everything you need to know about product <br>
-  Can't find answer you looking for? <span class="text-primary font-medium"> Get in touch with our Friendly Team</span></p>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-    <div class=" p-5 lg:p-8  rounded-xl" *ngFor="let item of [].constructor(7); let i = index">
-      <h1 class="font-medium">Lorem ipsum dolor sit amet consectetur ? </h1>
-      <p class="mt-3 text-sm font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsum aspernatur necessitatibus incidunt. Veritatis doloribus sed, in similique laboriosam aliquam rem, quod repellat perferendis natus numquam voluptatem consectetur molestiae totam.</p>
+    </div>
+  </div>
+  <!-- form -->
+  <!-- provide service -->
+  <div class="p-5 lg:p-16">
+    <div class="w-full h-[20rem] rounded-3xl flex justify-center p-5">
+      <div class="lg:w-3/4 text-center">
+        <h1 class="header-text font-semibold">
+          We Provide service to bussiness model
+        </h1>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet
+          natus beatae eaque temporibus accusantium itaque repellendus quasi
+          facere earum nihil. Molestias porro nisi sequi. Nesciunt fuga iure
+          iusto nulla necessitatibus.
+        </p>
+      </div>
     </div>
 
+    <div
+      class="flex flex-col lg:flex-row justify-center items-center mt-[-5rem] xl:mt-[-8rem] gap-y-4 gap-x-10"
+    >
+      <div
+        class="bg-white w-3/4 lg:w-[18rem] h-auto p-8 rounded-xl shadow-xl"
+        *ngFor="let items of bussinessMOde"
+      >
+        <div class="flex items-center">
+          <div class="w-[4rem] h-[4rem] bg-blue-100 rounded-md p-3">
+            <img class="img-contain" src="{{ items.icon }}" alt="" />
+          </div>
+          <p class="ml-4 text-xl font-semibold">{{ items.title }}</p>
+        </div>
+        <p class="mt-8 text-zinc-400">{{ items.content }}</p>
+      </div>
+    </div>
   </div>
+  <!-- provide service -->
+  <!-- why us -->
+  <div class="flex justify-between items-center p-5 md:p-10 mt-10">
+    <div class="md:w-1/2 flex justify-center">
+      <div class="w-4/5 md:w-3/4">
+        <h1 class="header-text font-semibold leading-[2.8rem]">
+          Why should you choose US
+        </h1>
+        <p class="mt-10">
+          They build them using various materials and processes.
+        </p>
+        <p class="mt-2">
+          Materials are the core elements of engineering, a source of
+          differentiation in any product or process.
+        </p>
+        <p class="mt-2">
+          In the process of developing a new product or process for material
+          selection and procurement, innovators waste 60-70% of their product
+          development time, money and resources using ‘ trial and error’
+          methodology.
+        </p>
+      </div>
+    </div>
+    <div class="w-1/2 hidden md:flex justify-center">
+      <div class="w-[30rem] h-[30rem]" data-aos="zoom-out-right">
+        <img
+          class="img-cover rounded-3xl"
+          src="https://images.unsplash.com/photo-1604411853851-8b4d5d910545?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+  <!-- why us -->
+  <!-- our clients -->
+  <div class="p-5 lg:p-16 mt-10 our-client">
+    <h1 class="text-center header-text font-semibold">Our Client</h1>
+    <div class="mt-5">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template
+          carouselSlide
+          *ngFor="let items of clientLogo"
+          class="flex justify-center"
+        >
+          <div class="w-[10rem] h-[7rem]">
+            <img
+              class="img-contain grayscale"
+              src="{{ items.logoUrl }}"
+              alt="client logo"
+            />
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+  <!-- our clients -->
+  <!-- faq -->
+  <div class="p-5 lg:p-16 mt-10">
+    <h1 class="header-text">Frequenty Ask's Questions</h1>
+    <p class="mt-5 text-zinc-500">
+      Everything you need to know about product <br />
+      Can't find answer you looking for?
+      <span class="text-primary font-medium">
+        Get in touch with our Friendly Team</span
+      >
+    </p>
 
-</div>
-<!-- faq -->
-<div class="px-5 flex justify-center my-10">
-
-  <div class="md:w-3/4 bg-blue-100  p-5 rounded-2xl flex justify-between items-center">
-    <div class="flex gap-x-5 items-center">
-      <div class="w-[3.5rem] h-[3.5rem]">
-        <img class="img-contain" src="../../../assets/asserts/Avatar.png" alt="">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
+      <div
+        class="p-5 lg:p-8 rounded-xl"
+        *ngFor="let item of [].constructor(7); let i = index"
+      >
+        <h1 class="font-medium">Lorem ipsum dolor sit amet consectetur ?</h1>
+        <p class="mt-3 text-sm font-light">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsum
+          aspernatur necessitatibus incidunt. Veritatis doloribus sed, in
+          similique laboriosam aliquam rem, quod repellat perferendis natus
+          numquam voluptatem consectetur molestiae totam.
+        </p>
+      </div>
+    </div>
+  </div>
+  <!-- faq -->
+  <div class="px-5 flex justify-center my-10">
+    <div
+      class="md:w-3/4 bg-blue-100 p-5 rounded-2xl flex justify-between items-center"
+    >
+      <div class="flex gap-x-5 items-center">
+        <div class="w-[3.5rem] h-[3.5rem]">
+          <img
+            class="img-contain"
+            src="../../../assets/asserts/Avatar.png"
+            alt=""
+          />
+        </div>
+        <div>
+          <p class="text-primary text-lg font-medium">Still have questions?</p>
+          <p class="text-sm">Talk to our friendly team</p>
+        </div>
       </div>
       <div>
-        <p class="text-primary text-lg font-medium">Still have questions?</p>
-        <p class="text-sm">Talk to our friendly team</p>
+        <button class="bg-secondary p-3 px-5 rounded-lg text-white">
+          Get in Touch
+        </button>
       </div>
     </div>
-    <div>
-      <button class="bg-secondary p-3 px-5 rounded-lg text-white">Get in Touch</button>
-    </div>
   </div>
-
-</div>
-
-
 </div>
 <app-footer></app-footer>

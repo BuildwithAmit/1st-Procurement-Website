@@ -25,7 +25,7 @@ scrollToSection() {
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,
-    touchDrag: false,
+    touchDrag: true,
     pullDrag: false,
     dots: false,
     navSpeed: 700,
@@ -51,13 +51,12 @@ scrollToSection() {
     {
       id: "1",
       title:"No Registration or Product listing Charges",
-      content:"By eliminating registration and listing fees, we are able to provide our suppliers opportunity to reach new customers and grow their business with a level playing field and encourage them to focus on what really matters - providing high quality raw materials."    
+      content:"By eliminating registration and listing fees, we are able to provide our suppliers opportunity to reach new customers and grow their business with a level playing field and encourage them to focus on what really matters - providing high quality raw materials."
     },
     {
       id: "2",
       title:"Technology Enabled Platform",
-      content:"We are dedicated to revolutionizing the way businesses source and manage their raw materials, making the process faster, easier and more cost effective than ever before."    
-      
+      content:"We are dedicated to revolutionizing the way businesses source and manage their raw materials, making the process faster, easier and more cost effective than ever before."
     },
     {
       id: "3",
@@ -77,8 +76,7 @@ scrollToSection() {
     {
       id: "6",
       title:"Large and verified base of Customers",
-      content:"We pride ourselves on building strong relationships with our suppliers. We understand that trust is essential in any business partnership, which is why we only work with verified customers who share our commitment to quality and customer service."    
-      
+      content:"We pride ourselves on building strong relationships with our suppliers. We understand that trust is essential in any business partnership, which is why we only work with verified customers who share our commitment to quality and customer service."
     }
   ]
 

@@ -32,11 +32,3 @@
         display: block;
     }
 }
-@media (min-width: 1024px) {
-    .sec-2-tab{
-        display: none;
-    }
-    .sec-2-full{
-        display: block;
-    }
-}
