@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-bottom: 0;
+  font-family: 'Poppins', sans-serif;
+}
+/*  */
+ul{list-style: none;padding: 0;}
+.bg-primary{background-color: #3E82FC;}
+.text-primary{color: #3E82FC;}
+.bg-secondary{background-color: #192442;}
+.text-secondary{color: #192442;}
+.text-white-tint{color:#E3E3E3}
+.card-bg-color{background-color: #F3F3F3;}
+.hero-s-text{font-size: 3.75rem;}
+.header-text{font-size: 3rem;}
+.logo{height: 2rem;}
+.btn-dblue{background-color: #192442; color: white;transition: all .05s ease-in;}
+.btn-dblue:hover{background-color: #273252;}
+.img-cover{width: 100%;height: 100%;object-fit: cover;}
+.img-contain{width: 100%;height: 100%;object-fit: contain;}
+
+
+.scrollbar-hidden::-webkit-scrollbar {display: none;}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.scrollbar-hidden {-ms-overflow-style: none;scrollbar-width: none;}
+
+@media only screen and (max-width: 600px) {
+  .hero-s-text{font-size: 2rem;}
+.header-text{font-size: 1.5rem;}
+}
+
+
+@media only screen and (min-width: 600px) {
+  .hero-s-text{font-size: 2.5rem;}
+.header-text{font-size: 2rem;}
+}
+
+
+@media only screen and (min-width: 768px) {
+.hero-s-text{font-size: 3rem;}
+.header-text{font-size: 2.5rem;}
+}
+
+
+@media only screen and (min-width: 992px) {
+  .hero-s-text{font-size: 3.75rem;}
+  .header-text{font-size: 3rem;}
+}
+
+@media only screen and (min-width: 1200px) {
+
+}

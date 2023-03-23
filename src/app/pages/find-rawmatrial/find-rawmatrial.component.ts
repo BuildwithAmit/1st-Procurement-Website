@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
-
+declare let $:any
 
 @Component({
   selector: 'app-find-rawmatrial',
@@ -11,23 +11,32 @@ export class FindRawmatrialComponent {
 
   constructor() { window.scrollTo(0, 0) }
 
-
+  scrollToSection() {
+    $('html,body').animate({
+      scrollTop: $("#form").offset().top},
+      'slow');
+  }
   elements = [
     {
       name: 'metals',
-      icon: '../../../assets/asserts/svgs/metal.svg'
+      icon: '../../../assets/asserts/3dasserts/metals.png',
+      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
     },{
       name: 'chemicals',
-      icon: '../../../assets/asserts/svgs/chemical.svg'
+      icon: '../../../assets/asserts/3dasserts/chemicals.png',
+      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
     },{
       name: 'polymers',
-      icon: '../../../assets/asserts/svgs/polymers.svg'
+      icon: '../../../assets/asserts/3dasserts/polyemrs.png',
+      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
     },{
       name: 'composites',
-      icon: '../../../assets/asserts/svgs/composites.svg'
+      icon: '../../../assets/asserts/3dasserts/composites.png',
+      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
     },{
       name: 'ceramics',
-      icon: '../../../assets/asserts/svgs/ceramic.svg'
+      icon: '../../../assets/asserts/3dasserts/ceramics.png',
+      content:'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
     },
   ]
   bussinessMOde =[
@@ -69,7 +78,7 @@ export class FindRawmatrialComponent {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1
+        items: 2
       },
       400: {
         items: 2

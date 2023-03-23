@@ -3,3 +3,4 @@
 .beta-screen{
     height: calc(100vh-5rem);
 }
+.beta-form{height: calc(100vh - 5rem);}
