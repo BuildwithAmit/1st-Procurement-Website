@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-
+  ngOnOnit():void {
+    window.scrollTo(0,0);
+}
 }

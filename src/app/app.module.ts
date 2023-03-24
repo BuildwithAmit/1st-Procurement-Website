@@ -13,11 +13,11 @@ import { BeaPartnerComponent } from './pages/bea-partner/bea-partner.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { JoinBetaComponent } from './pages/join-beta/join-beta.component';
-import { PartnershipCardComponent } from './components/partnership-card/partnership-card.component';
 
 //third party libraries
 import {SimpleScrollSpyModule} from "angular-simple-scroll-spy";
 import { FAQComponent } from './components/faq/faq.component';
+import { TeamCarouselComponent } from './components/team-carousel/team-carousel.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,8 +29,8 @@ import { FAQComponent } from './components/faq/faq.component';
     AboutComponent,
     ContactComponent,
     JoinBetaComponent,
-    PartnershipCardComponent,
     FAQComponent,
+    TeamCarouselComponent,
 
   ],
   imports: [

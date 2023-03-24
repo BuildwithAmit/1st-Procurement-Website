@@ -13,22 +13,23 @@ export class AboutComponent {
   $(document).ready(()=>{
     AOS.init();
   })
+  window.scrollTo(0,0);
 }
 core_value_data = [
   {
       id:1,
       title:"Collaboration",
-      content:"Teamwork and cooperation are essential for achieving goals and delivering the best possible results.<br/> We encourage open communication, active listening, and a willingness to share ideas, feedback, and insights. By working together, we can achieve more than we ever could alone."    
+      content:"Teamwork and cooperation are essential for achieving goals and delivering the best possible results.<br/> We encourage open communication, active listening, and a willingness to share ideas, feedback, and insights. By working together, we can achieve more than we ever could alone."
     },
   {
       id:2,
       title:"Continuous Improvement",
-      content:"There is always room for growth and that we can always do better. We encourage our team members to think critically, ask questions, and challenge the status quo."    
+      content:"There is always room for growth and that we can always do better. We encourage our team members to think critically, ask questions, and challenge the status quo."
     },
   {
       id:3,
       title:"Curiosity",
-      content:"Desire to learn and explore is essential for personal and professional growth. We encourage our team members to stay curious, to seek out new experiences, and to never stop asking questions."    
+      content:"Desire to learn and explore is essential for personal and professional growth. We encourage our team members to stay curious, to seek out new experiences, and to never stop asking questions."
     }
   ]
    team_data = [
@@ -62,7 +63,7 @@ core_value_data = [
       designation: 'developer',
       img: "../../../assets/asserts/team/man-2.png"
     },
-    
+
   ]
    mentors_data = [
     {
@@ -102,11 +103,11 @@ core_value_data = [
     },
   ]
 
- 
+
   showTeam: boolean = true
   showMentors: boolean = false
-  
-   
+
+
 
   showTeamData() {
     this.showTeam = true

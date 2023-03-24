@@ -14,6 +14,8 @@ ngOnInit(): void{
   $(document).ready(()=>{
     AOS.init();
   })
+  window.scrollTo(0,0);
+
 }
 
 scrollToSection() {

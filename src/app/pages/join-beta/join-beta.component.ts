@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class JoinBetaComponent {
 
+
+ngOnInit():void {
+  window.scrollTo(0,0);
+
+}
+
 }

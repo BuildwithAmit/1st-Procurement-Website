@@ -1,55 +1,18 @@
 <app-navbar></app-navbar>
 <div class="min-h-[70vh]">
-  <!-- start of section 1 -->
-  <div
-    class="flex flex-col xl:flex-row justify-between xl:items-center w-full xl:h-[80vh] min-h-[80vh] relative"
+    <!-- header -->
+    <div
+    class="flex justify-center items-center w-full min-h-[70vh] relative px-5"
+    data-aos="fade-up"
   >
-    <div
-      class="flex flex-col w-full xl:w-5/6 min-h-[80vh] xl:h-[80vh] relative"
-    >
-      <img
-        src="../../../assets/asserts/our-story-bg.png"
-        alt="our story"
-        class="flex w-full xl:h-full h-[80vh]"
-      />
-      <div class="display-side h-full w-full absolute top-0"></div>
-      <div
-        class="xl:hidden flex flex-col w-full px-8 md:px-16 top-6 absolute items-center justify-center"
-       
-      >
-        <h1
-          class="hero-s-text-sm md:text-6xl mt-4 md:mt-20 xl:mt-52 text-white capitalize font-semibold text-center mb-6"
+    <div>
+      <div class="max-w-4xl text-center relative z-10">
+        <p
+          class="hero-s-text leading-9 sm:leading-[3rem] lg:leading-[4rem] capitalize font-semibold"
         >
-          Our <span class="text-primary"> story</span>
-        </h1>
-        <p class="text-sm text-white font-normal text-justify mt-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum maxime
-          sint esse inventore corrupti, vitae necessitatibus hic quaerat
-          suscipit accusamus quas ratione ducimus autem animi, cupiditate dolor
-          qui delectus corporis quia placeat, laudantium similique tempora
-          incidunt. Quia exercitationem laborum sed nostrum dignissimos
-          eligendi? Ipsum, suscipit ut doloribus nemo nam sapiente consequatur!
-          Magni veritatis error molestias consectetur numquam voluptatum ratione
-          magnam adipisci nostrum, voluptatibus beatae tenetur tempora quas
-          culpa! Officia ipsam dolor odio libero unde exercitationem quos error
-          perspiciatis atque rem aut voluptatum corporis quibusdam harum quam
-          aperiam sapiente minus, quidem soluta modi eum! Iusto praesentium vel
-          corporis dicta eum doloremque.
+        Our story
         </p>
-      </div>
-    </div>
-
-    <div
-      class="xl:flex justify-start h-[25vh] xl:h-[80vh] bg-secondary w-full xl:w-1/6"
-    >
-      <div
-        class="hidden xl:flex xl:flex-col w-full max-w-[500px] bg-white p-8 absolute bottom-[2rem] right-[10rem] rounded-md"
-         data-aos="fade-left"
-      >
-        <h2 class="header-text text-center font-semibold capitalize">
-          Our story
-        </h2>
-        <p class="text-sm text-zinc-600 font-normal text-justify mt-2">
+        <p class="mt-5 text-sm text-zinc-600">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum maxime
           sint esse inventore corrupti, vitae necessitatibus hic quaerat
           suscipit accusamus quas ratione ducimus autem animi, cupiditate dolor
@@ -66,7 +29,10 @@
       </div>
     </div>
   </div>
-  <!-- end of section 1 -->
+  <!-- header -->
+  <div class="max-w-4xl mx-auto px-5">
+    <img src="../../../assets/asserts/illustrator/our-story.png" alt="">
+  </div>
 
   <!-- start of section 2 -->
   <div
@@ -165,7 +131,7 @@
   <!-- end of section 4 -->
 
   <!-- start of section 5 -->
-  <div class="md:p-10 px-1 min-h-max my-4">
+  <div class="md:p-10 px-1 min-h-max my-4 hidden">
     <h2 class="header-text font-semibold capitalize text-center mb-2">
       our team
     </h2>
@@ -201,7 +167,7 @@
     <div class="my-10">
       <div *ngIf="showTeam">
         <owl-carousel-o [options]="customOptions">
-          <ng-container class="flex justify-center" *ngFor="let item of team_data" > 
+          <ng-container class="flex justify-center" *ngFor="let item of team_data" >
             <ng-template carouselSlide>
               <div
                 class="card-img flex flex-col justify-between cursor-pointer rounded-3xl w-[160px] h-[220px] md:w-[200px] md:h-[300px] relative"
@@ -256,6 +222,9 @@
     </div>
   </div>
   <!-- end of section 5 -->
+  <!-- our team -->
+  <app-team-carousel></app-team-carousel>
+  <!-- our team -->
 
   <!-- start of section 6 -->
   <div class="flex flex-col items-center  my-4 min-h-max">

@@ -15,6 +15,8 @@ export class FindRawmatrialComponent {
     $(document).ready(() => {
       AOS.init();
     })
+  window.scrollTo(0,0);
+
   }
   scrollToSection() {
     $('html,body').animate({

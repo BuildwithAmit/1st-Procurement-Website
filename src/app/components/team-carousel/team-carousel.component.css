@@ -1,0 +1,8 @@
+.progfile-img{border-radius: 1rem;z-index: -1;filter: brightness(.6) grayscale(1);transition: filter 0.5s ease-in-out;}
+.profile-card:hover .progfile-img{filter: brightness(.8) grayscale(0);}
+.profile-summery{height: 0;transition: transform 0.26s ease;}
+.profile-card:hover .profile-summery{height: auto;}
+.out-team-btn{color: rgb(131, 131, 131);position: relative;}
+.out-team-btn.active{padding-left: 5.5rem;font-size: 1.5rem; color: #000;}
+.out-team-btn.active::before{content: '';position: absolute; width: 5rem ;height: 3px;background: #000;left: 0;top: 50%;}
+.our-team-carousel ::ng-deep .owl-item{display: flex !important;justify-content: center !important;}
