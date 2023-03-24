@@ -1,6 +1,4 @@
 <app-navbar></app-navbar>
-<div class="min-h-[70vh]">
-
   <!-- header -->
   <div class="flex justify-center items-center w-full h-[100vh] relative px-5">
     <div class=" lg:max-w-5xl text-center relative z-10" data-aos="fade-up">
@@ -43,7 +41,7 @@
           <ul class="spy-scroll-navbar ">
             <li *ngFor="let items of offers_data"><a class="spy-scroll-links cursor-pointer" scrollSpyMenu="menu{{items.id}}" [ssmCurrentContent]="currentMenuId">
                 <div class="flex items-center gap-x-5">
-                  <span class="">{{items.id}}</span>
+                  <span >{{items.id}}</span>
                   <p>{{items.for}}</p>
                 </div>
               </a></li>
@@ -56,16 +54,16 @@
         <div class="overflow-scroll  lg:overflow-visible flex lg:block gap-x-4 scrollbar-hidden px-2  pb-28 lg:pb-0">
 
         <section id="menu{{items.id}}"
-          class="bg-zinc-100 min-w-[20rem]  lg:max-w-3xl p-5 lg:p-10 rounded-2xl relative lg:h-[25rem] pb-28 lg:mb-10" *ngFor="let items of offers_data" >
-          <div class="lg:max-w-lg">
-            <span class="text-sm text-blue-600 bg-blue-200 px-5 py-1 rounded-full ">{{items.for}}</span>
+          class="bg-zinc-100 min-w-[20rem] lg:min-w-[33rem] xl:min-w-[48rem] p-5 lg:p-10 rounded-2xl relative lg:h-[25rem] pb-28 lg:mb-10" *ngFor="let items of offers_data" >
+          <div class="lg:max-w-[20rem] xl:max-w-lg">
+            <span class="text-sm text-blue-600 bg-blue-200 px-5 py-1 rounded-full lg:hidden">{{items.for}}</span>
             <h1 class="text-lg lg:text-2xl  font-medium mt-3 md:mt-0">{{items.title}}</h1>
             <div class="mt-10 text-zinc-500 font-light">
               <p>{{items.content}}
               </p>
             </div>
           </div>
-          <div class="w-[17rem] h-[12rem] lg:w-[18rem] lg:h-[18rem] absolute  bottom-[-13rem] left-1/2  lg:bottom-0 lg:top-1/2 transform lg:translate-x-1/2 -translate-x-1/2 -translate-y-1/2" >
+          <div class=" w-[17rem] h-[12rem] lg:w-[15rem] lg:h-[15rem] xl:w-[18rem] xl:h-[18rem] absolute  bottom-[-13rem] left-1/2  lg:bottom-0 lg:top-1/2 transform  lg:translate-x-1/2 xl:translate-x-3/4 -translate-x-1/2 -translate-y-1/2" >
             <img class="img-cover rounded-xl" src="{{items.img}}" alt="img" >
           </div>
         </section>
@@ -168,7 +166,6 @@
     </div>
   </div>
   <!-- subs email -->
-</div>
 
 
 

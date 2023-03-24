@@ -22,6 +22,50 @@ scrollToSection() {
     'slow');
 }
 
+faqData=[
+  {
+    id: 1,
+    question: "What is the largest ocean in the world?",
+    answer: "The largest ocean in the world is the Pacific Ocean."
+  },
+  {
+    id: 2,
+    question: "What is the capital city of Spain?",
+    answer: "The capital city of Spain is Madrid."
+  },
+  {
+    id: 3,
+    question: "What is the currency used in Japan?",
+    answer: "The currency used in Japan is the Japanese yen."
+  },
+  {
+    id: 4,
+    question: "What is the largest desert in the world?",
+    answer: "The largest desert in the world is the Sahara Desert."
+  },
+  {
+    id: 5,
+    question: "What is the highest waterfall in the world?",
+    answer: "The highest waterfall in the world is Angel Falls in Venezuela."
+  },
+  {
+    id: 6,
+    question: "What is the largest mammal in the world?",
+    answer: "The largest mammal in the world is the blue whale."
+  },
+  {
+    id: 7,
+    question: "What is the largest bird in the world?",
+    answer: "The largest bird in the world is the ostrich."
+  },
+  {
+    id: 18,
+    question: "What is the smallest country in the world?",
+    answer: "The largest bird in the world is the ostrich."
+  }];
+
+
+
   customOptions: OwlOptions = {
     loop: true,
     mouseDrag: true,

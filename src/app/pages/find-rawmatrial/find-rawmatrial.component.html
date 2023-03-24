@@ -8,7 +8,7 @@
     <div>
       <div class="max-w-6xl text-center relative z-10">
         <p
-          class="hero-s-text leading-9 lg:leading-[4rem] capitalize font-semibold"
+          class="hero-s-text leading-9 sm:leading-[3rem] lg:leading-[4rem] capitalize font-semibold"
         >
           Discover an extensive range of high-quality materials for your
           research or specialty production needs
@@ -39,7 +39,7 @@
         class="grid grid-cols-2 lg:grid-cols-4 place-items-center gap-5 lg:gap-x-16"
       >
         <div
-          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center p-5"
         >
           <img
             class="h-[5rem] lg:h-[7rem]"
@@ -52,7 +52,7 @@
         </div>
 
         <div
-          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center p-5"
         >
           <img
             class="h-[5rem] lg:h-[7rem]"
@@ -63,7 +63,7 @@
         </div>
 
         <div
-          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center p-5  "
         >
           <img
             class="h-[5rem] lg:h-[7rem]"
@@ -74,7 +74,7 @@
         </div>
 
         <div
-          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center"
+          class="lg:w-[13rem] h-[13rem] flex flex-col justify-center items-center p-5"
         >
           <img
             class="h-[5rem] lg:h-[7rem]"
@@ -82,7 +82,7 @@
             alt=""
           />
           <p class="text-center mt-3 leading-4 text-white">
-            10K retailers/Distributors Network
+            10K retailers & Distributors Network
           </p>
         </div>
       </div>
@@ -126,7 +126,7 @@
         <div
           class="elements-card bg-zinc-100 group-hover hover:bg-zinc-800 w-[16rem] h-[20rem] rounded-2xl relative p-5 z-[-2]"
           *ngFor="let items of elements"
-          
+
         >
           <div class="w-[5rem] h-[5rem]" data-aos="fade-up">
             <img class="img-contain" src="{{ items.icon }}" alt="" />
@@ -202,16 +202,16 @@
     <div class="p-5 lg:p-10 pb-7">
       <div class="lg:flex justify-between items-center">
         <div>
-          <div class="lg:w-3/4">
+          <div class="xl:w-3/4">
             <h1 class="header-text font-semibold text-white lg:leading-[3rem]">
               Customize your Raw Matrials Requirements
             </h1>
             <p class="mt-8 text-white lg:text-zinc-400 font-light">
-             Tell us what materials you need for your research, and leave the rest to us. Our dedicated team will ensure swift delivery of the highest quality materials, providing you with peace of mind so that you can focus on what matters most - <b>your research</b> 
+             Tell us what materials you need for your research, and leave the rest to us. Our dedicated team will ensure swift delivery of the highest quality materials, providing you with peace of mind so that you can focus on what matters most - <b>your research</b>
             </p>
           </div>
         </div>
-        <div class="p-5 bg-white rounded-xl mt-5 mt:mt-0">
+        <div class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:max-w-md xlmax-w-xl">
           <p>Select Matrial</p>
 
           <div class="overflow-hidden">
@@ -320,7 +320,7 @@
   <!-- form -->
   <!-- provide service -->
   <div class="p-5 lg:p-16">
-    <div class="w-full h-[20rem] rounded-3xl flex justify-center p-5">
+    <div class="w-full  rounded-3xl flex justify-center p-5">
       <div class="lg:w-3/4 text-center">
         <h1 class="header-text font-semibold">
           We Provide service to bussiness model
@@ -333,24 +333,26 @@
         </p>
       </div>
     </div>
-
-    <div
-      class="flex flex-col lg:flex-row justify-center items-center mt-[-5rem] xl:mt-[-8rem] gap-y-4 gap-x-10"
-    >
-      <div
-        class="bg-white w-3/4 lg:w-[18rem] h-auto p-8 rounded-xl shadow-xl"
-        *ngFor="let items of bussinessMOde"
-      >
-        <div class="flex items-center">
-          <div class="w-[4rem] h-[4rem] bg-blue-100 rounded-md p-3">
-            <img class="img-contain" src="{{ items.icon }}" alt="" />
-          </div>
-          <p class="ml-4 text-xl font-semibold">{{ items.title }}</p>
-        </div>
-        <p class="mt-8 text-zinc-400">{{ items.content }}</p>
+<!--  -->
+<div class="m-auto mt-10 p-5  w-full rounded-lg">
+  <div class="lg:flex items-center gap-x-5">
+    <div class="w-full lg:w-1/2 bg-white rounded-md p-5">
+      <div class="">
+        <img class="img-contain" src="../../../assets/asserts/illustrator/3996891.jpg" alt="">
       </div>
     </div>
+    <div class="w-full lg:w-1/2">
+      <div class="w-3/4">
+        <h1 class="text-2xl font-semibold">B2B</h1>
+        <p class="mt-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fuga ipsa rem dolor quam. Eveniet hic eligendi quidem blanditiis repellat sint quibusdam nisi soluta libero aut, commodi voluptates eaque maxime dolores?</p>
+      </div>
+      </div>
   </div>
+</div>
+
+  </div>
+
+
   <!-- provide service -->
   <!-- why us -->
   <div class="flex justify-between items-center p-5 md:p-10 mt-10">
@@ -407,56 +409,9 @@
     </div>
   </div>
   <!-- our clients -->
-  <!-- faq -->
-  <div class="p-5 lg:p-16 mt-10">
-    <h1 class="header-text">Frequenty Ask's Questions</h1>
-    <p class="mt-5 text-zinc-500">
-      Everything you need to know about product <br />
-      Can't find answer you looking for?
-      <span class="text-primary font-medium">
-        Get in touch with our Friendly Team</span
-      >
-    </p>
+<!-- faq -->
+<app-faq [faqData]="faqData"></app-faq>
+<!-- faq -->
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
-      <div
-        class="p-5 lg:p-8 rounded-xl"
-        *ngFor="let item of [].constructor(7); let i = index"
-      >
-        <h1 class="font-medium">Lorem ipsum dolor sit amet consectetur ?</h1>
-        <p class="mt-3 text-sm font-light">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsum
-          aspernatur necessitatibus incidunt. Veritatis doloribus sed, in
-          similique laboriosam aliquam rem, quod repellat perferendis natus
-          numquam voluptatem consectetur molestiae totam.
-        </p>
-      </div>
-    </div>
-  </div>
-  <!-- faq -->
-  <div class="px-5 flex justify-center my-10">
-    <div
-      class="md:w-3/4 bg-blue-100 p-5 rounded-2xl flex justify-between items-center"
-    >
-      <div class="flex gap-x-5 items-center">
-        <div class="w-[3.5rem] h-[3.5rem]">
-          <img
-            class="img-contain"
-            src="../../../assets/asserts/Avatar.png"
-            alt=""
-          />
-        </div>
-        <div>
-          <p class="text-primary text-lg font-medium">Still have questions?</p>
-          <p class="text-sm">Talk to our friendly team</p>
-        </div>
-      </div>
-      <div>
-        <button class="bg-secondary p-3 px-5 rounded-lg text-white">
-          Get in Touch
-        </button>
-      </div>
-    </div>
-  </div>
 </div>
 <app-footer></app-footer>
