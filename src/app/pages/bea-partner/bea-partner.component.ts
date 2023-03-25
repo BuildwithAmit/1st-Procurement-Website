@@ -27,46 +27,55 @@ scrollToSection() {
 faqData=[
   {
     id: 1,
-    question: "What is the largest ocean in the world?",
-    answer: "The largest ocean in the world is the Pacific Ocean."
+    question: "How do I create a seller account ?",
+    answer: "You will need to provide basic information about your company and products, as well as complete any necessary verification or documentation requirements."
   },
-  {
-    id: 2,
-    question: "What is the capital city of Spain?",
-    answer: "The capital city of Spain is Madrid."
-  },
+ 
   {
     id: 3,
-    question: "What is the currency used in Japan?",
-    answer: "The currency used in Japan is the Japanese yen."
+    question: "What information should I include in my product listings?",
+    answer: "To create effective product listings, you should include detailed information about the raw materials you are selling, such as specifications, pricing, and delivery options. High-quality images can also be helpful in showcasing your products."
   },
   {
     id: 4,
-    question: "What is the largest desert in the world?",
-    answer: "The largest desert in the world is the Sahara Desert."
+    question: "How do I ensure the quality of my products?",
+    answer: "To ensure the quality of your products, you should have a robust quality control process in place. This may involve testing raw materials before they are sold, as well as ongoing monitoring to ensure consistency in quality."
   },
-  {
-    id: 5,
-    question: "What is the highest waterfall in the world?",
-    answer: "The highest waterfall in the world is Angel Falls in Venezuela."
+   {
+    id: 2,
+    question: "What are the fees associated with selling?",
+    answer: "No, charge fees to onboard and sell on our platform."
   },
-  {
-    id: 6,
-    question: "What is the largest mammal in the world?",
-    answer: "The largest mammal in the world is the blue whale."
-  },
-  {
-    id: 7,
-    question: "What is the largest bird in the world?",
-    answer: "The largest bird in the world is the ostrich."
-  },
-  {
-    id: 18,
-    question: "What is the smallest country in the world?",
-    answer: "The largest bird in the world is the ostrich."
-  }];
+  ];
 
-
+  elements = [
+    {
+      name: 'Metals and Non metals',
+      icon: '../../../assets/asserts/3dasserts/metals.png',
+      content:  'Explore the distinct characteristics and diverse applications of metals and non-metals, two essential classes of elements with vastly different physical and chemical properties.',
+    }, {
+      name: 'Chemicals',
+      icon: '../../../assets/asserts/3dasserts/chemicals.png',
+      content: 'Discover the world of chemicals - substances with defined compositions and characteristic properties that are essential to the manufacturing, processing, and performance of countless products and applications.',
+    }, {
+      name: 'Polymers',
+      icon: '../../../assets/asserts/3dasserts/polyemrs.png',
+      content: 'materials composed of long chains of repeating units that exhibit unique mechanical, thermal, and chemical properties, and are used in a vast array of applications across industries.',
+    }, {
+      name: 'Composites',
+      icon: '../../../assets/asserts/3dasserts/composites.png',
+      content: 'Materials composed of 2+ distinct components that combine to create unique properties, and are used in a wide range of applications from construction and transportation to sports equipment and aerospace.',
+    }, {
+      name: 'Ceramics',
+      icon: '../../../assets/asserts/3dasserts/ceramics.png',
+      content: 'Discover ceramics - materials that are typically hard, brittle, and resistant to high temperatures and chemicals, and are used in a wide range of applications from pottery and construction to electronics and aerospace.',
+    },
+    {
+      name: 'Natural Materials',
+      icon: '../../../assets/asserts/3dasserts/ceramics.png',
+      content: 'Discover the world of natural materials - substances that occur in nature and are used in a vast array of applications across industries, from traditional materials (wood, stone) to modern materials (silk, cellulose).',
+    },
+  ]
 
   customOptions: OwlOptions = {
     loop: true,
@@ -126,8 +135,4 @@ faqData=[
     }
   ]
 
-
-  // click() {
-
-  // }
 }

@@ -28,33 +28,44 @@ export class FindRawmatrialComponent {
   faqData = [
     {
       id: 1,
-      question: "What is the capital city of France?",
-      answer: "The capital city of France is Paris."
+      question: "What types of raw materials do you offer?",
+      answer: "We offer a wide variety of raw materials, including metals, plastics, polymers, composites, ceramics, natural materials, textiles, chemicals, and more. Please let us know your specific needs and we can recommend the best options for you."
     },
     {
       id: 2,
-      question: "What is the largest country in the world?",
-      answer: "The largest country in the world is Russia."
+      question: "How do I place an order for raw materials?",
+      answer: "You can place an order for raw materials directly on our website. Simply select the materials you need, specify the quantity, and complete the checkout process."
     },
     {
       id: 3,
-      question: "What is the highest mountain in the world?",
-      answer: "The highest mountain in the world is Mount Everest."
+      question: "What is the lead time for delivery of raw materials?",
+      answer: "The lead time for delivery of raw materials depends on the type of material and the quantity ordered. We will provide you with an estimated delivery date when you place your order."
     },
     {
       id: 4,
-      question: "What is your return policy?",
-      answer: "Our return policy is..."
+      question: "How do you ensure the quality of your raw materials?",
+      answer: "We work with reputable suppliers and conduct regular quality control checks to ensure that our raw materials meet industry standards and our customers' needs."
     },
     {
       id: 5,
-      question: "How long does shipping take?",
-      answer: "Shipping time varies depending on..."
+      question: "What is your customer service process?",
+      answer: "We pride ourselves on providing excellent customer service. Our team is available to answer any questions you may have, and we will work with you to find a solution to any issues that may arise. You can contact us by phone, email, or through our website."
     },
     {
       id: 6,
-      question: "Is there a warranty for the product?",
-      answer: "Yes, there's a one-year warranty."
+      question: "What is your return policy for raw materials?",
+      answer: "We understand that sometimes materials may need to be returned, and we have a clear and fair return policy in place. Please contact us if you need to return any materials, and we will work with you to find a solution."
+    }
+    ,
+    {
+      id: 7,
+      question: "Do you offer discounts for bulk orders?",
+      answer: "Yes, we offer discounts for bulk orders. Please contact us for a quote."
+    },
+    {
+      id: 8,
+      question: "Can you provide technical specifications for the raw materials you offer",
+      answer: "Yes, we can provide technical specifications for the raw materials we offer. Please let us know your specific needs and we can provide you with the necessary information."
     }
   ]
 
@@ -63,47 +74,33 @@ export class FindRawmatrialComponent {
 
   elements = [
     {
-      name: 'metals',
+      name: 'Metals and Non metals',
       icon: '../../../assets/asserts/3dasserts/metals.png',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
+      content:  'Explore the distinct characteristics and diverse applications of metals and non-metals, two essential classes of elements with vastly different physical and chemical properties.',
     }, {
-      name: 'chemicals',
+      name: 'Chemicals',
       icon: '../../../assets/asserts/3dasserts/chemicals.png',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
+      content: 'Discover the world of chemicals - substances with defined compositions and characteristic properties that are essential to the manufacturing, processing, and performance of countless products and applications.',
     }, {
-      name: 'polymers',
+      name: 'Polymers',
       icon: '../../../assets/asserts/3dasserts/polyemrs.png',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
+      content: 'materials composed of long chains of repeating units that exhibit unique mechanical, thermal, and chemical properties, and are used in a vast array of applications across industries.',
     }, {
-      name: 'composites',
+      name: 'Composites',
       icon: '../../../assets/asserts/3dasserts/composites.png',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
+      content: 'Materials composed of 2+ distinct components that combine to create unique properties, and are used in a wide range of applications from construction and transportation to sports equipment and aerospace.',
     }, {
-      name: 'ceramics',
+      name: 'Ceramics',
       icon: '../../../assets/asserts/3dasserts/ceramics.png',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
+      content: 'Discover ceramics - materials that are typically hard, brittle, and resistant to high temperatures and chemicals, and are used in a wide range of applications from pottery and construction to electronics and aerospace.',
     },
     {
-      name: 'NaturalMaterials',
+      name: 'Natural Materials',
       icon: '../../../assets/asserts/3dasserts/ceramics.png',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero',
+      content: 'Discover the world of natural materials - substances that occur in nature and are used in a vast array of applications across industries, from traditional materials (wood, stone) to modern materials (silk, cellulose).',
     },
   ]
-  bussinessMOde = [
-    {
-      icon: '../../../assets/asserts/svgs/b2b.svg',
-      title: 'B2B',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero alias accusantium, vitae veniam illo illum doloribus praesentium natus voluptates laudantium laborum velit.'
-    }, {
-      icon: '../../../assets/asserts/svgs/b2c.svg',
-      title: 'B2C',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero alias accusantium, vitae veniam illo illum doloribus praesentium natus voluptates laudantium laborum velit.'
-    }, {
-      icon: '../../../assets/asserts/svgs/c2c.svg',
-      title: 'C2C',
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur, optio. Deserunt dolor architecto itaque! Non, placeat libero alias accusantium, vitae veniam illo illum doloribus praesentium natus voluptates laudantium laborum velit.'
-    },
-  ]
+  
 
   clientLogo = [
     { logoUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/1200px-Google_2015_logo.svg.png' },
