@@ -2,13 +2,13 @@
 <!-- wrapper -->
 <div class="flex min-h-max md:h-[89vh]">
   <div
-    class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden"
+    class="w-1/3 h-full display-side relative lg:flex justify-center items-center hidden"
   >
-    <div class="w-1/2">
-      <div class="flex justify-center">
+    <div class="w-full">
+      <div class="flex justify-center img-cover">
         <img class="logo" src="../../../assets/asserts/logo-white.png" alt="" />
       </div>
-      <p class="mt-5 font-light text-center text-white text-xl">
+      <p class="mt-5 font-light text-center text-white text-xl px-4">
         A Platform for Today’s and tomorrow's
         innovators/researchers/entrepreneurs/builders
       </p>
@@ -43,7 +43,7 @@
       </ul>
     </div>
   </div>
-  <div class="w-full lg:w-1/2 h-[auto] p-10 xl:p-24 xl:pt-10">
+  <div class="w-full lg:w-2/3 h-[auto] p-10 xl:p-24 xl:pt-10">
     <div class="">
       <h1 class="text-2xl font-medium">Join Beta</h1>
       <p class="mt-5 text-sm text-zinc-500">
@@ -52,17 +52,32 @@
       </p>
 
       <div class="form mt-5">
-        <div>
-          <label for="name" class="text-sm text-zinc-400 font-light">Name</label
-          ><br />
-          <input
-            type="text"
-            id="name"
-            class="w-full border-zinc-300 rounded-md border-2 p-2"
-            placeholder="Enter your Name"
-          />
+        <div class="md:flex gap-x-5 mt-3">
+          <div class="w-full">
+            <label for="name" class="text-sm text-zinc-400 font-light"
+              >Name</label
+            ><br />
+            <input
+              type="text"
+              id="name"
+              class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+              placeholder="Enter your name"
+            />
+          </div>
+          <div class="w-full mt-3 md:mt-0">
+            <label for="companyname" class="text-sm text-zinc-400 font-light"
+              >Company Name</label
+            ><br />
+            <input
+              type="text"
+              id="companyname"
+              class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+              placeholder="Enter your company name"
+            />
+          </div>
         </div>
-        <div class="flex flex-col md:flex-row gap-y-3 gap-x-5 mt-3">
+
+        <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
             <label for="email" class="text-sm text-zinc-400 font-light"
               >Email</label
@@ -75,6 +90,34 @@
             />
           </div>
           <div class="w-full">
+            <label for="sector" class="text-sm text-zinc-400 font-light"
+              >Select Company Sector</label
+            >
+
+            <select
+              id="countries"
+              class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+            >
+              <option selected>Choose a sector</option>
+              <option value="sec-op1">Aerospace</option>
+              <option value="sec-op2">Agriculter</option>
+              <option value="sec-op3">Automotive</option>
+              <option value="sec-op4">Aviation and Aerospace</option>
+              <option value="sec-op5">Defense</option>
+              <option value="sec-op6">Energy</option>
+              <option value="sec-op7">Electric Vehicle</option>
+              <option value="sec-op8">FMCG</option>
+              <option value="sec-op9">Healthcare</option>
+              <option value="sec-op10">HVAC</option>
+              <option value="sec-op11">Medical Devices</option>
+              <option value="sec-op12">Oil and Energy</option>
+              <option value="sec-op13">Pharmaceuticals</option>
+              <option value="sec-op14">Solar</option>
+            </select>
+          </div>
+        </div>
+        <div class="md:flex gap-x-5 mt-3">
+          <div class="w-full">
             <label for="phoneno" class="text-sm text-zinc-400 font-light"
               >Phone Number</label
             ><br />
@@ -85,28 +128,47 @@
               placeholder="Enter your Phone Number"
             />
           </div>
+          <div class="w-full">
+            <label for="countries" class="text-sm text-zinc-400 font-light"
+              >Select Organization</label
+            >
+
+            <select
+              id="organization"
+              class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+            >
+              <option selected>Choose organization</option>
+              <option value="org-op1">Product Development Lab</option>
+              <option value="org-op2">Testing Lab</option>
+              <option value="org-op3">R&D Lab</option>
+              <option value="org-op4">Academia</option>
+              <option value="org-op5">Manufacturing Industry</option>
+              <option value="org-op6">Other</option>
+            </select>
+          </div>
         </div>
+
         <div class="mt-3">
-          <label for="sectore" class="text-sm text-zinc-400 font-light"
-            >Company Sector</label
-          ><br />
-          <input
-            type="text"
-            id="sectore"
-            class="w-full border-zinc-300 rounded-md border-2 p-2"
-            placeholder="Enter your compnay Sectore"
-          />
-        </div>
-        <div class="mt-3">
-          <label for="companyname" class="text-sm text-zinc-400 font-light"
-            >Company Name</label
-          ><br />
-          <input
-            type="text"
-            id="companyname"
-            class="w-full border-zinc-300 rounded-md border-2 p-2"
-            placeholder="Enter your Name"
-          />
+          <div class="w-full md:w-1/2">
+            <label for="countries" class="text-sm text-zinc-400 font-light"
+              >Select Profession</label
+            >
+            <div class="wrapper">
+              <select
+                id="profession"
+                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+              >
+                <option selected>Choose profession</option>
+                <option value="prof-op1">Student</option>
+                <option value="prof-op2">
+                  Individual Innovator/researcher
+                </option>
+                <option value="prof-op3">Working Professional</option>
+                <option value="prof-op4">Lab Incharge/technician</option>
+                <option value="prof-op5">Other</option>
+              </select>
+            </div>
+          </div>
         </div>
         <div class="mt-6 flex justify-end">
           <button class="bg-secondary p-3 px-5 rounded-lg text-white">

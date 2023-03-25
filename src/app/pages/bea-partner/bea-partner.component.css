@@ -10,7 +10,13 @@
 .benifit-carousel ::ng-deep .owl-next:hover{
     background-color: #273252;
 }
-
+.elements-name{width: 5rem;height: 5rem;object-fit: contain;}
+.matrial-select{display: none;}
+.matrial-text{color: rgb(164, 164, 164);}
+.matrial-select-label{border: 2px solid rgb(164, 164, 164) !important;color: rgb(164, 164, 164);}
+.matrial-select:checked ~ label{background-color: #192442;color: white;border-color: #192442 !important;}
+.no-scrollbar::-webkit-scrollbar {display: none;}
+.no-scrollbar{-ms-overflow-style: none; scrollbar-width: none; }
 @media (max-width: 768px){
      .sec-2-tab{
         display: none;

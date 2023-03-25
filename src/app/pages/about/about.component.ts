@@ -131,8 +131,8 @@ core_value_data = [
     pullDrag: true,
     dots: false,
     navSpeed: 700,
-    autoplayTimeout:2000,
-    autoplaySpeed:700,
+    autoplayTimeout:1000,
+    autoplaySpeed:800,
     autoplay:true,
     navText: ['', ''],
     responsive: {
