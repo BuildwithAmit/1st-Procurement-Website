@@ -201,22 +201,20 @@
       alt=""
     />
     <div class="p-5 lg:p-10 pb-7">
-      <div class="lg:flex justify-between items-center">
-
-          <div class="lg:max-w-lg">
-            <h1 class="header-text font-semibold text-white lg:leading-[3rem]">
-              Customize your Raw Matrials Requirements
-            </h1>
-            <p class="mt-8 text-white lg:text-zinc-400 font-light">
-              Tell us what materials you need for your research, and leave the
-              rest to us. Our dedicated team will ensure swift delivery of the
-              highest quality materials, providing you with peace of mind so
-              that you can focus on what matters most - <b>your research</b>
-            </p>
-          </div>
+      <div class="lg:flex justify-between w-full gap-8 items-center">
+        <div class="lg:w-1/2">
+          <h1 class="header-text font-semibold text-white lg:leading-[3rem]">
+            Customize your Raw Matrials Requirements
+          </h1>
+          <p class="mt-8 text-white lg:text-zinc-400 font-light">
+            Tell us what materials you need for your research, and leave the
+            rest to us. Our dedicated team will ensure swift delivery of the
+            highest quality materials, providing you with peace of mind so that
+            you can focus on what matters most - <b>your research</b>
+          </p>
         </div>
         <div
-          class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:max-w-md xlmax-w-xl"
+          class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:w-1/2"
         >
           <p>Select Matrial</p>
 
@@ -308,7 +306,7 @@
             <textarea
               name="address"
               id="address"
-              class="w-full border-2 rounded-lg border-zinc-300 p-3"
+              class="w-full border-2 rounded-lg border-zinc-300 p-2"
               rows="3"
             ></textarea>
           </div>
@@ -321,8 +319,6 @@
             </button>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
@@ -431,5 +427,5 @@
   <!-- faq -->
   <app-faq [faqData]="faqData"></app-faq>
   <!-- faq -->
-
+</div>
 <app-footer></app-footer>
