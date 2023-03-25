@@ -201,8 +201,8 @@
     />
     <div class="p-5 lg:p-10 pb-7">
       <div class="lg:flex justify-between items-center">
-        <div>
-          <div class="xl:w-3/4">
+
+          <div class="lg:max-w-lg">
             <h1 class="header-text font-semibold text-white lg:leading-[3rem]">
               Customize your Raw Matrials Requirements
             </h1>
@@ -210,12 +210,13 @@
              Tell us what materials you need for your research, and leave the rest to us. Our dedicated team will ensure swift delivery of the highest quality materials, providing you with peace of mind so that you can focus on what matters most - <b>your research</b>
             </p>
           </div>
-        </div>
-        <div class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:max-w-md xlmax-w-xl">
+
+
+        <div class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:max-w-lg">
           <p>Select Matrial</p>
 
           <div class="overflow-hidden">
-            <div class="overflow-auto p-2 flex gap-x-2 mt-3 scrollbar-hidden">
+            <div class="overflow-auto p-2 flex gap-3 mt-3 scrollbar-hidden flex-nowrap lg:flex-wrap">
               <div class="" *ngFor="let items of elements">
                 <input
                   class="matrial-select"
@@ -239,7 +240,7 @@
             <textarea
               name="matrial-desc"
               id="matrial-desc"
-              class="w-full border-2 rounded-lg border-zinc-300 p-3"
+              class="w-full border-2 rounded-lg border-zinc-300 p-2"
               rows="6"
             ></textarea>
           </div>
@@ -252,7 +253,7 @@
               <input
                 type="text"
                 id="name"
-                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                class="w-full border-zinc-300 rounded-md border-2 p-2"
                 placeholder="Enter your name"
               />
             </div>
@@ -263,7 +264,7 @@
               <input
                 type="email"
                 id="email"
-                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                class="w-full border-zinc-300 rounded-md border-2 p-2"
                 placeholder="Enter your Email"
               />
             </div>
@@ -277,7 +278,7 @@
               <input
                 type="tel"
                 id="phoneno"
-                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                class="w-full border-zinc-300 rounded-md border-2 p-2"
                 placeholder="Enter your Phone Number"
               />
             </div>
@@ -288,7 +289,7 @@
               <input
                 type="text"
                 id="city"
-                class="w-full border-zinc-300 rounded-md border-2 p-[3px]"
+                class="w-full border-zinc-300 rounded-md border-2 p-2"
                 placeholder="Enter your City"
               />
             </div>
@@ -301,7 +302,7 @@
             <textarea
               name="address"
               id="address"
-              class="w-full border-2 rounded-lg border-zinc-300"
+              class="w-full border-2 rounded-lg border-zinc-300 p-2"
               rows="3"
             ></textarea>
           </div>
@@ -314,6 +315,8 @@
             </button>
           </div>
         </div>
+
+
       </div>
     </div>
   </div>
