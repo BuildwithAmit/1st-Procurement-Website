@@ -145,7 +145,7 @@
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               required
             >
-              <option selected value="">Choose organization</option>
+              <option selected value="" disabled>Choose organization</option>
               <option value="org-op1">Product Development Lab</option>
               <option value="org-op2">Testing Lab</option>
               <option value="org-op3">R&D Lab</option>
@@ -180,8 +180,7 @@
           </div>
         </div>
         <div class="mt-6 flex justify-end">
-          <button class="bg-secondary p-3 px-5 rounded-lg text-white"
-          (click)="submitForm($event)">
+          <button class="bg-secondary p-3 px-5 rounded-lg text-white">
             Submit
           </button>
         </div>

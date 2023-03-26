@@ -1,49 +1,9 @@
 <app-navbar></app-navbar>
-<!-- wrapper -->
-<div class="flex min-h-max md:h-[90vh]">
-  <div
-    class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden"
-  >
-    <div class="w-1/2">
-      <div class="flex justify-center">
-        <img class="logo" src="../../../assets/asserts/logo-white.png" alt="" />
-      </div>
-      <p class="mt-5 font-light text-center text-white text-xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsa
-        fuga! Provident,
-      </p>
-    </div>
-    <div
-      class="absolute bottom-5 left-[50%] transform -translate-x-1/2 -translate-y-1/2"
-    >
-      <ul class="flex gap-x-5">
-        <li class="text-white">
-          <a href=""><i class="bi bi-facebook" target="_blank"></i></a>
-        </li>
-        <li class="text-white">
-          <a
-            href="https://www.instagram.com/build_with_productry/"
-            target="_blank"
-            ><i class="bi bi-instagram"></i
-          ></a>
-        </li>
-        <li class="text-white">
-          <a href=""><i class="bi bi-twitter" target="_blank"></i></a>
-        </li>
-        <li class="text-white">
-          <a href=""><i class="bi bi-youtube" target="_blank"></i></a>
-        </li>
-        <li class="text-white">
-          <a
-            href="https://www.linkedin.com/company/productryindia/"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i
-          ></a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="w-full lg:w-1/2 h-[auto] p-10 xl:p-24 xl:pt-10">
+
+<div class="contact-us-div flex">
+  <!--  -->
+
+  <div class="w-full lg:w-1/2 h-full p-10 xl:p-24 xl:pt-10">
     <div class="">
       <h1 class="text-2xl font-medium">Contact Us</h1>
       <p class="mt-5 text-sm text-zinc-500">
@@ -55,111 +15,128 @@
 
       <div class="form mt-5">
         <div>
-          <label for="name" class="text-sm text-zinc-400 font-light">Name</label
-          ><br />
-          <input
-            type="text"
-            id="name"
-            class="w-full border-zinc-300 rounded-md border-2 p-2"
-            placeholder="Enter your Name"
-          />
+          <label for="name" class="text-sm text-zinc-400 font-light">Name</label><br />
+          <input type="text" id="name" class="w-full border-zinc-300 rounded-md border-2 p-2"
+            placeholder="Enter your Name" />
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{nameError}}</p>
         </div>
         <div class="flex flex-col md:flex-row gap-y-3 gap-x-5 mt-3">
           <div class="w-full">
-            <label for="email" class="text-sm text-zinc-400 font-light"
-              >Email</label
-            ><br />
-            <input
-              type="email"
-              id="email"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-              placeholder="Enter your Email"
-            />
+            <label for="email" class="text-sm text-zinc-400 font-light">Email</label><br />
+            <input type="email" id="email" class="w-full border-zinc-300 rounded-md border-2 p-2"
+              placeholder="Enter your Email" />
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{emailError}}</p>
           </div>
           <div class="w-full">
-            <label for="phoneno" class="text-sm text-zinc-400 font-light"
-              >Phone Number</label
-            ><br />
-            <input
-              type="tel"
-              id="phoneno"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-              placeholder="Enter your Phone Number"
-            />
+            <label for="phoneno" class="text-sm text-zinc-400 font-light">Phone Number</label><br />
+            <input type="number" id="phoneno" class="w-full border-zinc-300 rounded-md border-2 p-2"
+              placeholder="Enter your Phone Number" minlength="10" maxlength="10"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"/>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{phoneError}}</p>
           </div>
         </div>
         <div class="mt-3 ">
-          <label for="sectore" class="text-sm text-zinc-400 font-light"
-            >Company Sector</label
-          ><br />
-          <input
-            type="text"
-            id="sectore"
-            class="w-full border-zinc-300 rounded-md border-2 p-2"
-            placeholder="Enter your compnay Sectore"
-          />
+          <label for="sectore" class="text-sm text-zinc-400 font-light">Company Sector</label><br />
+          <input type="text" id="sectore" class="w-full border-zinc-300 rounded-md border-2 p-2"
+            placeholder="Enter your compnay Sectore" />
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{sectorError}}</p>
         </div>
         <div class="mt-3">
-          <label for="companyname" class="text-sm text-zinc-400 font-light"
-            >Company Name</label
-          ><br />
-          <input
-            type="text"
-            id="companyname"
-            class="w-full border-zinc-300 rounded-md border-2 p-2"
-            placeholder="Enter your Name"
-          />
+          <label for="companyname" class="text-sm text-zinc-400 font-light">Company Name</label><br />
+          <input type="text" id="companyname" class="w-full border-zinc-300 rounded-md border-2 p-2"
+            placeholder="Enter your Name" />
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{companynameError}}</p>
         </div>
-       
+
         <div class="mt-6 flex justify-end">
-          <button class="bg-secondary p-3 px-5 rounded-lg text-white">
+          <button class="bg-secondary p-3 px-5 rounded-lg text-white" (click)="sendContactInfo()">
             Submit
           </button>
         </div>
       </div>
     </div>
   </div>
-</div>
-<!-- company info section -->
-<div class="flex flex-col lg:flex-row items-center justify-center min-h-max w-full p-8 gap-x-10">
-  <div class="w-full lg:w-1/2">
-    <p class="text-sm">
-      <span class="w-[4rem] h-[2px] bg-zinc-200 inline-block mr-2"></span>Office
-      Address
-    </p>
-    <div class="w-full">
-      <div class="flex justify-between gap-10">
-        <p class="mt-5 text-sm text-zinc-900">
-          Pune office - Radhakrishna Apartment, Sinhgad Road, Vadgaon, Pune-
-          411041
-        </p>
-        <p class="mt-5 text-sm text-zinc-900">
-          Hyderabad Office - Ground Floor, Vindhya C4, IIIT-H Campus,
-          Gachibowli, Hyderabad, Telangana 500032
-        </p>
-      </div>
-      <div class="flex w-1/2"></div>
-    </div>
-  </div>
-  <div class="w-full lg:w-1/2 mt-10 lg:mt-0">
-    <div class="flex flex-row w-full">
-      <div class="flex-col w-1/2">
-        <p class="text-sm">
-          <span class="w-[4rem] h-[2px] bg-zinc-200 inline-block mr-2"></span
-          >Contact Number
-        </p>
-        <p class="mt-5 text-sm text-zinc-900">(+91) 9175788723</p>
-      </div>
-      <div class="flex-col w-1/2">
-        <p class="text-sm">
-          <span class="w-[4rem] h-[2px] bg-zinc-200 inline-block mr-2"></span
-          >Contact Email
-        </p>
-        <p class="mt-5 text-sm text-zinc-900">info@productry.in</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- company info section -->
-<!-- wrapper -->
 
+  <!--  -->
+  <div class="info-side w-1/2 p-5 hidden lg:flex justify-end">
+    <div class="h-full w-full rounded-2xl relative overflow-hidden">
+      <img class="img-cover absolute top-0 left-0 z-[-1] brightness-[.75]"
+        src="https://images.unsplash.com/photo-1555448248-2571daf6344b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1887&q=80"
+        alt="">
+      <!--  -->
+      <div class="flex flex-col p-5 w-full h-full justify-between">
+        <div class="flex justify-center items-center h-1/2">
+          <div class="text-center">
+            <img class="logo mx-auto" src="../../../assets/asserts/logo-white.png" alt="">
+            <p class="display-font text-3xl mt-5 text-white">Empowering The Worlds <br> Hidden Innovators</p>
+          </div>
+        </div>
+        <div class="p-5 bg-black/20  backdrop-blur-md h-auto w-full rounded-xl">
+          <div>
+            <p class="info-head">Address</p>
+            <div class="flex gap-4 text-white text-sm font-light mt-5">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae esse necessitatibus vero nostrum.
+              </p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vitae esse necessitatibus vero nostrum.
+              </p>
+            </div>
+          </div>
+          <div class="mt-8 flex gap-x-20">
+            <div>
+              <p class="info-head">Contact Number</p>
+              <ul class="text-white text-sm font-light mt-5">
+                <li><a href="tel:+911515151515">+91 515 151 5151</a></li>
+                <li><a href="tel:+911515151515">+91 515 999 5151</a></li>
+              </ul>
+            </div>
+            <div>
+              <p class="info-head">Contact Email</p>
+              <ul class="text-white text-sm font-light mt-5">
+                <li><a href="mailto:+911515151515">hello@productry.com</a></li>
+                <li><a href="mailto:+911515151515">info@productry.com</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="mt-8 flex justify-end">
+            <ul class="flex gap-x-5">
+              <li class="text-white">
+                <a href=""><i class="bi bi-facebook" target="_blank"></i></a>
+              </li>
+              <li class="text-white">
+                <a href="https://www.instagram.com/build_with_productry/" target="_blank"><i
+                    class="bi bi-instagram"></i></a>
+              </li>
+              <li class="text-white">
+                <a href=""><i class="bi bi-twitter" target="_blank"></i></a>
+              </li>
+              <li class="text-white">
+                <a href=""><i class="bi bi-youtube" target="_blank"></i></a>
+              </li>
+              <li class="text-white">
+                <a href="https://www.linkedin.com/company/productryindia/" target="_blank"><i
+                    class="bi bi-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!--  -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->
