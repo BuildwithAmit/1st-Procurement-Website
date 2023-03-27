@@ -6,115 +6,90 @@ declare let $:any;
   styleUrls: ['./join-beta.component.css']
 })
 export class JoinBetaComponent {
+
+   regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexName: any = /^[a-zA-Z ]*$/;
+  regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
+
+  formError:boolean = false;
+
+  nameError:any
+  emailError:any
+  phoneError:any
+  sectorError:any
+  companynameError:any
+  organizationError:any
+  professionError:any
+
 ngOnInit():void {
   window.scrollTo(0,0);
   }
 
-//   validateEmail(inputEmail:string):boolean {
-//     const expression: RegExp = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
-//     const result: boolean = expression.test(inputEmail);
-//     console.log('e-mail is ' + (result ? 'correct' : 'incorrect'));
-//     return result;
-//   }
-//   validatePhone(inputNumber:string):boolean {
-//     var expression: RegExp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
-//     const result: boolean = expression.test(inputNumber);
-//      console.log('phone is ' + (result ? 'correct' : 'incorrect'));
-//     return result;
-//   }
+sendBetaInfo(){
+  let name = $('#name').val();
+  let company_name = $('#companyname').val();
+  let email = $('#email').val();
+  let phone = $('#phoneno').val();
+  let sector = $('#sector').val();
+  let organization = $('#organization').val();
+  let profession = $('#profession').val();
 
-//   submitForm(event:any) {
-//     event.preventDefault();
-//    var name = $('#name').val();
-//     var companyname = $('#companyname').val();
-//     var email = $('#email').val();
-//     var sector = $('#sector').val();
-//     var phoneno = $('#phoneno').val();
-//     var organization = $('#organization').val();
-//     var profession = $('#profession').val();
-//     if (email && phoneno) {
-//       if (!this.validateEmail(email)) {
-//         alert("please enter correct email");
-//       }
-//       if (!this.validatePhone(phoneno)) {
-//         alert("please enter correct phone number");
-//       }
-//     }
-//  }
+  if(name == null || name == undefined || name == ''){
+    $('#name').addClass('error-b');
+    this.formError = true;
+    this.nameError = 'Name is required';
+  }else if(!this.regexName.test(name)){
+    $('#name').addClass('error-b');
+    this.nameError = 'please enter a valid name';
+    this.formError = true;
+  }else if(email == null || email == undefined || email == ''){
+    $('#name').removeClass('error-b');
+    this.nameError = '';
 
-//   validateForm() {
-//     var name = $('#name').val();
-//     var companyname = $('#companyname').val();
-//     var email = $('#email').val();
-//     var sector = $('#sector').val();
-//     var phoneno = $('#phoneno').val();
-//     var organization = $('#organization').val();
-//     var profession = $('#profession').val();
-//     console.log(this.validateEmail(email));
-//     console.log(this.validatePhone(phoneno));
-//     console.log(organization);
-//     if (!name) {
-//       $('#name').addClass('input-error');
-//     } else if (!companyname) {
-//       $('#name').removeClass('input-error');
-//       $('#companyname').addClass('input-error');
-//     } else if (!email) {
-//       $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').addClass('input-error');
+    $('#email').addClass('error-b');
+    this.emailError = 'Email is required';
+    this.formError = true;
+  }else if(!this.regexEmail.test(email)){
+    $('#email').addClass('error-b');
+    this.emailError = 'please enter a valid email address';
+    this.formError = true;
+  }else if(phone == null || phone == undefined || phone == ''){
+    $('#email').removeClass('error-b');
+    this.emailError = '';
 
-//     } else if (!this.validateEmail(email)) {
-//        $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').addClass('input-error');
-//     } else if (!phoneno) {
-//       $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').removeClass('input-error');
-//       $('#phoneno').addClass('input-error');
-//     } else if (!this.validatePhone(phoneno)) {
-//        $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').removeClass('input-error');
-//       $('#phoneno').addClass('input-error');
-//     } else if (!sector) {
-//       $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').removeClass('input-error');
-//       $('#phoneno').removeClass('input-error');
-//        $('#sector').addClass('input-error');
-//     } else if (!organization) {
-//       $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').removeClass('input-error');
-//       $('#phoneno').removeClass('input-error');
-//        $('#sector').removeClass('input-error');
-//        $('#organization').addClass('input-error');
-//     } else if (!profession) {
-//        $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').removeClass('input-error');
-//       $('#phoneno').removeClass('input-error');
-//        $('#sector').removeClass('input-error');
-//        $('#organization').removeClass('input-error');
-//        $('#profession').addClass('input-error');
-//     } else {
-//       $('#name').removeClass('input-error');
-//       $('#companyname').removeClass('input-error');
-//       $('#email').removeClass('input-error');
-//       $('#phoneno').removeClass('input-error');
-//        $('#sector').removeClass('input-error');
-//        $('#organization').removeClass('input-error');
-//       $('#profession').removeClass('input-error');
-//     }
-//   }
+    $('#phoneno').addClass('error-b');
+    this.phoneError = 'phone is required';
+    this.formError = true;
+  }else if(!this.regexPhoneNumber.test(phone)){
+    $('#phoneno').addClass('error-b');
+    this.phoneError = 'please enter a valid phone address';
+    this.formError = true;
+  }else if(sector == null || sector == undefined || sector == ''){
+    $('#phoneno').removeClass('error-b');
+    this.phoneError = '';
 
+    $('#sector').addClass('error-b');
+    this.sectorError = 'sector is required';
+    this.formError = true;
+  }else if(company_name == null || company_name == undefined || company_name == ''){
+    $('#sector').removeClass('error-b');
+    this.sectorError = '';
+    $('#companyname').addClass('error-b');
+    this.companynameError = 'company name is required';
+    this.formError = true;
+  }else if(organization == null || organization == undefined || organization == ''){
+    $('#companyname').removeClass('error-b');
+    this.companynameError = '';
+    $('#organization').addClass('error-b');
+    this.organizationError = 'organization is required';
+    this.formError = true;
+  }else if(profession == null || profession == undefined || profession == ''){
+    $('#organization').removeClass('error-b');
+    this.organizationError = '';
+    $('#profession').addClass('error-b');
+    this.professionError = 'profession is required';
+    this.formError = true;
+  }else{alert('done')}
 
-
-
-
-
-
-
-
+}
 }
