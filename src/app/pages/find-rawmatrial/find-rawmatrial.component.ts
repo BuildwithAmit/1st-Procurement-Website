@@ -140,4 +140,100 @@ export class FindRawmatrialComponent {
     nav: false
   }
 
+
+  regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexName: any = /^[a-zA-Z ]*$/;
+  regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
+
+  formError:boolean = false;
+
+  nameError:any
+  emailError:any
+  phoneError:any
+  materialdescriptionError:any
+  cityError:any
+  addressError: any
+  materialselectError:any
+  selected: boolean = false;
+
+  sendRawMaterialInfo(){
+    let material_description = $('#matrial-desc').val();
+  let name = $('#name').val();
+  let email = $('#email').val();
+  let phone = $('#phoneno').val();
+  let city = $('#city').val();
+    let address = $('#address').val();
+   
+    
+      this.elements.forEach(element => {
+        let material_select = document.getElementById("select-" + element.name) as HTMLInputElement;
+        if (material_select.checked == true) { 
+          this.selected = true 
+        }
+      });
+    
+    if (!this.selected) {
+         this.materialselectError = 'Please select material';
+          this.formError = true;
+    }else if(material_description == null || material_description == undefined || material_description == ''){
+    $('#material_description').addClass('error-b');
+   this.materialdescriptionError = 'Material desciption is required';
+   this.materialselectError = '';
+    this.formError = true;
+  }else if(name == null || name == undefined || name == ''){
+    $('#material_description').removeClass('error-b');
+    $('#name').addClass('error-b');
+   this.formError = true;
+   this.materialdescriptionError = '';
+    this.nameError = 'Name is required';
+  }else if(!this.regexName.test(name)){
+    $('#name').addClass('error-b');
+    this.nameError = 'please enter a valid name';
+    this.formError = true;
+  }else if(email == null || email == undefined || email == ''){
+    $('#name').removeClass('error-b');
+    this.nameError = '';
+    $('#email').addClass('error-b');
+    this.emailError = 'Email is required';
+    this.formError = true;
+  }else if(!this.regexEmail.test(email)){
+    $('#email').addClass('error-b');
+    this.emailError = 'please enter a valid email address';
+    this.formError = true;
+  }else if(phone == null || phone == undefined || phone == ''){
+    $('#email').removeClass('error-b');
+    this.emailError = '';
+
+    $('#phoneno').addClass('error-b');
+    this.phoneError = 'phone is required';
+    this.formError = true;
+  }else if(!this.regexPhoneNumber.test(phone)){
+    $('#phoneno').addClass('error-b');
+    this.phoneError = 'please enter a valid phone address';
+    this.formError = true;
+  }else if(city == null || city == undefined || city == ''){
+    $('#phoneno').removeClass('error-b');
+    this.phoneError = '';
+    $('#city').addClass('error-b');
+    this.cityError = 'city name is required';
+    this.formError = true;
+  }else if(address == null || address == undefined || address == ''){
+    $('#companyname').removeClass('error-b');
+    this.cityError = '';
+    $('#address').addClass('error-b');
+    this.addressError = 'Address is required';
+    this.formError = true;
+    } else {
+      this.nameError = ''
+      this.emailError = ""
+      this.phoneError = ""
+      this.materialselectError = ""
+      this.materialdescriptionError = ""
+      this.cityError = ""
+      this.addressError = ""
+      alert('done')
+    }
+
+}
+
 }
