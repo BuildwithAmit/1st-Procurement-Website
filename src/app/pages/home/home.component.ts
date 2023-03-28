@@ -14,9 +14,6 @@ declare let AOS :any;
 
 
 export class HomeComponent {
-
-
-
   constructor(){window.scrollTo(0,0);}
 
   ngOnInit(){
@@ -57,5 +54,24 @@ export class HomeComponent {
   ]
 
 
+  regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  formError: boolean = false;
+  emailError: any;
+  sendNewsletterInfo() { 
+    let email = $('#email').val();
+    if(email == null || email == undefined || email == ''){
+    $('#email').addClass('error-b');
+    this.emailError = 'Email is required';
+    this.formError = true;
+  }else if(!this.regexEmail.test(email)){
+    $('#email').addClass('error-b');
+    this.emailError = 'please enter a valid email address';
+    this.formError = true;
+    } else {
+      $('#email').removeClass('error-b');
+       this.emailError=''
+      alert('done')
+  }
+  }
 
 }
