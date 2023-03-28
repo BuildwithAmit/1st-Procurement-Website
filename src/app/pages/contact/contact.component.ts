@@ -30,7 +30,7 @@ sendContactInfo(){
   let name = $('#name').val();
   let email = $('#email').val();
   let phone = $('#phoneno').val();
-  let sector = $('#sectore').val();
+  let sector = $('#sector').val();
   let company_name = $('#companyname').val();
 
   if(name == null || name == undefined || name == ''){
@@ -67,17 +67,29 @@ sendContactInfo(){
     $('#phoneno').removeClass('error-b');
     this.phoneError = '';
 
-    $('#sectore').addClass('error-b');
+    $('#sector').addClass('error-b');
     this.sectorError = 'sector is required';
     this.formError = true;
   }else if(company_name == null || company_name == undefined || company_name == ''){
-    $('#sectore').removeClass('error-b');
+    $('#sector').removeClass('error-b');
     this.sectorError = '';
 
     $('#companyname').addClass('error-b');
     this.companynameError = 'company name is required';
     this.formError = true;
-  }else{alert('done')}
+  } else {
+    this.nameError = ''
+    this.phoneError = ''
+    this.emailError = ''
+    this.sectorError = ''
+    this.companynameError = ''
+    $('#name').removeClass('error-b');
+    $('#email').removeClass('error-b');
+    $('#phoneno').removeClass('error-b');
+    $('#companyname').removeClass('error-b');
+    $('#sector').removeClass('error-b');
+    alert('done')
+  }
 
 }
 }

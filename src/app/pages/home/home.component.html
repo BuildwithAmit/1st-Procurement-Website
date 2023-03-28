@@ -166,10 +166,15 @@
         <p class="text-lg md:text-2xl">Subscribe To our</p>
         <p class="header-text text-secondary">Daily Newletters</p>
       </div>
-      <div class="flex items-center gap-x-4 mt-5 md:mt-0 lg:w-1/4">
-        <input type="text" class="p-2 bg-zinc-200 border-0 rounded-md w-full " placeholder="Enter your email">
-        <button class="bg-secondary  text-white px-5 py-2 rounded-md">Send</button>
+      <div class="flex flex-col justify-center  mt-5 md:mt-0 lg:w-1/4">
+        <div class="flex  gap-x-4">
+        <input type="email" id="email" class="p-2 bg-zinc-200 border-0 rounded-md w-full " placeholder="Enter your email">
+        
+        <button class="bg-secondary  text-white px-5 py-2 rounded-md" (click)="sendNewsletterInfo()">Send</button>
+        </div>
+        <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{emailError}}</p>
       </div>
+      
     </div>
   </div>
   <!-- subs email -->
