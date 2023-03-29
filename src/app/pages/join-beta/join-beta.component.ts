@@ -7,7 +7,7 @@ declare let $:any;
 })
 export class JoinBetaComponent {
 
-   regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexName: any = /^[a-zA-Z ]*$/;
   regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
 
@@ -20,6 +20,7 @@ export class JoinBetaComponent {
   companynameError:any
   organizationError:any
   professionError:any
+  termsError:any
 
 ngOnInit():void {
   window.scrollTo(0,0);
@@ -33,7 +34,9 @@ sendBetaInfo(){
   let sector = $('#sector').val();
   let organization = $('#organization').val();
   let profession = $('#profession').val();
+  let terms = $('#terms-conditions');
 
+console.log(terms.is(':checked'));
   if(name == null || name == undefined || name == ''){
     $('#name').addClass('error-b');
     this.formError = true;
@@ -89,7 +92,33 @@ sendBetaInfo(){
     $('#profession').addClass('error-b');
     this.professionError = 'profession is required';
     this.formError = true;
-  }else{alert('done')}
+  }else if(!terms.is(':checked')){
+    $('#profession').removeClass('error-b');
+    this.professionError = '';
+    $('#terms-conditions').addClass('error-b');
+    this.termsError = 'please agree to terms & conditions/ privacy policy';
+    this.formError = true;
+  }
+  else {
+     $('#name').removeClass('error-b');
+     $('#email').removeClass('error-b');
+     $('#phoneno').removeClass('error-b');
+     $('#sector').removeClass('error-b');
+    $('#companyname').removeClass('error-b');
+     $('#organization').removeClass('error-b');
+    $('#profession').removeClass('error-b');
+    $('#terms-conditions').removeClass('error-b');
+     this.nameError = ''
+     this.emailError = ''
+     this.phoneError = ''
+     this.companynameError = ''
+     this.sectorError = ''
+     this.organizationError = ''
+     this.professionError = ''
+     this.termsError = ''
+    alert('done')
+
+  }
 
 }
 }

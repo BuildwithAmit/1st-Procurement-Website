@@ -1,16 +1,16 @@
 <app-navbar></app-navbar>
 <!-- wrapper -->
-<div class="flex min-h-max md:h-[calc(100vh-5rem)]">
+<div class="flex min-h-max md:h-[calc(100vh-5rem)] p-5 gap-8">
   <div
-    class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden"
+    class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden rounded-2xl"
   >
-    <div class="w-full">
-      <div class="flex justify-center img-cover">
+    <div class="w-full ">
+      <div class="flex justify-center img-cover ">
         <img class="logo" src="../../../assets/asserts/logo-white.png" alt="" />
       </div>
-      <p class="mt-5 font-light text-center text-white text-xl px-4">
-        A Platform for Today’s and tomorrow's
-        innovators/researchers/entrepreneurs/builders
+      <p class=" text-3xl mt-5 text-white mx-4 text-center">
+        A Platform for Today’s and tomorrow's <br>
+        innovators/researchers/ entrepreneurs/builders
       </p>
     </div>
     <div
@@ -188,6 +188,13 @@
             </div>
           </div>
         </div>
+        <div class="flex mt-6 items-center">
+          <label for="terms-condition">
+          <input class="w-4 h-4 mr-2 rounded-sm" type="checkbox" name="terms-conditions" id="terms-conditions">
+            I agree to <a class="text-primary" href="">terms & conditions/ </a> <a class="text-primary" href="">Privacy Policy</a>
+          </label>
+        </div>
+         <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{termsError}}</p>
         <div class="mt-6 flex justify-end">
           <button class="bg-secondary p-3 px-5 rounded-lg text-white" (click)="sendBetaInfo()">
             Submit
