@@ -12,14 +12,15 @@ export class TeamCarouselComponent {
 
   customOptions: OwlOptions = {
     loop: true,
-    mouseDrag: false,
-    touchDrag: false,
-    pullDrag: false,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
     dots: false,
-    autoplay:true,
-    autoplaySpeed:500,
-
     navSpeed: 700,
+    autoplayTimeout:5000,
+    autoplayHoverPause:true,
+    autoplaySpeed:800,
+    autoplay:true,
     navText: ['', ''],
     responsive: {
       0: {
@@ -35,7 +36,7 @@ export class TeamCarouselComponent {
         items: 3
       }
     },
-    nav: true
+    nav: false
   }
 
 teamData=[

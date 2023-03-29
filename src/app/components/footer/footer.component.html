@@ -1,3 +1,9 @@
+<div class="w-[10rem] md:w-[15rem]  sticky left-[83%] bottom-[1rem] z-[100]">
+  <a aria-label="Chat on WhatsApp" href="https://wa.me/+918180821919" target="_blank" >
+    <img class="img-contain rounded-xl shadow-2xl" src="../../../assets/asserts/illustrator/whatsapp.png" alt="">
+  </a>
+</div>
+
 <footer class="bg-zinc-900 p-5 sm:p-7 md:p-10">
   <div
     class="grid grid-flow-row grid-cols-1 md:grid-cols-2 xl:grid-cols-4 mb-10"
@@ -21,7 +27,7 @@
         <div>
           <ul class="flex gap-x-5 mt-10 xl:mt-0">
             <li class="text-white">
-              <a href=""><i class="bi bi-facebook" target="_blank"></i></a>
+              <a href="https://www.facebook.com/profile.php?id=100089632657358" target="_blank"><i class="bi bi-facebook" ></i></a>
             </li>
             <li class="text-white">
               <a
@@ -31,10 +37,10 @@
               ></a>
             </li>
             <li class="text-white">
-              <a href=""><i class="bi bi-twitter" target="_blank"></i></a>
+              <a href="https://twitter.com/produc_try" target="_blank"><i class="bi bi-twitter" ></i></a>
             </li>
             <li class="text-white">
-              <a href=""><i class="bi bi-youtube" target="_blank"></i></a>
+              <a href="" target="_blank"><i class="bi bi-youtube" ></i></a>
             </li>
             <li class="text-white">
               <a
@@ -78,7 +84,8 @@
             <li class="capitalize font-light">
               <a href="">terms & condition</a>
             </li>
-            <li class="capitalize font-light"><a href="">FAQ's</a></li>
+            <li class="capitalize font-light"><a routerLink="/rawmatrial" [queryParams]="{ section: 'raw-matrial-faq' }">Buyers FAQ's</a></li>
+            <li class="capitalize font-light"><a routerLink="/partner"  [queryParams]="{ section: 'partner-faq' }">Sellers FAQ's</a></li>
           </ul>
         </div>
       </div>
@@ -103,7 +110,7 @@
       >
         <div class="">
           <p class="text-white text-sm font-light">Want to Discuss ?</p>
-          <p class="text-xl text-primary">Arrange Meeting</p>
+          <a href="http://calendly.com/amit-jadhwar-1" target="_blank" class="text-xl text-primary">Arrange Meeting</a>
         </div>
       </button>
     </div>

@@ -3,10 +3,11 @@
 
 <div class="grid grid-cols-1 lg:grid-cols-3 mt-10">
   <div class="col-span-1 leading-10 hidden lg:block">
-    <ul>
+    <ul class="">
       <li><a  class="show-team-btn text-xl out-team-btn cursor-pointer active" (click)="showTeamData()">Team</a></li>
-      <li><a  class="show-mentors-btn text-xl out-team-btn cursor-pointer" (click)="showMentorsData()">Mentors</a></li>
+      <li><a  class="show-mentors-btn text-xl out-team-btn cursor-pointer hidden" (click)="showMentorsData()">Mentors</a></li>
     </ul>
+
   </div>
   <div class="col-span-1 lg:col-span-2 our-team-carousel">
     <ng-container *ngIf="showTeam;else showMentors" >

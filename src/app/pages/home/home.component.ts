@@ -1,7 +1,8 @@
-import { Component, NgModule, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, NgModule, ViewChild, ElementRef, AfterViewInit,Input } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SimpleScrollSpyModule } from 'angular-simple-scroll-spy';
-import { ServiceService } from '../services/service.service';
+import { Directive, HostListener } from '@angular/core';
+// import { ServiceService } from '../services/service.service';
 declare let Rellax:any;
 declare let $: any
 declare let AOS :any;
@@ -15,8 +16,7 @@ declare let Typed:any;
 
 
 export class HomeComponent {
-
-  constructor(private services:ServiceService){window.scrollTo(0,0);}
+  constructor(private elementRef: ElementRef){window.scrollTo(0,0);}
 
   ngOnInit(){
     const rellax = new Rellax('.rellax');
@@ -32,19 +32,37 @@ export class HomeComponent {
       loop: true,
       backDelay: 700,
     });
-
+    $(document).ready(()=>{
+    });
   }
-  currentMenuId = "menu1"
+  // currentMenuId = "menu1"
 
-  post(){
-    var data={
-      "name":'shalil',
-    }
-    this.services.postEndpoint2(data).subscribe((res:any)=>{
-      if(res.status === 200) {
-
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const element = this.elementRef.nativeElement;
+    const sections = document.querySelectorAll('section');
+    sections.forEach((section) => {
+      if (this.isElementInViewport(section)) {
+        const id = section.getAttribute('id');
+        const navLinks = document.querySelectorAll('.nav-item a');
+        navLinks.forEach((navLink) => {
+          navLink.classList.remove('active');
+          if (navLink.getAttribute('href') === '#' + id) {
+            navLink.classList.add('active');
+          }
+        });
       }
-    })
+    });
+  }
+
+  isElementInViewport(element:any) {
+    const rect = element.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 
 
@@ -75,5 +93,24 @@ export class HomeComponent {
   ]
 
 
+  regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  formError: boolean = false;
+  emailError: any;
+  sendNewsletterInfo() {
+    let email = $('#email').val();
+    if(email == null || email == undefined || email == ''){
+    $('#email').addClass('error-b');
+    this.emailError = 'Email is required';
+    this.formError = true;
+  }else if(!this.regexEmail.test(email)){
+    $('#email').addClass('error-b');
+    this.emailError = 'please enter a valid email address';
+    this.formError = true;
+    } else {
+      $('#email').removeClass('error-b');
+       this.emailError=''
+      alert('done')
+  }
+  }
 
 }

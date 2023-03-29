@@ -1,5 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ActivatedRoute } from '@angular/router';
 declare let $:any;
 declare let AOS :any;
 
@@ -14,8 +15,18 @@ ngOnInit(): void{
   $(document).ready(()=>{
     AOS.init();
   })
-  window.scrollTo(0,0);
+// ****************
+$(document).ready(()=>{
+  this.route.queryParams.subscribe(params => {
+    let sectionId = params['section'];
+    $('html, body').animate({
+      scrollTop: sectionId ? $('#' + sectionId).offset().top : 0
+    }, 1000);
+  });
+});
+}
 
+constructor(private route: ActivatedRoute) {
 }
 
 scrollToSection() {
@@ -30,7 +41,7 @@ faqData=[
     question: "How do I create a seller account ?",
     answer: "You will need to provide basic information about your company and products, as well as complete any necessary verification or documentation requirements."
   },
- 
+
   {
     id: 3,
     question: "What information should I include in my product listings?",
@@ -135,4 +146,135 @@ faqData=[
     }
   ]
 
+
+  regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  regexName: any = /^[a-zA-Z ]*$/;
+  regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
+  regxWebURL = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  formError:boolean = false;
+
+  nameError:any
+  emailError:any
+  phoneError:any
+  companynameError:any
+  cityError:any
+  addressError: any
+  materialselectError:any
+  gstError:any
+  weburlError:any
+  uploadError:any
+  selected: boolean = false;
+
+  sendPartnerInfo(){
+  let company_name = $('#companyname').val();
+  let name = $('#name').val();
+  let email = $('#email').val();
+  let phone = $('#phoneno').val();
+  let city = $('#city').val();
+  let gstno = $('#gstno').val();
+  let weburl = $('#weburl').val();
+  let upload = $('#dropzone-file').val();
+  let address = $('#address').val();
+
+
+      this.elements.forEach(element => {
+        let material_select = document.getElementById("select-" + element.name) as HTMLInputElement;
+        if (material_select.checked == true) {
+          this.selected = true
+        }
+      });
+
+    if (!this.selected) {
+         this.materialselectError = 'Please select material';
+          this.formError = true;
+    }else if(name == null || name == undefined || name == ''){
+
+    $('#name').addClass('error-b');
+   this.formError = true;
+   this.companynameError = '';
+    this.nameError = 'Name is required';
+  }else if(!this.regexName.test(name)){
+    $('#name').addClass('error-b');
+    this.nameError = 'please enter a valid name';
+    this.formError = true;
+  }else if(email == null || email == undefined || email == ''){
+    $('#name').removeClass('error-b');
+    this.nameError = '';
+    $('#email').addClass('error-b');
+    this.emailError = 'Email is required';
+    this.formError = true;
+  }else if(!this.regexEmail.test(email)){
+    $('#email').addClass('error-b');
+    this.emailError = 'please enter a valid email address';
+    this.formError = true;
+  }else if(phone == null || phone == undefined || phone == ''){
+    $('#email').removeClass('error-b');
+    this.emailError = '';
+
+    $('#phoneno').addClass('error-b');
+    this.phoneError = 'phone is required';
+    this.formError = true;
+  }else if(!this.regexPhoneNumber.test(phone)){
+    $('#phoneno').addClass('error-b');
+    this.phoneError = 'please enter a valid phone address';
+    this.formError = true;
+  }else if(city == null || city == undefined || city == ''){
+    $('#phoneno').removeClass('error-b');
+    this.phoneError = '';
+    $('#city').addClass('error-b');
+    this.cityError = 'City name is required';
+    this.formError = true;
+    } else if (company_name == null || company_name == undefined || company_name == '') {
+      $('#city').removeClass('error-b');
+    $('#companyname').addClass('error-b');
+   this.companynameError = 'Company name is required';
+   this.cityError = '';
+    this.formError = true;
+  }else if(address == null || address == undefined || address == ''){
+    $('#companyname').removeClass('error-b');
+    this.cityError = '';
+    $('#address').addClass('error-b');
+    this.addressError = 'Address is required';
+    this.formError = true;
+    }else if(gstno == null || gstno == undefined || gstno == ''){
+    $('#address').removeClass('error-b');
+    this.cityError = '';
+    $('#gstno').addClass('error-b');
+    this.gstError = 'GST number is required';
+    this.formError = true;
+    }else if(gstno == null || gstno == undefined || gstno == ''){
+    $('#address').removeClass('error-b');
+    this.cityError = '';
+    $('#gstno').addClass('error-b');
+    this.gstError = 'GST number is required';
+    this.formError = true;
+    }else if(weburl == null || weburl == undefined || weburl == ''){
+    $('#gstno').removeClass('error-b');
+    this.cityError = '';
+    $('#weburl').addClass('error-b');
+    this.weburlError = 'website url is required';
+    this.formError = true;
+    }else if(!this.regxWebURL.test(weburl)){
+    $('#weburl').addClass('error-b');
+    this.weburlError = 'please provid valid url';
+    this.formError = true;
+  } else if(upload == null || upload == undefined || upload == ''){
+    $('#weburl').removeClass('error-b');
+    this.cityError = '';
+      $('#upload').addClass('error-b');
+
+    this.uploadError = 'please upload required document';
+    this.formError = true;
+    }else {
+      this.nameError = ''
+      this.emailError = ""
+      this.phoneError = ""
+      this.materialselectError = ""
+      this.companynameError = ""
+      this.cityError = ""
+      this.addressError = ""
+      alert('done')
+    }
+
+}
 }

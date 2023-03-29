@@ -2,7 +2,7 @@
   <!-- header -->
   <div class="flex justify-center items-center w-full h-[100vh] relative px-5">
     <div class=" lg:max-w-5xl text-center relative z-10" data-aos="fade-up">
-      <h1 class="hero-s-text leading-9 md:leading-[3.5rem] lg:leading-[4rem] capitalize font-semibold">Empowering the worlds hidden
+      <h1 class="hero-s-text home-hero-text leading-9 md:leading-[3.5rem] lg:leading-[4rem] capitalize font-semibold">Empowering the worlds hidden
        <p><span class="text-primary" id="element"></span></p>
       </h1>
       <p class="mt-5 text-sm text-zinc-600">By leveraging data intelligence to inform raw material selection and
@@ -36,11 +36,10 @@
   <div class="p-5 md:p-7 lg:p-10">
     <h1 class="text-center header-text font-semibold">What we Offers?</h1>
     <div class="grid grid-flow-col grid-cols-1 lg:grid-cols-3 mt-10">
-
       <div class="col-span-1 lg:flex justify-center relative hidden">
         <div class="sticky top-24 left-0  h-[25rem]">
           <ul class="spy-scroll-navbar flex flex-col gap-y-20">
-            <li *ngFor="let items of offers_data"><a class="spy-scroll-links cursor-pointer" scrollSpyMenu="menu{{items.id}}" [ssmCurrentContent]="currentMenuId" [ssmActiveClassName]="currentMenuId">
+            <li class="nav-item" *ngFor="let items of offers_data"><a class="spy-scroll-links nav-link cursor-pointer" href="#menu{{items.id}}" >
                 <div class="flex items-center gap-x-5 p-5 rounded-xl">
                   <span >{{items.id}}</span>
                   <p>{{items.for}}</p>
@@ -51,10 +50,10 @@
         </div>
       </div>
 
-      <div class="col-span-1 flex lg:col-span-2  lg:overflow-visible  " scrollSpyContent="DIV" [(sscCurrentContent)]="currentMenuId"  >
+      <div class="col-span-1 flex lg:col-span-2  lg:overflow-visible "  >
         <div class="overflow-scroll  lg:overflow-visible flex lg:block gap-x-4 scrollbar-hidden px-2  pb-28 lg:pb-0">
 
-        <div id="menu{{items.id}}"
+        <section id="menu{{items.id}}"
           class="bg-zinc-100 min-w-[20rem] lg:min-w-[33rem] xl:min-w-[48rem] p-5 lg:p-10 rounded-2xl relative lg:h-[25rem]  lg:mb-10" *ngFor="let items of offers_data" >
           <div class="flex flex-col lg:flex-row items-center justify-between h-full">
 
@@ -74,7 +73,7 @@
 
         </div>
 
-        </div>
+        </section>
 
     </div>
       </div>
@@ -167,10 +166,15 @@
         <p class="text-lg md:text-2xl">Subscribe To our</p>
         <p class="header-text text-secondary">Daily Newletters</p>
       </div>
-      <div class="flex items-center gap-x-4 mt-5 md:mt-0 lg:w-1/4">
-        <input type="text" class="p-2 bg-zinc-200 border-0 rounded-md w-full " placeholder="Enter your email">
-        <button class="bg-secondary  text-white px-5 py-2 rounded-md">Send</button>
+      <div class="flex flex-col justify-center  mt-5 md:mt-0 lg:w-1/4">
+        <div class="flex  gap-x-4">
+        <input type="email" id="email" class="p-2 bg-zinc-200 border-0 rounded-md w-full " placeholder="Enter your email">
+
+        <button class="bg-secondary  text-white px-5 py-2 rounded-md" (click)="sendNewsletterInfo()">Send</button>
+        </div>
+        <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{emailError}}</p>
       </div>
+
     </div>
   </div>
   <!-- subs email -->
@@ -179,3 +183,5 @@
 
 
 <app-footer></app-footer>
+
+
