@@ -83,12 +83,12 @@ core_value_data = [
   supporters_data = [
     {
       id: "1",
-      img: "../../../assets/asserts/ourSupporters/StartupIndia.svg",
+      img: "../../../assets/asserts/ourSupporters/IIITH.png",
       alt:"StartupIndia-logo"
     },
     {
       id: "2",
-      img: "../../../assets/asserts/ourSupporters/MSME.jpeg",
+      img: "../../../assets/asserts/ourSupporters/CIE.png",
       alt:"MSME-logo"
     },
     {
@@ -98,7 +98,12 @@ core_value_data = [
     },
     {
       id: "4",
-      img: "../../../assets/asserts/ourSupporters/iithydrabad.png",
+      img: "../../../assets/asserts/ourSupporters/StartupIndia.svg",
+      alt:"iithydrabad"
+    },
+    {
+      id: "5",
+      img: "../../../assets/asserts/ourSupporters/MSME.png",
       alt:"iithydrabad"
     },
   ]
