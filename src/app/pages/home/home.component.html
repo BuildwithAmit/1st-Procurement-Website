@@ -2,8 +2,9 @@
   <!-- header -->
   <div class="flex justify-center items-center w-full h-[100vh] relative px-5">
     <div class=" lg:max-w-5xl text-center relative z-10" data-aos="fade-up">
-      <p class="hero-s-text leading-9 md:leading-[3.5rem] lg:leading-[4rem] capitalize font-semibold">Empowering the Work hidden <span
-          class="text-primary"> Innovators Researchers</span></p>
+      <h1 class="hero-s-text leading-9 md:leading-[3.5rem] lg:leading-[4rem] capitalize font-semibold">Empowering the worlds hidden
+       <p><span class="text-primary" id="element"></span></p>
+      </h1>
       <p class="mt-5 text-sm text-zinc-600">By leveraging data intelligence to inform raw material selection and
         procurement, hardware development can be optimized for maximum efficiency. This approach streamlines the
         development process, ensuring that the most appropriate materials are chosen and sourced in a timely and
@@ -37,10 +38,10 @@
     <div class="grid grid-flow-col grid-cols-1 lg:grid-cols-3 mt-10">
 
       <div class="col-span-1 lg:flex justify-center relative hidden">
-        <div class="sticky top-16 left-0  h-[25rem]">
-          <ul class="spy-scroll-navbar ">
-            <li *ngFor="let items of offers_data"><a class="spy-scroll-links cursor-pointer" scrollSpyMenu="menu{{items.id}}" [ssmCurrentContent]="currentMenuId">
-                <div class="flex items-center gap-x-5">
+        <div class="sticky top-24 left-0  h-[25rem]">
+          <ul class="spy-scroll-navbar flex flex-col gap-y-20">
+            <li *ngFor="let items of offers_data"><a class="spy-scroll-links cursor-pointer" scrollSpyMenu="menu{{items.id}}" [ssmCurrentContent]="currentMenuId" [ssmActiveClassName]="currentMenuId">
+                <div class="flex items-center gap-x-5 p-5 rounded-xl">
                   <span >{{items.id}}</span>
                   <p>{{items.for}}</p>
                 </div>
@@ -53,7 +54,7 @@
       <div class="col-span-1 flex lg:col-span-2  lg:overflow-visible  " scrollSpyContent="DIV" [(sscCurrentContent)]="currentMenuId"  >
         <div class="overflow-scroll  lg:overflow-visible flex lg:block gap-x-4 scrollbar-hidden px-2  pb-28 lg:pb-0">
 
-        <section id="menu{{items.id}}"
+        <div id="menu{{items.id}}"
           class="bg-zinc-100 min-w-[20rem] lg:min-w-[33rem] xl:min-w-[48rem] p-5 lg:p-10 rounded-2xl relative lg:h-[25rem]  lg:mb-10" *ngFor="let items of offers_data" >
           <div class="flex flex-col lg:flex-row items-center justify-between h-full">
 
@@ -73,7 +74,7 @@
 
         </div>
 
-        </section>
+        </div>
 
     </div>
       </div>

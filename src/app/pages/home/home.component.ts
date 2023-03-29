@@ -1,10 +1,11 @@
-import { Component, NgModule } from '@angular/core';
+import { Component, NgModule, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SimpleScrollSpyModule } from 'angular-simple-scroll-spy';
+import { ServiceService } from '../services/service.service';
 declare let Rellax:any;
 declare let $: any
 declare let AOS :any;
-
+declare let Typed:any;
 
 @Component({
   selector: 'app-home',
@@ -15,9 +16,7 @@ declare let AOS :any;
 
 export class HomeComponent {
 
-
-
-  constructor(){window.scrollTo(0,0);}
+  constructor(private services:ServiceService){window.scrollTo(0,0);}
 
   ngOnInit(){
     const rellax = new Rellax('.rellax');
@@ -26,9 +25,28 @@ export class HomeComponent {
     })
     window.scrollTo(0,0);
 
+    var typed = new Typed('#element', {
+      strings: ['Innovators ^3000', 'Researchers ^3000'],
+      typeSpeed: 100,
+      backSpeed: 100,
+      loop: true,
+      backDelay: 700,
+    });
 
   }
-  currentMenuId = "menu1";
+  currentMenuId = "menu1"
+
+  post(){
+    var data={
+      "name":'shalil',
+    }
+    this.services.postEndpoint2(data).subscribe((res:any)=>{
+      if(res.status === 200) {
+
+      }
+    })
+  }
+
 
   offers_data = [
     {
