@@ -157,18 +157,22 @@ $(document).ready(()=>{
   emailError:any
   phoneError:any
   materialdescriptionError:any
+  materialrequirementError:any
   cityError:any
+  termsError:any
   addressError: any
   materialselectError:any
   selected: boolean = false;
 
   sendRawMaterialInfo(){
     let material_description = $('#matrial-desc').val();
+    let material_requirement = $('#matrial-requirement').val();
   let name = $('#name').val();
   let email = $('#email').val();
   let phone = $('#phoneno').val();
   let city = $('#city').val();
     let address = $('#address').val();
+     let terms = $('#terms-conditions');
 
 
       this.elements.forEach(element => {
@@ -186,11 +190,16 @@ $(document).ready(()=>{
    this.materialdescriptionError = 'Material desciption is required';
    this.materialselectError = '';
     this.formError = true;
+  }else if(material_requirement == null || material_requirement == undefined || material_requirement == ''){
+    $('#material_requirement').addClass('error-b');
+   this.materialrequirementError = 'Please write your material requirements';
+   this.materialdescriptionError = '';
+    this.formError = true;
   }else if(name == null || name == undefined || name == ''){
-    $('#material_description').removeClass('error-b');
+    $('#material_requirement').removeClass('error-b');
     $('#name').addClass('error-b');
    this.formError = true;
-   this.materialdescriptionError = '';
+   this.materialrequirementError = '';
     this.nameError = 'Name is required';
   }else if(!this.regexName.test(name)){
     $('#name').addClass('error-b');
@@ -229,13 +238,21 @@ $(document).ready(()=>{
     $('#address').addClass('error-b');
     this.addressError = 'Address is required';
     this.formError = true;
-    } else {
+    }else if(!terms.is(':checked')){
+    $('#address').removeClass('error-b');
+    this.addressError = '';
+    $('#terms-conditions').addClass('error-b');
+    this.termsError = 'please agree to terms & conditions/ privacy policy';
+    this.formError = true;
+  } else {
        $('#material_description').removeClass('error-b');
+       $('#material_requirement').removeClass('error-b');
       $('#name').removeClass('error-b');
         $('#email').removeClass('error-b');
        $('#phoneno').removeClass('error-b');
       $('#city').removeClass('error-b');
       $('#adress').removeClass('error-b');
+      $('#terms-conditions').removeClass('error-b');
       this.nameError = ''
       this.emailError = ""
       this.phoneError = ""
@@ -243,6 +260,8 @@ $(document).ready(()=>{
       this.materialdescriptionError = ""
       this.cityError = ""
       this.addressError = ""
+      this.materialrequirementError = ""
+      this.termsError = ""
       alert('done')
     }
 

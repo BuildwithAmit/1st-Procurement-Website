@@ -348,6 +348,22 @@
           </div>
           <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{uploadError}}</p>
         </div>
+         <div class="flex mt-6 items-center">
+            <label for="terms-condition">
+              <input
+                class="w-4 h-4 mr-2 rounded-sm"
+                type="checkbox"
+                name="terms-conditions"
+                id="terms-conditions"
+              />
+              I agree to
+              <a class="text-primary" href="">terms & conditions/ </a>
+              <a class="text-primary" href="">Privacy Policy</a>
+            </label>
+          </div>
+          <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+            {{ termsError }}
+          </p>
         <div class="mt-5 flex justify-end">
           <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm"
           (click)="sendPartnerInfo()"

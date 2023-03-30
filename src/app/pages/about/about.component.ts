@@ -137,7 +137,7 @@ core_value_data = [
     dots: false,
     navSpeed: 700,
     autoplayTimeout:1000,
-    autoplaySpeed:800,
+    autoplaySpeed:700,
     autoplay:true,
     navText: ['', ''],
     responsive: {
