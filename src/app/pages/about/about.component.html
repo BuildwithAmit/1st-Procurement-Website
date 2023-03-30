@@ -58,7 +58,8 @@
     <p
       class="text-sm text-zinc-600 font-normal text-center md:text-justify max-w-[900px] md:w-3/4"
     >
-     We aspire to build an ecosystem to assist innovators and researchers in developing hardware products.
+      We aspire to build an ecosystem to assist innovators and researchers in
+      developing hardware products.
     </p>
   </div>
   <!-- end of section 2 -->
@@ -71,7 +72,10 @@
     <p
       class="text-sm text-zinc-600 font-normal text-center md:text-justify md:w-3/4 max-w-[900px]"
     >
-     Our mission is to assist innovators and researchers in achieving their hardware product development goals by leveraging data intelligence to inform raw material selection and procurement so that hardware development can be optimized for maximum efficiency.
+      Our mission is to assist innovators and researchers in achieving their
+      hardware product development goals by leveraging data intelligence to
+      inform raw material selection and procurement so that hardware development
+      can be optimized for maximum efficiency.
     </p>
   </div>
   <!-- end of section 3 -->
@@ -157,7 +161,7 @@
           </div>
         </a>
         <a class="tab-links hidden">
-          <div class="flex items-center gap-x-5 ">
+          <div class="flex items-center gap-x-5">
             <span></span>
             <p
               class="text-2xl cursor-pointer font-normal capitalize"
@@ -236,12 +240,32 @@
   <!-- our team -->
 
   <!-- start of section 6 -->
-  <div class="flex flex-col items-center my-4 min-h-max">
+  <div class="p-5 lg:p-16 mt-10 our-client">
+    <h1 class="text-center header-text font-semibold">We are Supported By</h1>
+    <div class="mt-5">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template
+          carouselSlide
+          *ngFor="let items of supporters_data"
+          class="flex justify-center"
+        >
+          <div class="w-[10rem] h-[7rem]">
+            <img
+              class="img-contain"
+              src="{{ items.img }}"
+              alt="{{ items.alt }}"
+            />
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+  <div class="flex hidden flex-col items-center my-4 min-h-max">
     <h2 class="header-text font-semibold capitalize text-center">
       We are Supported By
     </h2>
     <div
-      class="flex flex-row mt-4 flex-wrap items-center min-h-[50vh] justify-center gap-x-10 px-10 mb-5 w-full"
+      class="flex flex-row mt-6 flex-wrap items-center min-h-[50vh] justify-center gap-x-10 px-10 mb-5 w-full"
     >
       <img
         class="flex w-60 h-28"

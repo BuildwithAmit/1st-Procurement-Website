@@ -16,7 +16,7 @@ export class ContactComponent {
   nameError:any
   emailError:any
   phoneError:any
-  sectorError:any
+  messageError:any
   companynameError:any
 
 ngOnInit(): void{
@@ -30,7 +30,7 @@ sendContactInfo(){
   let name = $('#name').val();
   let email = $('#email').val();
   let phone = $('#phoneno').val();
-  let sector = $('#sector').val();
+  let message = $('#message').val();
   let company_name = $('#companyname').val();
 
   if(name == null || name == undefined || name == ''){
@@ -63,31 +63,30 @@ sendContactInfo(){
     $('#phoneno').addClass('error-b');
     this.phoneError = 'please enter a valid phone address';
     this.formError = true;
-  }else if(sector == null || sector == undefined || sector == ''){
+  }else if(company_name == null || company_name == undefined || company_name == ''){
     $('#phoneno').removeClass('error-b');
     this.phoneError = '';
-
-    $('#sector').addClass('error-b');
-    this.sectorError = 'sector is required';
-    this.formError = true;
-  }else if(company_name == null || company_name == undefined || company_name == ''){
-    $('#sector').removeClass('error-b');
-    this.sectorError = '';
-
     $('#companyname').addClass('error-b');
     this.companynameError = 'company name is required';
     this.formError = true;
-  } else {
+  } else if(message == null || message == undefined || message == ''){
+    $('#companyname').removeClass('error-b');
+    this.companynameError = '';
+
+    $('#message').addClass('error-b');
+    this.messageError = 'message is required';
+    this.formError = true;
+  }else {
     this.nameError = ''
     this.phoneError = ''
     this.emailError = ''
-    this.sectorError = ''
+    this.messageError = ''
     this.companynameError = ''
     $('#name').removeClass('error-b');
     $('#email').removeClass('error-b');
     $('#phoneno').removeClass('error-b');
     $('#companyname').removeClass('error-b');
-    $('#sector').removeClass('error-b');
+    $('#message').removeClass('error-b');
     alert('done')
   }
 

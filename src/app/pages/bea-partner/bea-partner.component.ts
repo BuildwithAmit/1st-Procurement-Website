@@ -163,6 +163,7 @@ faqData=[
   gstError:any
   weburlError:any
   uploadError:any
+  termsError:any
   selected: boolean = false;
 
   sendPartnerInfo(){
@@ -174,7 +175,9 @@ faqData=[
   let gstno = $('#gstno').val();
   let weburl = $('#weburl').val();
   let upload = $('#dropzone-file').val();
-  let address = $('#address').val();
+    let address = $('#address').val();
+    let terms = $('#terms-conditions');
+
 
 
       this.elements.forEach(element => {
@@ -265,7 +268,22 @@ faqData=[
 
     this.uploadError = 'please upload required document';
     this.formError = true;
-    }else {
+    }else if(!terms.is(':checked')){
+    $('#upload').removeClass('error-b');
+    this.uploadError = '';
+    $('#terms-conditions').addClass('error-b');
+    this.termsError = 'please agree to terms & conditions/ privacy policy';
+    this.formError = true;
+    } else {
+       $('#name').removeClass('error-b');
+      $('#phoneno').removeClass('error-b');
+      $('#city').removeClass('error-b');
+       $('#companyname').removeClass('error-b');
+        $('#address').removeClass('error-b');
+       $('#gstno').removeClass('error-b');
+       $('#weburl').removeClass('error-b');
+       $('#terms-conditions').removeClass('error-b');
+      $('#upload').removeClass('error-b');
       this.nameError = ''
       this.emailError = ""
       this.phoneError = ""
@@ -273,6 +291,7 @@ faqData=[
       this.companynameError = ""
       this.cityError = ""
       this.addressError = ""
+      this.termsError = ""
       alert('done')
     }
 
