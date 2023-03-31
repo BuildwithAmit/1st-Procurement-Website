@@ -6,7 +6,8 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { FindRawmatrialComponent } from './pages/find-rawmatrial/find-rawmatrial.component';
 import { HomeComponent } from './pages/home/home.component';
 import { JoinBetaComponent } from './pages/join-beta/join-beta.component';
-
+import {TermsConditionsComponent} from "./pages/terms-conditions/terms-conditions.component"
+import {PrivacyPolicyComponent} from "./pages/privacy-policy/privacy-policy.component"
 
 
 // third party librarys
@@ -17,7 +18,9 @@ const routes: Routes = [
 {path:'rawmatrial',component:FindRawmatrialComponent},
 {path:'about',component:AboutComponent},
 {path:'contact',component:ContactComponent},
-{path:'beta',component:JoinBetaComponent}
+{path:'beta',component:JoinBetaComponent},
+{path:'terms-and-conditions',component:TermsConditionsComponent},
+{path:'privacy-policy',component:PrivacyPolicyComponent}
 ];
 
 @NgModule({

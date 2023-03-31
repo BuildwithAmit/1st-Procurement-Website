@@ -150,6 +150,7 @@ faqData=[
   regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexName: any = /^[a-zA-Z ]*$/;
   regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
+  regexGstNumber: any = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
   regxWebURL = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
   formError:boolean = false;
 
@@ -245,11 +246,9 @@ faqData=[
     $('#gstno').addClass('error-b');
     this.gstError = 'GST number is required';
     this.formError = true;
-    }else if(gstno == null || gstno == undefined || gstno == ''){
-    $('#address').removeClass('error-b');
-    this.cityError = '';
+    }else if(!this.regexGstNumber.test(gstno)){
     $('#gstno').addClass('error-b');
-    this.gstError = 'GST number is required';
+    this.gstError = 'Please enter valid GST number';
     this.formError = true;
     }else if(weburl == null || weburl == undefined || weburl == ''){
     $('#gstno').removeClass('error-b');
@@ -265,7 +264,6 @@ faqData=[
     $('#weburl').removeClass('error-b');
     this.cityError = '';
       $('#upload').addClass('error-b');
-
     this.uploadError = 'please upload required document';
     this.formError = true;
     }else if(!terms.is(':checked')){
@@ -291,7 +289,10 @@ faqData=[
       this.companynameError = ""
       this.cityError = ""
       this.addressError = ""
+      this.gstError = ""
+      this.uploadError = ""
       this.termsError = ""
+      
       alert('done')
     }
 

@@ -4,12 +4,12 @@
   <div
     class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden rounded-2xl"
   >
-    <div class="w-full ">
-      <div class="flex justify-center img-cover ">
+    <div class="w-full">
+      <div class="flex justify-center img-cover">
         <img class="logo" src="../../../assets/asserts/logo-white.png" alt="" />
       </div>
-      <p class=" text-3xl mt-5 text-white mx-4 text-center">
-        A Platform for Today’s and tomorrow's <br>
+      <p class="text-3xl mt-5 text-white mx-4 text-center">
+        A Platform for Today’s <br />
         innovators/researchers/ entrepreneurs/builders
       </p>
     </div>
@@ -18,7 +18,11 @@
     >
       <ul class="flex gap-x-5">
         <li class="text-white">
-          <a href="https://www.facebook.com/profile.php?id=100089632657358" target="_blank"><i class="bi bi-facebook" ></i></a>
+          <a
+            href="https://www.facebook.com/profile.php?id=100089632657358"
+            target="_blank"
+            ><i class="bi bi-facebook"></i
+          ></a>
         </li>
         <li class="text-white">
           <a
@@ -28,10 +32,12 @@
           ></a>
         </li>
         <li class="text-white">
-          <a href="https://twitter.com/produc_try" target="_blank"><i class="bi bi-twitter" ></i></a>
+          <a href="https://twitter.com/produc_try" target="_blank"
+            ><i class="bi bi-twitter"></i
+          ></a>
         </li>
         <li class="text-white">
-          <a href=""  target="_blank"><i class="bi bi-youtube"></i></a>
+          <a href="https://youtube.com/@productry" target="_blank"><i class="bi bi-youtube"></i></a>
         </li>
         <li class="text-white">
           <a
@@ -47,11 +53,11 @@
     <div class="">
       <h1 class="text-2xl font-medium">Join Beta</h1>
       <p class="mt-5 text-sm text-zinc-500">
-        Optimize your project/product/research and development/or innovation
-        with us by choosing the right raw materials and sourcing them.
+        Optimize your project/product/research/ innovation with us by choosing
+        the right raw materials and sourcing them.
       </p>
 
-      <div class="form mt-5" id="form" >
+      <div class="form mt-5" id="form">
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
             <div class="w-full">
@@ -63,9 +69,10 @@
                 id="name"
                 class="w-full border-zinc-300 rounded-md border-2 p-2"
                 placeholder="Enter your name"
-           
               />
-              <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{nameError}}</p>
+              <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+                {{ nameError }}
+              </p>
             </div>
           </div>
           <div class="w-full mt-3 md:mt-0">
@@ -77,9 +84,10 @@
               id="companyname"
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter your company name"
-            
             />
-              <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{companynameError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ companynameError }}
+            </p>
           </div>
         </div>
 
@@ -93,9 +101,10 @@
               id="email"
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter your Email"
-       
             />
-              <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{emailError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ emailError }}
+            </p>
           </div>
           <div class="w-full">
             <label for="sector" class="text-sm text-zinc-400 font-light"
@@ -105,7 +114,6 @@
             <select
               id="sector"
               class="w-full border-zinc-300 rounded-md border-2 p-2"
-              
             >
               <option selected value="">Choose a sector</option>
               <option value="sec-op1">Aerospace</option>
@@ -123,7 +131,9 @@
               <option value="sec-op13">Pharmaceuticals</option>
               <option value="sec-op14">Solar</option>
             </select>
-              <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{sectorError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ sectorError }}
+            </p>
           </div>
         </div>
         <div class="md:flex gap-x-5 mt-3">
@@ -136,11 +146,13 @@
               id="phoneno"
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter your Phone Number"
-              minlength="10" maxlength="10"
+              minlength="10"
+              maxlength="10"
               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-              
             />
-              <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{phoneError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ phoneError }}
+            </p>
           </div>
           <div class="w-full">
             <label for="organization" class="text-sm text-zinc-400 font-light"
@@ -150,7 +162,6 @@
             <select
               id="organization"
               class="w-full border-zinc-300 rounded-md border-2 p-2"
-             
             >
               <option selected value="" disabled>Choose organization</option>
               <option value="org-op1">Product Development Lab</option>
@@ -160,7 +171,9 @@
               <option value="org-op5">Manufacturing Industry</option>
               <option value="org-op6">Other</option>
             </select>
-              <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{organizationError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ organizationError }}
+            </p>
           </div>
         </div>
 
@@ -173,7 +186,6 @@
               <select
                 id="profession"
                 class="w-full border-zinc-300 rounded-md border-2 p-2"
-               
               >
                 <option selected value="">Choose profession</option>
                 <option value="prof-op1">Student</option>
@@ -184,19 +196,32 @@
                 <option value="prof-op4">Lab Incharge/technician</option>
                 <option value="prof-op5">Other</option>
               </select>
-                <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{professionError}}</p>
+              <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+                {{ professionError }}
+              </p>
             </div>
           </div>
         </div>
         <div class="flex mt-6 items-center">
           <label for="terms-condition">
-          <input class="w-4 h-4 mr-2 rounded-sm" type="checkbox" name="terms-conditions" id="terms-conditions">
-            I agree to <a class="text-primary" href="">terms & conditions/ </a> <a class="text-primary" href="">Privacy Policy</a>
+            <input
+              class="w-4 h-4 mr-2 rounded-sm"
+              type="checkbox"
+              name="terms-conditions"
+              id="terms-conditions"
+            />
+            I agree to <a class="text-primary" routerLink="/terms-and-conditions">terms & conditions/ </a>
+              <a class="text-primary" routerLink="/privacy-policy">Privacy Policy</a>
           </label>
         </div>
-         <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{termsError}}</p>
+        <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+          {{ termsError }}
+        </p>
         <div class="mt-6 flex justify-end">
-          <button class="bg-secondary p-3 px-5 rounded-lg text-white" (click)="sendBetaInfo()">
+          <button
+            class="bg-secondary p-3 px-5 rounded-lg text-white"
+            (click)="sendBetaInfo()"
+          >
             Submit
           </button>
         </div>
