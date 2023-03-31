@@ -1,5 +1,7 @@
 .progfile-img{border-radius: 1rem;z-index: -1;filter: brightness(.6) grayscale(1);transition: filter 0.5s ease-in-out;}
 .profile-card:hover .progfile-img{filter: brightness(.8) grayscale(0);}
+.progfile-img.center{filter: brightness(.8) grayscale(0);}
+
 .profile-summery{height: 0;transition: transform 0.26s ease;}
 .profile-card:hover .profile-summery{height: auto;}
 .out-team-btn{color: rgb(131, 131, 131);position: relative;}

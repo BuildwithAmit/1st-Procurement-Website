@@ -24,16 +24,20 @@ export class TeamCarouselComponent {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1
+        items: 1,
+        center:true
       },
       400: {
-        items: 2
+        items: 2,
+         center:false
       },
       740: {
-        items: 3
+        items: 3,
+        center:false
       },
       940: {
-        items: 3
+        items: 3,
+        center:false
       }
     },
     nav: false
@@ -58,8 +62,8 @@ teamData = [
   },
     {
       id: '3',
-      name: "Juned Pothwala",
-      designation: 'Developer',
+      name: "Juned Pothwale",
+      designation: 'Backend Developer',
       img: "../../../assets/asserts/team/juned.jpeg",
       summary: "",
         profileurl:"https://www.linkedin.com/in/junedpothawale"
@@ -67,7 +71,7 @@ teamData = [
     {
       id: '4',
       name: "Shalil Jaiswar",
-      designation: 'Developer',
+      designation: 'Frontend Developer',
       img: "../../../assets/asserts/team/shalil.jpeg",
       summary: "",
         profileurl:"https://www.linkedin.com/in/shaxlil/"
@@ -76,7 +80,7 @@ teamData = [
     {
       id: '5',
       name: "Rushikesh Aher",
-      designation: 'Developer',
+      designation: 'Fullstack Developer',
       img: "../../../assets/asserts/team/rushi.jpeg",
       summary: "",
         profileurl:"https://www.linkedin.com/in/rushikeshaher"
