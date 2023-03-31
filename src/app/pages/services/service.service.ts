@@ -1,20 +1,32 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  private apiUrl = 'https://api.example.com';
+  private apiUrl = environment.api_url;
 
   constructor(private http: HttpClient) { }
 
-  getEndpoint1() {
-    return this.http.get(`${this.apiUrl}/endpoint1`);
+  setSubscribed(data:any) {
+    return this.http.post(`${this.apiUrl}/newsletter`, data);
+  }
+  setReqRawMatrial(data:any) {
+    return this.http.post(`${this.apiUrl}/rawmetarial`, data);
+  }
+  contactUs(data:any) {
+    return this.http.post(`${this.apiUrl}/contactus`, data);
+  }
+  setReqPartner(data:any) {
+    return this.http.post(`${this.apiUrl}/partner`, data);
+  }
+  joinBeta(data:any) {
+    return this.http.post(`${this.apiUrl}/beta`, data);
   }
 
-  postEndpoint2(data:any) {
-    return this.http.post(`${this.apiUrl}/endpoint2`, data);
-  }
 }

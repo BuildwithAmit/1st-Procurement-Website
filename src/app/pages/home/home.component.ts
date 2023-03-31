@@ -1,8 +1,8 @@
-import { Component, NgModule, ViewChild, ElementRef, AfterViewInit,Input } from '@angular/core';
+import { Component, NgModule, ViewChild, ElementRef, AfterViewInit,Input, } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { SimpleScrollSpyModule } from 'angular-simple-scroll-spy';
 import { Directive, HostListener } from '@angular/core';
-// import { ServiceService } from '../services/service.service';
+import { ServiceService } from '../services/service.service';
 declare let Rellax:any;
 declare let $: any
 declare let AOS :any;
@@ -16,7 +16,7 @@ declare let Typed:any;
 
 
 export class HomeComponent {
-  constructor(private elementRef: ElementRef){window.scrollTo(0,0);}
+  constructor(private elementRef: ElementRef,private service:ServiceService){window.scrollTo(0,0);}
 
   ngOnInit(){
     const rellax = new Rellax('.rellax');
@@ -110,6 +110,10 @@ export class HomeComponent {
       $('#email').removeClass('error-b');
        this.emailError=''
       alert('done')
+
+      this.service.setSubscribed(email).subscribe((res:any)=>{
+        console.log(res);
+      })
   }
   }
 

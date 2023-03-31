@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
@@ -40,6 +41,7 @@ import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.co
   imports: [
     SimpleScrollSpyModule,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     CarouselModule ,
     BrowserAnimationsModule,
