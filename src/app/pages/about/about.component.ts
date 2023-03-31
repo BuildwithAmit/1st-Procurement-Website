@@ -142,7 +142,8 @@ core_value_data = [
     navText: ['', ''],
     responsive: {
       0: {
-        items: 2
+        items: 2,
+        center:true
       },
       400: {
         items: 3
