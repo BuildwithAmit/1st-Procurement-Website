@@ -14,13 +14,13 @@
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let items of teamData">
           <div id="{{items.id}}" class="w-[18rem] h-[27rem] relative profile-card">
-            <img class="progfile-img img-cover absolute top-0 left-0" src="https://images.unsplash.com/photo-1610088441520-4352457e7095?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTZ8fG1lbnxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60" alt="profile">
+            <img class="progfile-img img-cover absolute top-0 left-0" src="{{items.img}}">
             <div class="w-full h-full p-5 flex flex-col justify-between text-white">
               <div><p>~ {{items.designation}}</p></div>
               <div>
                 <p class="text-xl font-semibold">{{items.name}}</p>
                 <div class="profile-summery overflow-hidden">
-                  <p id="summary-{{items.id}}" class=" text-xs font-light mt-3" >{{items.summary}}</p>
+                  <a href="{{items.profileurl}}" id="summary-{{items.id}}" target="_blank" class=" text-xs font-light mt-3" >~ Linkedin</a>
                 </div>
               </div>
             </div>
