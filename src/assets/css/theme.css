@@ -5,6 +5,7 @@
   margin-bottom: 0;
   font-family: 'Poppins', sans-serif;
 }
+body{-moz-user-select: none; -webkit-user-select: none;}
 html{scroll-behavior: smooth;}
 /*  */
 ul{list-style: none;padding: 0;}

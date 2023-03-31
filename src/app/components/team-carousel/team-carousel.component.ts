@@ -39,39 +39,64 @@ export class TeamCarouselComponent {
     nav: false
   }
 
-teamData=[
-  {
-    id:'1',
-    name:'Amit J',
-    designation: 'Founder',
-    summary:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
+teamData = [
+    {
+      id: '1',
+      name: "Amit Jadhwar",
+      designation: 'Founder',
+    img: "../../../assets/asserts/team/amit.jpeg",
+    summary: "",
+      profileurl:"https://www.linkedin.com/in/amit-jadhwar-b98ab5147"
+    },
+    {
+      id: '2',
+      name: "Sadanand Gore",
+      designation: 'Operational',
+      img: "../../../assets/asserts/team/sadanad.jpeg",
+      summary: "",
+      profileurl:""
   },
-  {
-    id:'2',
-    name:'Juned',
-    designation: 'Developer',
-    summary:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-  },
-  {
-    id:'3',
-    name:'sadanand',
-    designation: 'operational',
-    summary:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-  },
-  {
-    id:'4',
-    name:'SHAlil',
-    designation: 'developer',
-    summary:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-  },
-  {
-    id:'5',
-    name:'rushikesh',
-    designation: 'developer',
-    summary:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,"
-  }
-]
+    {
+      id: '3',
+      name: "Juned Pothwala",
+      designation: 'Developer',
+      img: "../../../assets/asserts/team/juned.jpeg",
+      summary: "",
+        profileurl:"https://www.linkedin.com/in/junedpothawale"
+    },
+    {
+      id: '4',
+      name: "Shalil Jaiswar",
+      designation: 'Developer',
+      img: "../../../assets/asserts/team/shalil.jpeg",
+      summary: "",
+        profileurl:"https://www.linkedin.com/in/shaxlil/"
+    },
+    
+    {
+      id: '5',
+      name: "Rushikesh Aher",
+      designation: 'Developer',
+      img: "../../../assets/asserts/team/rushi.jpeg",
+      summary: "",
+        profileurl:"https://www.linkedin.com/in/rushikeshaher"
+    },
 
+  ]
+   mentors_data = [
+    {
+      id: '1',
+      name: "Amit Jadhwar",
+      designation: 'founder',
+      img: "../../../assets/asserts/team/man-1.png"
+    },
+    {
+      id: '1',
+      name: "Sadanand Gore",
+      designation: 'marketing',
+      img: "../../../assets/asserts/team/man-2.png"
+    },
+  ]
 mentorData=[
   {
     id:'1',

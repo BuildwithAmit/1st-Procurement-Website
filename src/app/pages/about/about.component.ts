@@ -37,28 +37,28 @@ core_value_data = [
       id: '1',
       name: "Amit Jadhwar",
       designation: 'founder',
-      img: "../../../assets/asserts/team/man-1.png"
+      img: "../../../assets/asserts/team/amit.jpeg"
     },
     {
-      id: '1',
+      id: '2',
       name: "Sadanand Gore",
       designation: 'marketing',
-      img: "../../../assets/asserts/team/man-2.png"
+      img: "../../../assets/asserts/team/sadanad.jpeg"
     },
     {
-      id: '1',
+      id: '3',
       name: "Shalil Jaiswar",
       designation: 'developer',
-      img: "../../../assets/asserts/team/man-3.png"
+      img: "../../../assets/asserts/team/juned.jpeg"
     },
     {
-      id: '1',
-      name: "Juned",
+      id: '4',
+      name: "Juned Pothwala",
       designation: 'developer',
-      img: "../../../assets/asserts/team/man-1.png"
+      img: "../../../assets/asserts/team/shalil.jpeg"
     },
     {
-      id: '1',
+      id: '5',
       name: "Rushikesh Aher",
       designation: 'developer',
       img: "../../../assets/asserts/team/man-2.png"
