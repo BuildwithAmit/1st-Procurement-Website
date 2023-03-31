@@ -69,14 +69,14 @@ export class HomeComponent {
   offers_data = [
     {
       id: '1',
-      for:'Matrial Selection',
+      for:'Material Selection',
       title: 'Don’t waste your time in reading literature, research papers and browsing the web to find out the raw material for your product.',
-      content: 'Find best suitable raw material for your Product or process with the help of ProducTry.Let AI/ML handle the tasks.',
+      content: 'Find best suitable raw material for your Product or process with the help of ProducTry.',
       img: '../../../assets/asserts/illustrator/matrial-selection.png'
     },
     {
       id: '2',
-      for:'Matrial Procurement',
+      for:'Material Procurement',
       title: 'Stuck in procuring raw Material for your research and speciality production.',
       content: 'Make data based procurement decisions and we will deliver the material at your doorstep.',
       img: '../../../assets/asserts/illustrator/purches.png'
@@ -86,7 +86,7 @@ export class HomeComponent {
       id: '3',
       for:'Dashboards and Analytics',
       title: 'What you can measure, you can improve.',
-      content: 'Optimize your hardware Product development process with the help of ProducTry.Make data driven decisions with dashboards and data analytics.',
+      content: `Optimize your hardware Product development process with the help of ProducTry. Make data driven decisions with the help of Dashboards and Analytics.`,
       img: '../../../assets/asserts/illustrator/dashboard.png'
     },
 

@@ -18,6 +18,8 @@ import { JoinBetaComponent } from './pages/join-beta/join-beta.component';
 import {SimpleScrollSpyModule} from "angular-simple-scroll-spy";
 import { FAQComponent } from './components/faq/faq.component';
 import { TeamCarouselComponent } from './components/team-carousel/team-carousel.component';
+import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +33,8 @@ import { TeamCarouselComponent } from './components/team-carousel/team-carousel.
     JoinBetaComponent,
     FAQComponent,
     TeamCarouselComponent,
+    TermsConditionsComponent,
+    PrivacyPolicyComponent,
 
   ],
   imports: [

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,ElementRef } from '@angular/core';
 declare let $:any;
 @Component({
   selector: 'app-join-beta',
@@ -22,9 +22,8 @@ export class JoinBetaComponent {
   professionError:any
   termsError:any
 
-ngOnInit():void {
-  window.scrollTo(0,0);
-  }
+constructor(){window.scrollTo(0,0);}
+
 
 sendBetaInfo(){
   let name = $('#name').val();

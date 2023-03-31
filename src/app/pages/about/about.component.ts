@@ -19,7 +19,7 @@ core_value_data = [
   {
       id:1,
       title:"Collaboration",
-      content:"Teamwork and cooperation are essential for achieving goals and delivering the best possible results.<br/> We encourage open communication, active listening, and a willingness to share ideas, feedback, and insights. By working together, we can achieve more than we ever could alone."
+      content:"Teamwork and cooperation are essential for achieving goals and delivering the best possible results. We encourage open communication, active listening, and a willingness to share ideas, feedback, and insights. By working together, we can achieve more than we ever could alone."
     },
   {
       id:2,
