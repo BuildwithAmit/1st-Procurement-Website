@@ -1,6 +1,5 @@
 .progfile-img{border-radius: 1rem;z-index: -1;filter: brightness(.6) grayscale(1);transition: filter 0.5s ease-in-out;}
 .profile-card:hover .progfile-img{filter: brightness(.8) grayscale(0);}
-.progfile-img.center{filter: brightness(.8) grayscale(0);}
 
 .profile-summery{height: 0;transition: transform 0.26s ease;}
 .profile-card:hover .profile-summery{height: auto;}
@@ -8,3 +7,29 @@
 .out-team-btn.active{padding-left: 5.5rem;font-size: 1.5rem; color: #000;}
 .out-team-btn.active::before{content: '';position: absolute; width: 5rem ;height: 3px;background: #000;left: 0;top: 50%;}
 .our-team-carousel ::ng-deep .owl-item{display: flex !important;justify-content: center !important;}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .team ::ng-deep .owl-carousel {overflow-y: visible;}
+  .team ::ng-deep .owl-carousel .owl-item.center  .profile-card .progfile-img{filter: brightness(.8) grayscale(0);}
+  .team ::ng-deep .owl-carousel .owl-item.center  .profile-card .profile-summery{height: auto;}
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}

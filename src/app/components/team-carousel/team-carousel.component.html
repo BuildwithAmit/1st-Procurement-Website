@@ -10,10 +10,11 @@
 
   </div>
   <div class="col-span-1 lg:col-span-2 our-team-carousel">
+    <div class="team">
     <ng-container *ngIf="showTeam;else showMentors" >
       <owl-carousel-o [options]="customOptions">
         <ng-template carouselSlide *ngFor="let items of teamData">
-          <div id="{{items.id}}" class="w-[18rem] h-[27rem] relative profile-card" >
+          <div id="{{items.id}}" class="w-[15rem] h-[20rem] md:w-[18rem] md:h-[27rem] relative profile-card" >
             <img class="progfile-img img-cover absolute top-0 left-0" src="{{items.img}}">
             <div class="w-full h-full p-5 flex flex-col justify-between text-white">
               <div><p>~ {{items.designation}}</p></div>
@@ -28,6 +29,7 @@
         </ng-template>
       </owl-carousel-o>
     </ng-container>
+  </div>
     <!-- mentor -->
     <ng-template #showMentors>
       <owl-carousel-o [options]="customOptions">

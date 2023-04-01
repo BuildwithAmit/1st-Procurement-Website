@@ -24,12 +24,14 @@ export class TeamCarouselComponent {
     navText: ['', ''],
     responsive: {
       0: {
-        items: 1,
-        center:true
+        items: 2,
+        center:true,
+        margin:10,
       },
       400: {
+        margin:5,
         items: 2,
-         center:false
+        center:true
       },
       740: {
         items: 3,
@@ -76,7 +78,7 @@ teamData = [
       summary: "",
         profileurl:"https://www.linkedin.com/in/shaxlil/"
     },
-    
+
     {
       id: '5',
       name: "Rushikesh Aher",
