@@ -111,7 +111,7 @@
     </div>
     <div class="flex justify-center p-10">
       <div class="w-full lg:w-1/2 h-auto lg:h-[25rem] mt-[-15rem] ">
-        <iframe class="w-full h-full rounded-3xl" src="https://www.youtube.com/embed/DDEkCjTRZYk"
+        <iframe class="w-full h-full rounded-3xl" src="https://www.youtube.com/embed/DDEkCjTRZYk?autoplay=1&mute=1&controls=0&loop=1&playlist=DDEkCjTRZYk"
           title="YouTube video player" frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowfullscreen></iframe>
@@ -157,6 +157,28 @@
     </div>
   </div>
   <!-- give away -->
+  <!-- supporters -->
+   <div class="p-5  lg:p-16 mt-10 our-client">
+    <h1 class="text-center header-text font-semibold">We are Supported By</h1>
+    <div class="mt-5">
+      <owl-carousel-o [options]="customOptions">
+        <ng-template
+          carouselSlide
+          *ngFor="let items of supporters_data"
+          class="flex justify-center"
+        >
+          <div class="w-[10rem] h-[7rem]">
+            <img
+              class="img-contain"
+              src="{{ items.img }}"
+              alt="{{ items.alt }}"
+            />
+          </div>
+        </ng-template>
+      </owl-carousel-o>
+    </div>
+  </div>
+  <!-- supporters -->
   <!-- subs email -->
   <div class="p-5 lg:p-10">
     <div class="md:flex justify-between items-center">
