@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SimpleScrollSpyModule } from 'angular-simple-scroll-spy';
 import { Directive, HostListener } from '@angular/core';
 import { ServiceService } from '../services/service.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+
 declare let Rellax:any;
 declare let $: any
 declare let AOS :any;
@@ -92,6 +94,33 @@ export class HomeComponent {
 
   ]
 
+  supporters_data = [
+    {
+      id: "1",
+      img: "../../../assets/asserts/ourSupporters/IIITH.png",
+      alt:"StartupIndia-logo"
+    },
+    {
+      id: "2",
+      img: "../../../assets/asserts/ourSupporters/CIE.png",
+      alt:"MSME-logo"
+    },
+    {
+      id: "3",
+      img: "../../../assets/asserts/ourSupporters/MEIT.svg",
+      alt:"MEIT-logo"
+    },
+    {
+      id: "4",
+      img: "../../../assets/asserts/ourSupporters/StartupIndia.svg",
+      alt:"iithydrabad"
+    },
+    {
+      id: "5",
+      img: "../../../assets/asserts/ourSupporters/MSME.png",
+      alt:"iithydrabad"
+    },
+  ]
 
   regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   formError: boolean = false;
@@ -115,6 +144,37 @@ export class HomeComponent {
         console.log(res);
       })
   }
+  }
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    autoplayTimeout:1000,
+    autoplaySpeed:700,
+    autoplay:true,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 2,
+        center:true
+      },
+      400: {
+        items: 3
+      },
+      740: {
+        items: 4
+      },
+      940: {
+        items: 4
+      },
+      1024:{
+        items:5
+      }
+    },
+    nav: false
   }
 
 }

@@ -50,22 +50,22 @@ teamData = [
       id: '1',
       name: "Amit Jadhwar",
       designation: 'Founder',
-    img: "../../../assets/asserts/team/amit.jpeg",
+    img: "../../../assets/asserts/team/amit.png",
     summary: "",
       profileurl:"https://www.linkedin.com/in/amit-jadhwar-b98ab5147"
     },
     {
       id: '2',
       name: "Sadanand Gore",
-      designation: 'Operational',
-      img: "../../../assets/asserts/team/sadanad.jpeg",
+      designation: 'Operations and Sales',
+      img: "../../../assets/asserts/team/sada.png",
       summary: "",
       profileurl:""
   },
     {
       id: '3',
       name: "Juned Pothwale",
-      designation: 'Backend Developer',
+      designation: 'Engineering',
       img: "../../../assets/asserts/team/juned.jpeg",
       summary: "",
         profileurl:"https://www.linkedin.com/in/junedpothawale"
@@ -73,7 +73,7 @@ teamData = [
     {
       id: '4',
       name: "Shalil Jaiswar",
-      designation: 'Frontend Developer',
+      designation: 'Engineering',
       img: "../../../assets/asserts/team/shalil.jpeg",
       summary: "",
         profileurl:"https://www.linkedin.com/in/shaxlil/"
@@ -82,7 +82,7 @@ teamData = [
     {
       id: '5',
       name: "Rushikesh Aher",
-      designation: 'Fullstack Developer',
+      designation: 'Engineering',
       img: "../../../assets/asserts/team/rushi.jpeg",
       summary: "",
         profileurl:"https://www.linkedin.com/in/rushikeshaher"
