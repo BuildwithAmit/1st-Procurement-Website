@@ -9,6 +9,7 @@ declare let Rellax:any;
 declare let $: any
 declare let AOS :any;
 declare let Typed:any;
+declare let Swal:any;
 
 @Component({
   selector: 'app-home',
@@ -138,12 +139,22 @@ export class HomeComponent {
     } else {
       $('#email').removeClass('error-b');
        this.emailError=''
-      alert('done')
       var data={
         'email': email
       }
       this.service.setSubscribed(data).subscribe((res:any)=>{
-        console.log(res);
+        if(res.status === 200){
+          Swal.fire(
+            'Successfully',
+            res.message,
+            'success'
+          )
+        }else if(res.status == 400){
+          this.formError = true
+          this.emailError = res.message.email[0]
+        }
+
+
       })
   }
   }

@@ -40,7 +40,7 @@
         the right raw materials and sourcing them.
       </p>
 
-      <div class="form mt-5" id="form">
+      <form class="form mt-5" id="form">
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
             <div class="w-full">
@@ -155,11 +155,11 @@
           {{ termsError }}
         </p>
         <div class="mt-6 flex justify-end">
-          <button class="bg-secondary p-3 px-5 rounded-lg text-white" (click)="sendBetaInfo()">
+          <button class="bg-secondary p-3 px-5 rounded-lg text-white" (click)="sendBetaInfo($event)">
             Submit
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
