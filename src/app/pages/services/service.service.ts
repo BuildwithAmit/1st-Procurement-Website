@@ -22,8 +22,10 @@ export class ServiceService {
   contactUs(data:any) {
     return this.http.post(`${this.apiUrl}/contactus`, data);
   }
-  setReqPartner(data:any) {
-    return this.http.post(`${this.apiUrl}/partner`, data);
+  setReqPartner(data:any,headers:any) {
+    return this.http.post(`${this.apiUrl}/partner`, data,{
+      headers:headers
+    });
   }
   joinBeta(data:any) {
     return this.http.post(`${this.apiUrl}/beta`, data);

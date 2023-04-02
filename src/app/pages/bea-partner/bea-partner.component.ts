@@ -2,6 +2,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from '../services/service.service';
+import {NgForm} from '@angular/forms';
+import { HttpHeaders } from '@angular/common/http';
 declare let $:any;
 declare let AOS :any;
 declare let Swal :any;
@@ -176,17 +178,15 @@ matrialSelected(data:any){
 }
 
 uploadedFile(e:any){
-  var data = e.target.files
-  var name = data.name
-  const formData = new FormData();
-  // this.uploadedFIle = formData.append('image', data,name);
-  this.uploadedFIle = data
-  console.log(this.uploadedFIle);
+  // var name = data.name
+  // const formData = new FormData();
+  this.uploadedFIle = e.target.files[0]
+  // console.log(this.uploadedFIle);
 
 }
 
 
-  sendPartnerInfo(){
+  sendPartnerInfo(f:NgForm){
   let company_name = $('#companyname').val();
   let name = $('#name').val();
   let email = $('#email').val();
@@ -324,21 +324,30 @@ uploadedFile(e:any){
         'address':address,
         'card':this.uploadedFIle,
       }
-      console.log(this.uploadedFIle);
+      const formData = new FormData();
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Accept', 'application/json')
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone_no', phone);
+      formData.append('city', city);
+      formData.append('material', this.matrailSelectedvalue);
+      formData.append('company_name', company_name);
+      formData.append('company_gst', gstno);
+      formData.append('website_url', weburl);
+      formData.append('address', address);
+      formData.append('card', this.uploadedFIle, this.uploadedFIle.name);
 
-      this.services.setReqPartner(data).subscribe((res:any)=>{
+      this.services.setReqPartner(formData,headers).subscribe((res:any)=>{
         if (res.status === 200) {
-          console.log(res);
-
+          // console.log(res);
           Swal.fire({
             title: res.message,
             icon: 'success',
             confirmButtonText: 'OK',
           }).then((result: any) => {
-            if (result.isConfirmed) {
-              // this.router.navigateByUrl('/beta')
-              $('#form')[0].reset()
-            }
+            f.reset();
           })
         } else if (res.status == 400) {
           if (res.message.email[0] != '') {
