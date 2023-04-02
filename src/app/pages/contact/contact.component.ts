@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ServiceService } from '../services/service.service';
 declare let $:any;
+declare let Swal:any;
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
@@ -29,7 +30,8 @@ ngOnInit(): void{
   })
 
 }
-sendContactInfo(){
+sendContactInfo(e:any){
+  e.preventDefault();
   let name = $('#name').val();
   let email = $('#email').val();
   let phone = $('#phoneno').val();
@@ -98,8 +100,26 @@ sendContactInfo(){
       'company_name':company_name,
       'message':message,
     }
-    this.service.contactUs(data).subscribe((res)=>{
+    this.service.contactUs(data).subscribe((res:any)=>{
+      if (res.status === 200) {
+        console.log(res);
 
+        Swal.fire({
+          title: res.message,
+          icon: 'success',
+          confirmButtonText: 'OK',
+        }).then((result: any) => {
+          if (result.isConfirmed) {
+            $('#form')[0].reset()
+          }
+        })
+      } else if (res.status == 400) {
+        if (res.message.email[0] != '') {
+          this.emailError = res.message.email[0];
+          this.formError = true;
+          $('#email').addClass('error-b');
+        }
+      }
     })
 
   }

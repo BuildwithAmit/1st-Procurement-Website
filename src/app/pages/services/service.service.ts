@@ -14,13 +14,7 @@ export class ServiceService {
   constructor(private http: HttpClient) { }
 
   setSubscribed(data:any) {
-    // return this.http.post(`${this.apiUrl}/newsletter`, data);
-
     return this.http.post<any>(this.apiUrl+'/newsletter', data)
-    .pipe(
-      tap(_ => console.log('')),
-      catchError(this.handleError<any>('newsletter'))
-    );
   }
   setReqRawMatrial(data:any) {
     return this.http.post(`${this.apiUrl}/rawmetarial`, data);
@@ -35,13 +29,5 @@ export class ServiceService {
     return this.http.post(`${this.apiUrl}/beta`, data);
   }
 
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      console.log(`${operation} failed: ${error.message}`);
-      return of(result as T);
-    };
-  }
 
 }

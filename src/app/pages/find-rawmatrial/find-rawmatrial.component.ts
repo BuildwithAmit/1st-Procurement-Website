@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from '../services/service.service';
 declare let $: any
 declare let AOS: any;
+declare let Swal: any;
 
 @Component({
   selector: 'app-find-rawmatrial',
@@ -173,7 +174,8 @@ selectMatrial(e:any){
 
 }
 
-  sendRawMaterialInfo() {
+  sendRawMaterialInfo(e:any) {
+    e.preventDefault();
     let material_description = $('#matrial-desc').val();
     let material_requirement = $('#matrial-requirement').val();
     let name = $('#name').val();
@@ -283,7 +285,27 @@ selectMatrial(e:any){
         'address':address,
       }
       this.services.setReqRawMatrial(data).subscribe((res:any)=>{
+        if (res.status === 200) {
+          console.log(res);
 
+          Swal.fire({
+            title: res.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+          }).then((result: any) => {
+            if (result.isConfirmed) {
+              // this.router.navigateByUrl('/beta')
+              window.location.reload();
+              $('#form')[0].reset()
+            }
+          })
+        } else if (res.status == 400) {
+          if (res.message.email[0] != '') {
+            this.emailError = res.message.email[0];
+            this.formError = true;
+            $('#email').addClass('error-b');
+          }
+        }
       })
 
 

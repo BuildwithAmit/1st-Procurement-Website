@@ -111,7 +111,7 @@
         inventore optio.
       </p>
 
-      <div class="form mt-5">
+      <form id="form" class="form mt-5">
         <div>
           <label for="name" class="text-sm text-zinc-400 font-light">Name</label
           ><br />
@@ -191,12 +191,12 @@
         <div class="mt-6 flex justify-end">
           <button
             class="bg-secondary p-3 px-5 rounded-lg text-white"
-            (click)="sendContactInfo()"
+            (click)="sendContactInfo($event)"
           >
             Submit
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ServiceService } from '../services/service.service';
 declare let $:any;
 declare let AOS :any;
+declare let Swal :any;
 
 
 @Component({
@@ -175,11 +176,13 @@ matrialSelected(data:any){
 }
 
 uploadedFile(e:any){
-  var data = e.target.files[0]
+  var data = e.target.files
   var name = data.name
   const formData = new FormData();
   // this.uploadedFIle = formData.append('image', data,name);
   this.uploadedFIle = data
+  console.log(this.uploadedFIle);
+
 }
 
 
@@ -321,8 +324,29 @@ uploadedFile(e:any){
         'address':address,
         'card':this.uploadedFIle,
       }
-      this.services.setReqPartner(data).subscribe((res:any)=>{
+      console.log(this.uploadedFIle);
 
+      this.services.setReqPartner(data).subscribe((res:any)=>{
+        if (res.status === 200) {
+          console.log(res);
+
+          Swal.fire({
+            title: res.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+          }).then((result: any) => {
+            if (result.isConfirmed) {
+              // this.router.navigateByUrl('/beta')
+              $('#form')[0].reset()
+            }
+          })
+        } else if (res.status == 400) {
+          if (res.message.email[0] != '') {
+            this.emailError = res.message.email[0];
+            this.formError = true;
+            $('#email').addClass('error-b');
+          }
+        }
       })
 
     }
