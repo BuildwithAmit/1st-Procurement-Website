@@ -177,7 +177,7 @@
 
       </div>
 
-      <form id="form" class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:w-1/2">
+      <form  #f="ngForm" (ngSubmit)="sendPartnerInfo(f)" class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:w-1/2" enctype="multipart/form-data">
         <p>Be a partner</p>
 
         <div class="overflow-hidden">
@@ -343,7 +343,7 @@
                    PNG or JPG
                 </p>
               </div>
-              <input  id="dropzone-file" type="file" class="hidden" accept="image/x-png,image/gif,image/jpeg" (change)="uploadedFile($event)"/>
+              <input  id="dropzone-file" type="file" class="hidden" accept="image/x-png,image/gif,image/jpeg,image/png" (change)="uploadedFile($event)"/>
             </label>
 
           </div>
@@ -366,9 +366,7 @@
             {{ termsError }}
           </p>
         <div class="mt-5 flex justify-end">
-          <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm"
-          (click)="sendPartnerInfo()"
-          >
+          <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm">
             Submit
           </button>
         </div>
