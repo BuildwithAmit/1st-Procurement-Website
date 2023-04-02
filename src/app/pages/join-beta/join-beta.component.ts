@@ -1,4 +1,7 @@
 import { Component,ElementRef } from '@angular/core';
+import { ServiceService } from '../services/service.service';
+import { Router } from '@angular/router';
+import { Route } from '@angular/router';
 declare let $:any;
 @Component({
   selector: 'app-join-beta',
@@ -22,7 +25,7 @@ export class JoinBetaComponent {
   professionError:any
   termsError:any
 
-constructor(){window.scrollTo(0,0);}
+constructor(private services:ServiceService){window.scrollTo(0,0);}
 
 
 sendBetaInfo(){
@@ -34,6 +37,7 @@ sendBetaInfo(){
   let organization = $('#organization').val();
   let profession = $('#profession').val();
   let terms = $('#terms-conditions');
+  console.log(sector)
 
 console.log(terms.is(':checked'));
   if(name == null || name == undefined || name == ''){
@@ -115,7 +119,19 @@ console.log(terms.is(':checked'));
      this.organizationError = ''
      this.professionError = ''
      this.termsError = ''
-    alert('done')
+
+     var data ={
+      'name':name,
+      'email':email,
+      'phone_no':phone,
+      'company_name':company_name,
+      'company_sector':sector,
+      'company_organization':organization,
+      'company_profession':profession,
+     }
+     this.services.joinBeta(data).subscribe((res:any)=>{
+
+     })
 
   }
 

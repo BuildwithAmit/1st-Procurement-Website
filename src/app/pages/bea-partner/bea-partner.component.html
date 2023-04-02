@@ -191,6 +191,8 @@
                 id="select-{{ items.name }}"
                 name="matrial"
                 type="radio"
+                value="{{ items.name }}"
+                (click)="matrialSelected(items.name)"
               />
               <label
                 class="matrial-select-label text-sm rounded-full px-3 py-1"
@@ -341,7 +343,7 @@
                    PNG or JPG
                 </p>
               </div>
-              <input  id="dropzone-file" type="file" class="hidden" />
+              <input  id="dropzone-file" type="file" class="hidden" accept="image/x-png,image/gif,image/jpeg" (change)="uploadedFile($event)"/>
             </label>
 
           </div>

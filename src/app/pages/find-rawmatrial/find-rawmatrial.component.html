@@ -226,6 +226,8 @@
                   id="select-{{ items.name }}"
                   name="select-material"
                   type="radio"
+                  value="{{ items.name }}"
+                  (click)="selectMatrial($event)"
                 />
                 <label
                   class="matrial-select-label text-sm rounded-full px-3 py-1"

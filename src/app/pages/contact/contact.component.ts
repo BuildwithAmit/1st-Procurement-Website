@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServiceService } from '../services/service.service';
 declare let $:any;
 @Component({
   selector: 'app-contact',
@@ -6,6 +7,8 @@ declare let $:any;
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+
+constructor(private service:ServiceService){}
 
   regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexName: any = /^[a-zA-Z ]*$/;
@@ -87,7 +90,18 @@ sendContactInfo(){
     $('#phoneno').removeClass('error-b');
     $('#companyname').removeClass('error-b');
     $('#message').removeClass('error-b');
-    alert('done')
+
+    var data = {
+      'name': name ,
+      'email': email,
+      'phone_no':phone,
+      'company_name':company_name,
+      'message':message,
+    }
+    this.service.contactUs(data).subscribe((res)=>{
+
+    })
+
   }
 
 }

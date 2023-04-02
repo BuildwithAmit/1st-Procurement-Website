@@ -139,8 +139,10 @@ export class HomeComponent {
       $('#email').removeClass('error-b');
        this.emailError=''
       alert('done')
-
-      this.service.setSubscribed(email).subscribe((res:any)=>{
+      var data={
+        'email': email
+      }
+      this.service.setSubscribed(data).subscribe((res:any)=>{
         console.log(res);
       })
   }

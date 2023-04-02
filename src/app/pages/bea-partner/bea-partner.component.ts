@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from '../services/service.service';
 declare let $:any;
 declare let AOS :any;
 
@@ -26,7 +27,7 @@ $(document).ready(()=>{
 });
 }
 
-constructor(private route: ActivatedRoute) {
+constructor(private route: ActivatedRoute, private services:ServiceService) {
 }
 
 scrollToSection() {
@@ -167,6 +168,21 @@ faqData=[
   termsError:any
   selected: boolean = false;
 
+matrailSelectedvalue:any
+uploadedFIle:any
+matrialSelected(data:any){
+  this.matrailSelectedvalue = data
+}
+
+uploadedFile(e:any){
+  var data = e.target.files[0]
+  var name = data.name
+  const formData = new FormData();
+  // this.uploadedFIle = formData.append('image', data,name);
+  this.uploadedFIle = data
+}
+
+
   sendPartnerInfo(){
   let company_name = $('#companyname').val();
   let name = $('#name').val();
@@ -176,8 +192,8 @@ faqData=[
   let gstno = $('#gstno').val();
   let weburl = $('#weburl').val();
   let upload = $('#dropzone-file').val();
-    let address = $('#address').val();
-    let terms = $('#terms-conditions');
+  let address = $('#address').val();
+  let terms = $('#terms-conditions');
 
 
 
@@ -292,8 +308,23 @@ faqData=[
       this.gstError = ""
       this.uploadError = ""
       this.termsError = ""
-      
-      alert('done')
+
+      var data ={
+        'name':name,
+        'email':email,
+        'phone_no':phone,
+        'city':city,
+        'material':this.matrailSelectedvalue,
+        'company_name':company_name,
+        'company_gst':gstno,
+        'website_url':weburl,
+        'address':address,
+        'card':this.uploadedFIle,
+      }
+      this.services.setReqPartner(data).subscribe((res:any)=>{
+
+      })
+
     }
 
 }
