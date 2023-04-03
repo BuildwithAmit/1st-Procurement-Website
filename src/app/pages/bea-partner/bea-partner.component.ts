@@ -1,8 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from '../services/service.service';
+import {NgForm} from '@angular/forms';
+import { HttpHeaders } from '@angular/common/http';
 declare let $:any;
 declare let AOS :any;
+declare let Swal :any;
 
 
 @Component({
@@ -26,7 +30,7 @@ $(document).ready(()=>{
 });
 }
 
-constructor(private route: ActivatedRoute) {
+constructor(private route: ActivatedRoute, private services:ServiceService) {
 }
 
 scrollToSection() {
@@ -151,7 +155,7 @@ faqData=[
   regexName: any = /^[a-zA-Z ]*$/;
   regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
   regexGstNumber: any = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
-  regxWebURL = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  regxWebURL = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
   formError:boolean = false;
 
   nameError:any
@@ -167,7 +171,22 @@ faqData=[
   termsError:any
   selected: boolean = false;
 
-  sendPartnerInfo(){
+matrailSelectedvalue:any
+uploadedFIle:any
+matrialSelected(data:any){
+  this.matrailSelectedvalue = data
+}
+
+uploadedFile(e:any){
+  // var name = data.name
+  // const formData = new FormData();
+  this.uploadedFIle = e.target.files[0]
+  // console.log(this.uploadedFIle);
+
+}
+
+
+  sendPartnerInfo(f:NgForm){
   let company_name = $('#companyname').val();
   let name = $('#name').val();
   let email = $('#email').val();
@@ -176,8 +195,8 @@ faqData=[
   let gstno = $('#gstno').val();
   let weburl = $('#weburl').val();
   let upload = $('#dropzone-file').val();
-    let address = $('#address').val();
-    let terms = $('#terms-conditions');
+  let address = $('#address').val();
+  let terms = $('#terms-conditions');
 
 
 
@@ -292,8 +311,53 @@ faqData=[
       this.gstError = ""
       this.uploadError = ""
       this.termsError = ""
-      
-      alert('done')
+
+      var data ={
+        'name':name,
+        'email':email,
+        'phone_no':phone,
+        'city':city,
+        'material':this.matrailSelectedvalue,
+        'company_name':company_name,
+        'company_gst':gstno,
+        'website_url':weburl,
+        'address':address,
+        'card':this.uploadedFIle,
+      }
+      const formData = new FormData();
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'multipart/form-data');
+      headers.append('Accept', 'application/json')
+      formData.append('name', name);
+      formData.append('email', email);
+      formData.append('phone_no', phone);
+      formData.append('city', city);
+      formData.append('material', this.matrailSelectedvalue);
+      formData.append('company_name', company_name);
+      formData.append('company_gst', gstno);
+      formData.append('website_url', weburl);
+      formData.append('address', address);
+      formData.append('card', this.uploadedFIle, this.uploadedFIle.name);
+
+      this.services.setReqPartner(formData,headers).subscribe((res:any)=>{
+        if (res.status === 200) {
+          // console.log(res);
+          Swal.fire({
+            title: res.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+          }).then((result: any) => {
+            f.reset();
+          })
+        } else if (res.status == 400) {
+          if (res.message.email[0] != '') {
+            this.emailError = res.message.email[0];
+            this.formError = true;
+            $('#email').addClass('error-b');
+          }
+        }
+      })
+
     }
 
 }
