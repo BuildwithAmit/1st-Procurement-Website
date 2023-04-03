@@ -7,10 +7,11 @@ declare let $:any
 })
 export class LoaderComponent {
 ngOnInit():void{
+  $('.pre-loader').fadeIn();
   $(document).ready(function() {
-    $('.pre-loader').show();
+    $('.pre-loader').fadeIn();
     setTimeout(function() {
-      $('.pre-loader').hide();
+      $('.pre-loader').fadeOut();
     }, 2000);
   });
 }
