@@ -282,28 +282,19 @@ validateFile(file:any) {
     $('#gstno').addClass('error-b');
     this.gstError = 'Please enter valid GST number';
     this.formError = true;
-    }else if(weburl == null || weburl == undefined || weburl == ''){
-    $('#gstno').removeClass('error-b');
-    this.cityError = '';
-    $('#weburl').addClass('error-b');
-    this.weburlError = 'website url is required';
-    this.formError = true;
-    }else if(!this.regxWebURL.test(weburl)){
-    $('#weburl').addClass('error-b');
-    this.weburlError = 'please provid valid url';
-    this.formError = true;
-  } else if(upload == null || upload == undefined || upload == ''){
-    $('#weburl').removeClass('error-b');
-    this.cityError = '';
-      $('#upload').addClass('error-b');
-    this.uploadError = 'please upload required document';
-    this.formError = true;
-    } else if (this.filesize>3.0) {
+    }
+   
+      if (weburl && !this.regxWebURL.test(weburl)) {
+        $('#weburl').addClass('error-b');
+        this.weburlError = 'please provid valid url';
+        this.formError = true;
+      
+    } else if (this.uploadedFIle && this.filesize>3.0) {
        this.cityError = '';
       $('#upload').addClass('error-b');
     this.uploadError = 'maximum upload size is 2 MB. please upload compressed document';
     this.formError = true;
-    } else if (!this.validateFile(this.uploadedFIle.name)) {
+    } else if (this.uploadedFIle && !this.validateFile(this.uploadedFIle.name)) {
        this.cityError = '';
       $('#upload').addClass('error-b');
     this.uploadError = 'please upload image or pdf file only';
@@ -348,7 +339,8 @@ validateFile(file:any) {
         'website_url':weburl,
         'address':address,
         'card':this.uploadedFIle,
-      }
+        }
+        
       const formData = new FormData();
       const headers = new HttpHeaders();
       headers.append('Content-Type', 'multipart/form-data');
@@ -359,14 +351,21 @@ validateFile(file:any) {
       formData.append('city', city);
       formData.append('material', this.matrailSelectedvalue);
       formData.append('company_name', company_name);
-      formData.append('company_gst', gstno);
-      formData.append('website_url', weburl);
-      formData.append('address', address);
-      formData.append('card', this.uploadedFIle, this.uploadedFIle.name);
+        formData.append('company_gst', gstno);
+        console.log("herer");
+        if (weburl != undefined || weburl != null || weburl != '') {
+          formData.append('website_url', weburl);
+        }
+        formData.append('address', address);
+        if (this.uploadedFIle) {
+          formData.append('card', this.uploadedFIle, this.uploadedFIle.name);
+        } 
 
+    
       this.services.setReqPartner(formData,headers).subscribe((res:any)=>{
         if (res.status === 200) {
-          // console.log(res);
+          console.log(res);
+          console.log("inside 200");
           this.buttonText = "Submit"
           Swal.fire({
             title: res.message,
@@ -380,12 +379,17 @@ validateFile(file:any) {
             }
           })
         } else if (res.status == 400) {
+          console.log("inside 400");
            this.buttonText = "Submit"
-          if (res.message.email[0] != '') {
-            this.emailError = res.message.email[0];
-            this.formError = true;
-            $('#email').addClass('error-b');
+         Swal.fire({
+          title: res.message,
+          icon: 'error',
+          confirmButtonText: 'ERROR',
+        }).then((result: any) => {
+          if (result.isConfirmed) {
+            $('#form')[0].reset()
           }
+        })
         }
       })
 

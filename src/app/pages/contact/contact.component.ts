@@ -69,16 +69,9 @@ sendContactInfo(e:any){
     $('#phoneno').addClass('error-b');
     this.phoneError = 'please enter a valid phone address';
     this.formError = true;
-  }else if(company_name == null || company_name == undefined || company_name == ''){
-    $('#phoneno').removeClass('error-b');
-    this.phoneError = '';
-    $('#companyname').addClass('error-b');
-    this.companynameError = 'company name is required';
-    this.formError = true;
   } else if(message == null || message == undefined || message == ''){
     $('#companyname').removeClass('error-b');
     this.companynameError = '';
-
     $('#message').addClass('error-b');
     this.messageError = 'message is required';
     this.formError = true;
@@ -118,11 +111,15 @@ sendContactInfo(e:any){
         })
       } else if (res.status == 400) {
         this.buttonText = "Submit"
-        if (res.message.email[0] != '') {
-          this.emailError = res.message.email[0];
-          this.formError = true;
-          $('#email').addClass('error-b');
-        }
+        Swal.fire({
+          title: res.message,
+          icon: 'error',
+          confirmButtonText: '',
+        }).then((result: any) => {
+          if (result.isConfirmed) {
+            $('#form')[0].reset()
+          }
+        })
       }
     })
 
