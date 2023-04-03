@@ -165,7 +165,7 @@ export class FindRawmatrialComponent {
   addressError: any
   materialselectError: any
   selected: boolean = false;
-
+buttonText:any = "Submit";
 matrialSelected:any
 
 selectMatrial(e:any){
@@ -256,6 +256,7 @@ selectMatrial(e:any){
       this.termsError = 'please agree to terms & conditions/ privacy policy';
       this.formError = true;
     } else {
+      this.buttonText = "Submit..."
       $('#material_description').removeClass('error-b');
       $('#material_requirement').removeClass('error-b');
       $('#name').removeClass('error-b');
@@ -287,7 +288,7 @@ selectMatrial(e:any){
       this.services.setReqRawMatrial(data).subscribe((res:any)=>{
         if (res.status === 200) {
           console.log(res);
-
+          this.buttonText = "Submit"
           Swal.fire({
             title: res.message,
             icon: 'success',
@@ -300,6 +301,7 @@ selectMatrial(e:any){
             }
           })
         } else if (res.status == 400) {
+          this.buttonText = "Submit"
           if (res.message.email[0] != '') {
             this.emailError = res.message.email[0];
             this.formError = true;

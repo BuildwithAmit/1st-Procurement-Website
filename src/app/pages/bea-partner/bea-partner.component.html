@@ -4,27 +4,25 @@
   class="flex flex-col justify-center items-center p-2 w-full h-[70vh] relative"
   data-aos="fade-up"
 >
-
-    <h1
-      class="hero-s-text leading-[2rem] md:leading-[4rem] capitalize font-semibold text-center px-2"
+  <h1
+    class="hero-s-text leading-[2rem] md:leading-[4rem] capitalize font-semibold text-center px-2"
+  >
+    Be a Part of Journey to Success. <br />Become a Partner Today
+  </h1>
+  <p
+    class="text-sm lg:mt-10 px-4 md:mt-6 mt-5 font-normal max-w-4xl text-center text-zinc-600"
+  >
+    Join us on path to success and become a partner today, where together, we
+    can achieve even greater heights and make a lasting impact in the world of
+    research and development.
+  </p>
+  <div class="flex justify-center">
+    <button
+      class="bg-secondary text-white mt-8 px-8 py-2 rounded-md"
+      (click)="scrollToSection()"
     >
-      Be a Part of Journey to Success. <br/>Become a Partner Today
-    </h1>
-    <p
-      class="text-sm lg:mt-10 px-4 md:mt-6 mt-5 font-normal max-w-4xl text-center text-zinc-600"
-    >
-      Join us on path to success and become a partner today, where together, we
-      can achieve even greater heights and make a lasting impact in the world of
-      research and development.
-    </p>
-    <div class="flex justify-center">
-      <button
-        class="bg-secondary text-white mt-8 px-8 py-2 rounded-md"
-        (click)="scrollToSection()"
-      >
-        Register Now
-      </button>
-
+      Register Now
+    </button>
   </div>
 </div>
 
@@ -107,7 +105,8 @@
 <!-- end of section 2 for medium devices -->
 
 <!-- start of section 3 -->
-<div class="benifit-carousel flex flex-col justify-center items-center min-h-[100vh] md:mt-16 mb-4 mt-8"
+<div
+  class="benifit-carousel flex flex-col justify-center items-center min-h-[100vh] md:mt-16 mb-4 mt-8"
 >
   <h2
     class="header-text mt-2 leading-[2rem] md:leading-[4rem] capitalize font-semibold text-center px-2"
@@ -163,21 +162,24 @@
   />
   <div class="p-5 lg:p-10 pb-7">
     <div class="lg:flex justify-between w-full gap-8 items-center">
-
-        <div class="lg:w-1/2">
-          <h1 class="header-text font-semibold text-white lg:leading-[3rem]">
-            Be a partner and supply raw materials with us
-          </h1>
-          <p class="mt-8 text-white lg:text-zinc-400 font-light">
-            If you are interested in becoming a partner with us, we would love
-            to hear from you. Please don't hesitate to reach out to our team
-            today to learn more about the benefits of partnering with ProducTRY.
-            We look forward to working with you!
-          </p>
-
+      <div class="lg:w-1/2">
+        <h1 class="header-text font-semibold text-white lg:leading-[3rem]">
+          Be a partner and supply raw materials with us
+        </h1>
+        <p class="mt-8 text-white lg:text-zinc-400 font-light">
+          If you are interested in becoming a partner with us, we would love to
+          hear from you. Please don't hesitate to reach out to our team today to
+          learn more about the benefits of partnering with ProducTRY. We look
+          forward to working with you!
+        </p>
       </div>
 
-      <form  #f="ngForm" (ngSubmit)="sendPartnerInfo(f)" class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:w-1/2" enctype="multipart/form-data">
+      <form
+        #f="ngForm"
+        (ngSubmit)="sendPartnerInfo(f)"
+        class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:w-1/2"
+        enctype="multipart/form-data"
+      >
         <p>Be a partner</p>
 
         <div class="overflow-hidden">
@@ -201,7 +203,9 @@
               >
             </div>
           </div>
-          <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{materialselectError}}</p>
+          <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+            {{ materialselectError }}
+          </p>
         </div>
 
         <div class="md:flex gap-x-5 mt-3">
@@ -215,7 +219,9 @@
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter your name"
             />
-            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{nameError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ nameError }}
+            </p>
           </div>
           <div class="w-full mt-3 md:mt-0">
             <label for="email" class="text-sm text-zinc-400 font-light"
@@ -227,8 +233,9 @@
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter your Email"
             />
-            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{emailError}}</p>
-
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ emailError }}
+            </p>
           </div>
         </div>
 
@@ -242,10 +249,13 @@
               id="phoneno"
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter your Phone No."
-               minlength="10" maxlength="10"
+              minlength="10"
+              maxlength="10"
               oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
             />
-            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{phoneError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ phoneError }}
+            </p>
           </div>
           <div class="w-full mt-3 md:mt-0">
             <label for="city" class="text-sm text-zinc-400 font-light"
@@ -257,7 +267,9 @@
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter your City"
             />
-            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{cityError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ cityError }}
+            </p>
           </div>
         </div>
 
@@ -272,7 +284,9 @@
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter company name"
             />
-            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{companynameError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ companynameError }}
+            </p>
           </div>
           <div class="w-full mt-3 md:mt-0">
             <label for="gstno" class="text-sm text-zinc-400 font-light"
@@ -284,21 +298,25 @@
               class="w-full border-zinc-300 rounded-md border-2 p-2"
               placeholder="Enter GST No."
             />
-            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{gstError}}</p>
+            <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+              {{ gstError }}
+            </p>
           </div>
         </div>
         <div class="w-full mt-3">
-            <label for="weburl" class="text-sm text-zinc-400 font-light"
-              >Website URL</label
-            ><br />
-            <input
-              type="url"
-              id="weburl"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-              placeholder="eg. https://Productry.in"
-            />
-            <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{weburlError}}</p>
-          </div>
+          <label for="weburl" class="text-sm text-zinc-400 font-light"
+            >Website URL</label
+          ><br />
+          <input
+            type="url"
+            id="weburl"
+            class="w-full border-zinc-300 rounded-md border-2 p-2"
+            placeholder="eg. https://Productry.in"
+          />
+          <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+            {{ weburlError }}
+          </p>
+        </div>
         <div class="mt-3">
           <label for="address" class="text-sm text-zinc-400">Address</label
           ><br />
@@ -308,17 +326,20 @@
             class="w-full border-2 rounded-lg border-zinc-300 p-2"
             rows="3"
           ></textarea>
-          <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{addressError}}</p>
+          <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+            {{ addressError }}
+          </p>
         </div>
 
         <div>
-          <label for="upload" class="text-sm text-zinc-400">Upload a Catalogue/Brochure/Business card</label
+          <label for="upload" class="text-sm text-zinc-400"
+            >Upload a Catalogue/Brochure/Business card</label
           ><br />
           <div class="flex items-center justify-center w-full">
             <label
               for="dropzone-file"
               class="flex flex-col items-center justify-center w-full h-28 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-white"
->
+            >
               <div class="flex flex-col items-center justify-center pt-5 pb-6">
                 <svg
                   aria-hidden="true"
@@ -339,35 +360,54 @@
                   <span class="font-semibold">Click to upload</span> or drag and
                   drop
                 </p>
-                <p class="text-xs text-gray-500 dark:text-gray-400">
-                   PNG or JPG
+                <p
+                  class="text-xs text-gray-500 dark:text-gray-400"
+                  *ngIf="!uploadedFIle"
+                >
+                  Image or PDF File (max size 3 MB)
+                </p>
+                <p
+                  class="text-sm font-semibold text-gray-500 dark:text-gray-400"  *ngIf="uploadedFIle"
+                >
+                  {{ uploadedFIle.name }}
                 </p>
               </div>
-              <input  id="dropzone-file" type="file" class="hidden" accept="image/x-png,image/gif,image/jpeg,image/png" (change)="uploadedFile($event)"/>
-            </label>
-
-          </div>
-          <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{uploadError}}</p>
-        </div>
-         <div class="flex mt-6 items-center">
-            <label for="terms-condition">
               <input
-                class="w-4 h-4 mr-2 rounded-sm"
-                type="checkbox"
-                name="terms-conditions"
-                id="terms-conditions"
+                id="dropzone-file"
+                type="file"
+                class="hidden"
+                accept="application/pdf,image/x-png,image/gif,image/jpeg,image/png"
+                (change)="uploadedFile($event)"
               />
-              I agree to
-             <a class="text-primary" routerLink="/terms-and-conditions">terms & conditions/ </a>
-              <a class="text-primary" routerLink="/privacy-policy">Privacy Policy</a>
             </label>
           </div>
           <p *ngIf="formError" class="text-red-500 text-xs mt-1">
-            {{ termsError }}
+            {{ uploadError }}
           </p>
+        </div>
+        <div class="flex mt-6 items-center">
+          <label for="terms-condition">
+            <input
+              class="w-4 h-4 mr-2 rounded-sm"
+              type="checkbox"
+              name="terms-conditions"
+              id="terms-conditions"
+            />
+            I agree to
+            <a class="text-primary" routerLink="/terms-and-conditions"
+              >terms & conditions/
+            </a>
+            <a class="text-primary" routerLink="/privacy-policy"
+              >Privacy Policy</a
+            >
+          </label>
+        </div>
+        <p *ngIf="formError" class="text-red-500 text-xs mt-1">
+          {{ termsError }}
+        </p>
         <div class="mt-5 flex justify-end">
           <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm">
-            Submit
+            {{buttonText}}
           </button>
         </div>
       </form>
@@ -375,7 +415,7 @@
   </div>
 </div>
 <!-- form -->
-<div id="partner-faq" >
+<div id="partner-faq">
   <app-faq [faqData]="faqData"></app-faq>
 </div>
 <!-- end of section 3 -->

@@ -155,7 +155,7 @@ faqData=[
   regexName: any = /^[a-zA-Z ]*$/;
   regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
   regexGstNumber: any = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
-  regxWebURL = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+  regxWebURL = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
   formError:boolean = false;
 
   nameError:any
@@ -169,22 +169,35 @@ faqData=[
   weburlError:any
   uploadError:any
   termsError:any
-  selected: boolean = false;
-
+  selected: boolean = false
+  filesize:any
 matrailSelectedvalue:any
-uploadedFIle:any
+  uploadedFIle: any 
+buttonText:any = "Submit"; 
 matrialSelected(data:any){
   this.matrailSelectedvalue = data
+  console.log(this.matrailSelectedvalue)
 }
 
 uploadedFile(e:any){
   // var name = data.name
   // const formData = new FormData();
   this.uploadedFIle = e.target.files[0]
-  // console.log(this.uploadedFIle);
-
+  console.log(this.uploadedFIle);
+   this.filesize = ((this.uploadedFIle.size/1024)/1024).toFixed(4);
+  console.log(this.filesize);
 }
 
+validateFile(file:any) {
+    var ext = file.split(".");
+    ext = ext[ext.length-1].toLowerCase();      
+    var arrayExtensions = ["jpg" , "jpeg", "png", "pdf"];
+
+    if (arrayExtensions.lastIndexOf(ext) == -1) {
+        return false
+  }
+  return true
+}
 
   sendPartnerInfo(f:NgForm){
   let company_name = $('#companyname').val();
@@ -285,13 +298,25 @@ uploadedFile(e:any){
       $('#upload').addClass('error-b');
     this.uploadError = 'please upload required document';
     this.formError = true;
-    }else if(!terms.is(':checked')){
+    } else if (this.filesize>3.0) {
+       this.cityError = '';
+      $('#upload').addClass('error-b');
+    this.uploadError = 'maximum upload size is 2 MB. please upload compressed document';
+    this.formError = true;
+    } else if (!this.validateFile(this.uploadedFIle.name)) {
+       this.cityError = '';
+      $('#upload').addClass('error-b');
+    this.uploadError = 'please upload image or pdf file only';
+    this.formError = true;
+    }
+    else if(!terms.is(':checked')){
     $('#upload').removeClass('error-b');
     this.uploadError = '';
     $('#terms-conditions').addClass('error-b');
     this.termsError = 'please agree to terms & conditions/ privacy policy';
     this.formError = true;
     } else {
+      this.buttonText = "Submit..."
        $('#name').removeClass('error-b');
       $('#phoneno').removeClass('error-b');
       $('#city').removeClass('error-b');
@@ -342,14 +367,20 @@ uploadedFile(e:any){
       this.services.setReqPartner(formData,headers).subscribe((res:any)=>{
         if (res.status === 200) {
           // console.log(res);
+          this.buttonText = "Submit"
           Swal.fire({
             title: res.message,
             icon: 'success',
             confirmButtonText: 'OK',
           }).then((result: any) => {
-            f.reset();
+            if (result.isConfirmed) {
+              // this.router.navigateByUrl('/beta')
+              window.location.reload();
+              $('#form')[0].reset()
+            }
           })
         } else if (res.status == 400) {
+           this.buttonText = "Submit"
           if (res.message.email[0] != '') {
             this.emailError = res.message.email[0];
             this.formError = true;

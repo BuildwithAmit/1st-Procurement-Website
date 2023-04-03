@@ -24,6 +24,7 @@ export class JoinBetaComponent {
   organizationError: any
   professionError: any
   termsError: any
+  buttonText:any = "Submit"
 
   constructor(private services: ServiceService, private router: Router) { window.scrollTo(0, 0); }
 
@@ -105,6 +106,7 @@ export class JoinBetaComponent {
       this.formError = true;
     }
     else {
+       this.buttonText = "Submit..."
       this.formError = false;
       $('#name').removeClass('error-b');
       $('#email').removeClass('error-b');
@@ -134,6 +136,7 @@ export class JoinBetaComponent {
       }
       this.services.joinBeta(data).subscribe((res: any) => {
         if (res.status === 200) {
+          this.buttonText = "Submit"
           Swal.fire({
             title: res.message,
             icon: 'success',
@@ -145,6 +148,7 @@ export class JoinBetaComponent {
             }
           })
         } else if (res.status == 400) {
+          this.buttonText = "Submit"
           if (res.message.email[0] != '') {
             this.emailError = res.message.email[0];
             this.formError = true;

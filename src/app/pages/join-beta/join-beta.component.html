@@ -34,7 +34,7 @@
   </div>
   <div class="w-full lg:w-1/2 h-[auto] p-10 xl:p-24 xl:pt-10">
     <div class="">
-      <h1 class="text-2xl font-medium">Join Beta</h1>
+      <h1 class="text-2xl font-medium">Join Beta Waitlist</h1>
       <p class="mt-5 text-sm text-zinc-500">
         Optimize your project/product/research/ innovation with us by choosing
         the right raw materials and sourcing them.
@@ -90,6 +90,7 @@
               <option value="Oil and Energy">Oil and Energy</option>
               <option value="Pharmaceuticals">Pharmaceuticals</option>
               <option value="Solar">Solar</option>
+              <option value="Other">Other</option>
             </select>
             <p *ngIf="formError" class="text-red-500 text-xs mt-1">
               {{ sectorError }}
@@ -156,7 +157,7 @@
         </p>
         <div class="mt-6 flex justify-end">
           <button class="bg-secondary p-3 px-5 rounded-lg text-white" (click)="sendBetaInfo($event)">
-            Submit
+            {{buttonText}}
           </button>
         </div>
       </form>

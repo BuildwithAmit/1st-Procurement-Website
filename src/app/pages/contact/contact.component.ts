@@ -21,7 +21,8 @@ constructor(private service:ServiceService){}
   emailError:any
   phoneError:any
   messageError:any
-  companynameError:any
+  companynameError: any
+  buttonText:any = "Submit"
 
 ngOnInit(): void{
   $(document).ready(()=>{
@@ -81,7 +82,9 @@ sendContactInfo(e:any){
     $('#message').addClass('error-b');
     this.messageError = 'message is required';
     this.formError = true;
-  }else {
+  } else {
+    this.buttonText = "Submit..."
+    this.formError = false
     this.nameError = ''
     this.phoneError = ''
     this.emailError = ''
@@ -102,8 +105,8 @@ sendContactInfo(e:any){
     }
     this.service.contactUs(data).subscribe((res:any)=>{
       if (res.status === 200) {
-        console.log(res);
-
+        // console.log(res);
+        this.buttonText = "Submit"
         Swal.fire({
           title: res.message,
           icon: 'success',
@@ -114,6 +117,7 @@ sendContactInfo(e:any){
           }
         })
       } else if (res.status == 400) {
+        this.buttonText = "Submit"
         if (res.message.email[0] != '') {
           this.emailError = res.message.email[0];
           this.formError = true;

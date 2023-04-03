@@ -17,7 +17,7 @@
       <img class="h-[4.5rem]" src="../../../assets/asserts/3dasserts/lab-dynamic-color.png" alt="">
     </div>
 
-    <div class="absolute hidden lg:block z-20 top-[42%] right-[20%] rellax"  data-rellax-speed="-3">
+    <div class="absolute hidden lg:block z-20 top-[52%] right-[20%] rellax"  data-rellax-speed="-1">
       <img class="h-[5rem]" src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png" alt="">
     </div>
 
@@ -34,7 +34,7 @@
 
   <!-- secion 2 -->
   <div class="p-5 md:p-7 lg:p-10">
-    <h1 class="text-center header-text font-semibold">What we Offers?</h1>
+    <h1 class="text-center header-text font-semibold">What we Offer?</h1>
     <div class="grid grid-flow-col grid-cols-1 lg:grid-cols-3 mt-10">
       <div class="col-span-1 lg:flex justify-center relative hidden">
         <div class="sticky top-24 left-0  h-[25rem]">
@@ -179,9 +179,10 @@
     </div>
   </div>
   <!-- supporters -->
+  
   <!-- subs email -->
-  <div class="p-5 lg:p-10">
-    <div class="md:flex justify-between items-center">
+  <div class="p-5 lg:p-10 ">
+    <div class="md:flex justify-between  items-center">
       <div class="leading-10 ">
         <p class="text-lg md:text-2xl">Subscribe To our</p>
         <p class="header-text text-secondary">Newsletter</p>
@@ -190,7 +191,7 @@
         <div class="flex  gap-x-4">
         <input type="email" id="email" class="p-2 bg-zinc-200 border-0 rounded-md w-full " placeholder="Enter your email">
 
-        <button class="bg-secondary  text-white px-5 py-2 rounded-md" (click)="sendNewsletterInfo()">Send</button>
+        <button class="bg-secondary  text-white px-5 py-2 rounded-md" (click)="sendNewsletterInfo()">{{buttonText}}</button>
         </div>
         <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{emailError}}</p>
       </div>
