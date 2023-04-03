@@ -367,7 +367,8 @@
                   Image or PDF File (max size 3 MB)
                 </p>
                 <p
-                  class="text-sm font-semibold text-gray-500 dark:text-gray-400"  *ngIf="uploadedFIle"
+                  class="text-sm font-semibold text-gray-500 dark:text-gray-400"
+                  *ngIf="uploadedFIle"
                 >
                   {{ uploadedFIle.name }}
                 </p>
@@ -407,7 +408,7 @@
         </p>
         <div class="mt-5 flex justify-end">
           <button class="bg-secondary px-5 py-2 rounded-lg text-white text-sm">
-            {{buttonText}}
+            {{ buttonText }}
           </button>
         </div>
       </form>
