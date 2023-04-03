@@ -1,4 +1,3 @@
-<app-loader></app-loader>
 <app-navbar></app-navbar>
 
 
@@ -6,9 +5,7 @@
 <!-- header -->
 <div class="flex justify-center items-center w-full h-[100vh] relative px-5">
   <div class="lg:max-w-5xl text-center relative z-10" data-aos="fade-up">
-    <h1
-      class="hero-s-text home-hero-text leading-9 md:leading-[3.5rem] lg:leading-[4rem] capitalize font-semibold"
-    >
+    <h1 class="hero-s-text home-hero-text leading-9 md:leading-[3.5rem] lg:leading-[4rem] capitalize font-semibold">
       Empowering the world's hidden
       <p><span class="text-primary" id="element"></span></p>
     </h1>
@@ -19,57 +16,26 @@
       that the most appropriate materials are chosen and sourced in a timely and
       cost-effective manner.
     </p>
-    <button
-      class="bg-secondary text-white mt-8 px-8 py-2 rounded-md"
-      routerLink="/beta"
-    >
+    <button class="bg-secondary text-white mt-8 px-8 py-2 rounded-md" routerLink="/beta">
       Join Beta Now!
     </button>
   </div>
 
-  <div
-    class="absolute hidden lg:block z-0 bottom-[25%] right-[40%] rellax"
-    data-rellax-speed="1"
-    data-rellax-percentage="0.5"
-  >
-    <img
-      class="h-[4.5rem]"
-      src="../../../assets/asserts/3dasserts/lab-dynamic-color.png"
-      alt=""
-    />
+  <div class="absolute hidden lg:block z-0 bottom-[25%] right-[40%] rellax" data-rellax-speed="1"
+    data-rellax-percentage="0.5">
+    <img class="h-[4.5rem]" src="../../../assets/asserts/3dasserts/lab-dynamic-color.png" alt="" />
   </div>
 
-  <div
-    class="absolute hidden lg:block z-20 top-[52%] right-[20%] rellax"
-    data-rellax-speed="-1"
-  >
-    <img
-      class="h-[5rem]"
-      src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png"
-      alt=""
-    />
+  <div class="absolute hidden lg:block z-20 top-[52%] right-[20%] rellax" data-rellax-speed="-1">
+    <img class="h-[5rem]" src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png" alt="" />
   </div>
 
-  <div
-    class="absolute hidden lg:block z-0 bottom-[15%] left-[30%] rellax"
-    data-rellax-speed="4"
-  >
-    <img
-      class="h-[7rem]"
-      src="../../../assets/asserts/3dasserts/spring-black-4000x4000.png"
-      alt=""
-    />
+  <div class="absolute hidden lg:block z-0 bottom-[15%] left-[30%] rellax" data-rellax-speed="4">
+    <img class="h-[7rem]" src="../../../assets/asserts/3dasserts/spring-black-4000x4000.png" alt="" />
   </div>
 
-  <div
-    class="absolute hidden lg:block z-0 top-[2.5rem] left-[21%] rellax"
-    data-rellax-speed="-3"
-  >
-    <img
-      class="w-[8rem]"
-      src="../../../assets/asserts/3dasserts/Triple knot-gold-4000x4000.png"
-      alt=""
-    />
+  <div class="absolute hidden lg:block z-0 top-[2.5rem] left-[21%] rellax" data-rellax-speed="-3">
+    <img class="w-[8rem]" src="../../../assets/asserts/3dasserts/Triple knot-gold-4000x4000.png" alt="" />
   </div>
 </div>
 <!-- header -->
@@ -82,10 +48,7 @@
       <div class="sticky top-24 left-0 h-[25rem]">
         <ul class="spy-scroll-navbar flex flex-col gap-y-20">
           <li class="nav-item" *ngFor="let items of offers_data">
-            <a
-              class="spy-scroll-links nav-link cursor-pointer"
-              href="#menu{{ items.id }}"
-            >
+            <a class="spy-scroll-links nav-link cursor-pointer" href="#menu{{ items.id }}">
               <div class="flex items-center gap-x-5 p-5 rounded-xl">
                 <span>{{ items.id }}</span>
                 <p>{{ items.for }}</p>
@@ -97,22 +60,13 @@
     </div>
 
     <div class="col-span-1 flex lg:col-span-2 lg:overflow-visible">
-      <div
-        class="overflow-scroll lg:overflow-visible flex lg:block gap-x-4 scrollbar-hidden px-2 pb-28 lg:pb-0"
-      >
-        <section
-          id="menu{{ items.id }}"
+      <div class="overflow-scroll lg:overflow-visible flex lg:block gap-x-4 scrollbar-hidden px-2 pb-28 lg:pb-0">
+        <section id="menu{{ items.id }}"
           class="bg-zinc-100 min-w-[20rem] lg:min-w-[33rem] xl:min-w-[48rem] p-5 lg:p-10 rounded-2xl relative lg:h-[25rem] lg:mb-10"
-          *ngFor="let items of offers_data"
-        >
-          <div
-            class="flex flex-col lg:flex-row items-center justify-between h-full"
-          >
+          *ngFor="let items of offers_data">
+          <div class="flex flex-col lg:flex-row items-center justify-between h-full">
             <div class="w-full lg:w-1/2">
-              <span
-                class="text-sm text-blue-600 bg-blue-200 px-5 py-1 rounded-full lg:hidden"
-                >{{ items.for }}</span
-              >
+              <span class="text-sm text-blue-600 bg-blue-200 px-5 py-1 rounded-full lg:hidden">{{ items.for }}</span>
               <h1 class="text-lg lg:text-2xl font-medium mt-3 md:mt-0">
                 {{ items.title }}
               </h1>
@@ -154,11 +108,7 @@
   </div>
   <div class="w-1/2 lg:flex justify-center hidden">
     <div class="w-[30rem] h-[30rem]" data-aos="fade-zoom-in">
-      <img
-        class="img-contain rounded-3xl"
-        src="../../../assets/asserts/illustrator/innovation.png"
-        alt=""
-      />
+      <img class="img-contain rounded-3xl" src="../../../assets/asserts/illustrator/innovation.png" alt="" />
     </div>
   </div>
 </div>
@@ -166,12 +116,8 @@
 <!-- video -->
 <div class="py-10 mt-10">
   <div class="flex justify-center p-5">
-    <div
-      class="w-full md:w-11/12 bg-secondary h-[25rem] rounded-3xl p-3 pt-6 lg:p-10 flex justify-center"
-    >
-      <h1
-        class="text-lg md:text-2xl md:w-4/5 lg:w-9/12 text-center text-white font-light md:font-normal"
-      >
+    <div class="w-full md:w-11/12 bg-secondary h-[25rem] rounded-3xl p-3 pt-6 lg:p-10 flex justify-center">
+      <h1 class="text-lg md:text-2xl md:w-4/5 lg:w-9/12 text-center text-white font-light md:font-normal">
         In order to test new attributes and property sets for their products,
         innovators test approximately five to six raw materials for each part or
         process and fifteen to twenty raw materials for each product before
@@ -181,14 +127,11 @@
   </div>
   <div class="flex justify-center p-10">
     <div class="w-full lg:w-1/2 h-auto lg:h-[25rem] mt-[-15rem]">
-      <iframe
-        class="w-full h-full rounded-3xl"
+      <iframe class="w-full h-full rounded-3xl"
         src="https://www.youtube.com/embed/DDEkCjTRZYk?autoplay=1&mute=1&controls=0&loop=1&playlist=DDEkCjTRZYk"
-        title="YouTube video player"
-        frameborder="0"
+        title="YouTube video player" frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen
-      ></iframe>
+        allowfullscreen></iframe>
     </div>
   </div>
 </div>
@@ -196,19 +139,13 @@
 <!-- mobile matrial -->
 <div class="p-10 justify-center hidden">
   <div class="w-3/5">
-    <img
-      class="img-contain"
-      src="../../../assets/asserts/mobile-matrials.png"
-      alt=""
-    />
+    <img class="img-contain" src="../../../assets/asserts/mobile-matrials.png" alt="" />
   </div>
 </div>
 <!-- mobile matrial -->
 <!-- give away -->
 <div class="py-10 pb-0 relative">
-  <div
-    class="w-full h-[23rem] bg-gradient-to-r from-[#192442] to-black flex justify-center items-center px-2"
-  >
+  <div class="w-full h-[23rem] bg-gradient-to-r from-[#192442] to-black flex justify-center items-center px-2">
     <div class="lg:w-1/2 text-center">
       <div class="leading-[3rem]">
         <h1 class="header-text text-white">
@@ -224,46 +161,27 @@
         services?
       </p>
       <button class="bg-primary py-2 px-6 text-white mt-8 rounded-lg">
-        <a
-          href="https://join.slack.com/t/productry-workspace/shared_invite/zt-1sf4vc9s5-YGnHecNddZttDD0W5uIEag"
-          target="_blank"
-        >
-          Join Community on Slack</a
-        >
+        <a href="https://join.slack.com/t/productry-workspace/shared_invite/zt-1sf4vc9s5-YGnHecNddZttDD0W5uIEag"
+          target="_blank">
+          Join Community on Slack</a>
       </button>
     </div>
   </div>
   <!--  -->
   <div class="absolute hidden lg:block z-0 bottom-[5%] right-[40%]">
-    <img
-      class="h-[4.5rem]"
-      src="../../../assets/asserts/3dasserts/lab-dynamic-color.png"
-      alt=""
-    />
+    <img class="h-[4.5rem]" src="../../../assets/asserts/3dasserts/lab-dynamic-color.png" alt="" />
   </div>
 
   <div class="absolute hidden lg:block z-20 top-[28%] right-[20%]">
-    <img
-      class="h-[5rem]"
-      src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png"
-      alt=""
-    />
+    <img class="h-[5rem]" src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png" alt="" />
   </div>
 
   <div class="absolute hidden lg:block z-0 bottom-[15%] left-[25%]">
-    <img
-      class="h-[7rem]"
-      src="../../../assets/asserts/3dasserts/spring-black-4000x4000.png"
-      alt=""
-    />
+    <img class="h-[7rem]" src="../../../assets/asserts/3dasserts/spring-black-4000x4000.png" alt="" />
   </div>
 
   <div class="absolute hidden lg:block z-0 top-[2.5rem] left-[21%]">
-    <img
-      class="w-[8rem]"
-      src="../../../assets/asserts/3dasserts/Triple knot-gold-4000x4000.png"
-      alt=""
-    />
+    <img class="w-[8rem]" src="../../../assets/asserts/3dasserts/Triple knot-gold-4000x4000.png" alt="" />
   </div>
 </div>
 <!-- give away -->
@@ -277,18 +195,21 @@
     </div>
     <div class="flex flex-col justify-center mt-5 md:mt-0 lg:w-1/4">
       <div class="flex gap-x-4">
-        <input
-          type="email"
-          id="email"
-          class="p-2 bg-zinc-200 border-0 rounded-md w-full"
-          placeholder="Enter your email"
-        />
+        <input type="email" id="email" class="p-2 bg-zinc-200 border-0 rounded-md w-full"
+          placeholder="Enter your email" />
 
-        <button
-          class="bg-secondary text-white px-5 py-2 rounded-md"
-          (click)="sendNewsletterInfo()"
-        >
+        <button class="bg-secondary text-white px-5 py-2 rounded-md flex items-center gap-x-2" (click)="sendNewsletterInfo()">
+          <div role="status" id="loader" *ngIf="buttonText == 'Sending'">
+            <svg aria-hidden="true" class="inline w-4 h-4 text-gray-200 animate-spin dark:text-white fill-blue-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+              <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+          </svg>
+          <span class="sr-only">Loading...</span>
+
+        </div>
+        <div *ngIf="buttonText != 'Sending'">
           {{ buttonText }}
+        </div>
         </button>
       </div>
       <p *ngIf="formError" class="text-red-500 text-xs mt-1">

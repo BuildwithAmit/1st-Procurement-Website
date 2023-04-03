@@ -155,7 +155,7 @@ faqData=[
   regexName: any = /^[a-zA-Z ]*$/;
   regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
   regexGstNumber: any = /^[0-9]{2}[A-Z]{5}[0-9]{4}[A-Z]{1}[1-9A-Z]{1}Z[0-9A-Z]{1}$/;
-  regxWebURL = /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\+.~#?&\/=]*)$/;
+  regxWebURL = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/;
   formError:boolean = false;
 
   nameError:any
@@ -172,8 +172,8 @@ faqData=[
   selected: boolean = false
   filesize:any
 matrailSelectedvalue:any
-  uploadedFIle: any 
-buttonText:any = "Submit"; 
+  uploadedFIle: any
+buttonText:any = "Submit";
 matrialSelected(data:any){
   this.matrailSelectedvalue = data
   console.log(this.matrailSelectedvalue)
@@ -190,7 +190,7 @@ uploadedFile(e:any){
 
 validateFile(file:any) {
     var ext = file.split(".");
-    ext = ext[ext.length-1].toLowerCase();      
+    ext = ext[ext.length-1].toLowerCase();
     var arrayExtensions = ["jpg" , "jpeg", "png", "pdf"];
 
     if (arrayExtensions.lastIndexOf(ext) == -1) {
@@ -283,12 +283,12 @@ validateFile(file:any) {
     this.gstError = 'Please enter valid GST number';
     this.formError = true;
     }
-   
+
       if (weburl && !this.regxWebURL.test(weburl)) {
         $('#weburl').addClass('error-b');
         this.weburlError = 'please provid valid url';
         this.formError = true;
-      
+
     } else if (this.uploadedFIle && this.filesize>3.0) {
        this.cityError = '';
       $('#upload').addClass('error-b');
@@ -340,7 +340,7 @@ validateFile(file:any) {
         'address':address,
         'card':this.uploadedFIle,
         }
-        
+
       const formData = new FormData();
       const headers = new HttpHeaders();
       headers.append('Content-Type', 'multipart/form-data');
@@ -359,12 +359,12 @@ validateFile(file:any) {
         formData.append('address', address);
         if (this.uploadedFIle) {
           formData.append('card', this.uploadedFIle, this.uploadedFIle.name);
-        } 
+        }
 
-    
+
       this.services.setReqPartner(formData,headers).subscribe((res:any)=>{
         if (res.status === 200) {
-          
+
           this.buttonText = "Submit"
           Swal.fire({
             title: res.message,
@@ -378,7 +378,7 @@ validateFile(file:any) {
             }
           })
         } else if (res.status == 400) {
-          
+
            this.buttonText = "Submit"
          Swal.fire({
           title: res.message,
