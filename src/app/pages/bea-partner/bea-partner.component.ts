@@ -364,8 +364,7 @@ validateFile(file:any) {
     
       this.services.setReqPartner(formData,headers).subscribe((res:any)=>{
         if (res.status === 200) {
-          console.log(res);
-          console.log("inside 200");
+          
           this.buttonText = "Submit"
           Swal.fire({
             title: res.message,
@@ -379,7 +378,7 @@ validateFile(file:any) {
             }
           })
         } else if (res.status == 400) {
-          console.log("inside 400");
+          
            this.buttonText = "Submit"
          Swal.fire({
           title: res.message,
