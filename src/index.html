@@ -45,65 +45,14 @@
 
 <body>
   <app-root></app-root>
-
-<!-- pre loader -->
-<div class="pre-loader flex justify-center items-center ">
-  <div class="relative">
-    <span class="loader "></span>
-    <div class="w-[4rem] h-[4rem] absolute mt-[-3px] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-      <img class="img-cover" src="../../../assets/asserts/only-logo.png" alt="">
-    </div>
-
-  </div>
-</div>
-<!-- pre loader -->
-
-
 </body>
-<style>
-.pre-loader{
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-  background: #ffffff76;
-  backdrop-filter: blur(30px);
-  z-index: 100;
-  top: 0;
-  left: 0;
-}
-
-.loader {
-  width: 4.5rem;
-  height: 4.5rem;
-  border-radius: 50%;
-  display: inline-block;
-  border-top: 3px solid #3E82FC;
-  border-right: 3px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-  /* position: absolute; */
-}
-
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZHR0QMJKC"></script>
 <script>
-   $('.pre-loader').fadeIn();
-  $(document).ready(function() {
-    $('.pre-loader').fadeIn();
-    setTimeout(function() {
-      $('.pre-loader').fadeOut();
-    }, 2000);
-  });
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-LZHR0QMJKC');
 </script>
-
 </html>
 
 <!-- Enable text compression -->

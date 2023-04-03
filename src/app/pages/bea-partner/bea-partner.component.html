@@ -183,7 +183,7 @@
         <p>Be a partner</p>
 
         <div class="overflow-hidden">
-          <p class="matrial-text mt-3">Select Material You Provide</p>
+          <p class="matrial-text mt-3 required">Select Material You Provide</p>
           <div
             class="overflow-auto p-2 flex gap-3 scrollbar-hidden flex-nowrap whitespace-nowrap lg:flex-wrap"
           >
@@ -210,7 +210,7 @@
 
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
-            <label for="name" class="text-sm text-zinc-400 font-light"
+            <label for="name" class="text-sm text-zinc-400 font-light required"
               >Name</label
             ><br />
             <input
@@ -224,7 +224,7 @@
             </p>
           </div>
           <div class="w-full mt-3 md:mt-0">
-            <label for="email" class="text-sm text-zinc-400 font-light"
+            <label for="email" class="text-sm text-zinc-400 font-light required"
               >Email</label
             ><br />
             <input
@@ -241,7 +241,7 @@
 
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
-            <label for="phoneno" class="text-sm text-zinc-400 font-light"
+            <label for="phoneno" class="text-sm text-zinc-400 font-light required"
               >Phone Number</label
             ><br />
             <input
@@ -258,7 +258,7 @@
             </p>
           </div>
           <div class="w-full mt-3 md:mt-0">
-            <label for="city" class="text-sm text-zinc-400 font-light"
+            <label for="city" class="text-sm text-zinc-400 font-light required"
               >City</label
             ><br />
             <input
@@ -275,7 +275,7 @@
 
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
-            <label for="companyname" class="text-sm text-zinc-400 font-light"
+            <label for="companyname" class="text-sm text-zinc-400 font-light required"
               >Company Name</label
             ><br />
             <input
@@ -289,7 +289,7 @@
             </p>
           </div>
           <div class="w-full mt-3 md:mt-0">
-            <label for="gstno" class="text-sm text-zinc-400 font-light"
+            <label for="gstno" class="text-sm text-zinc-400 font-light required"
               >GST Number</label
             ><br />
             <input
@@ -318,7 +318,7 @@
           </p>
         </div>
         <div class="mt-3">
-          <label for="address" class="text-sm text-zinc-400">Address</label
+          <label for="address" class="text-sm text-zinc-400 required">Address</label
           ><br />
           <textarea
             name="address"
@@ -387,13 +387,13 @@
           </p>
         </div>
         <div class="flex mt-6 items-center">
-          <label for="terms-condition">
-            <input
-              class="w-4 h-4 mr-2 rounded-sm"
-              type="checkbox"
-              name="terms-conditions"
-              id="terms-conditions"
-            />
+          <input
+          class="w-4 h-4 mr-2 rounded-sm"
+          type="checkbox"
+          name="terms-conditions"
+          id="terms-conditions"
+          />
+          <label for="terms-condition " class="required">
             I agree to
             <a class="text-primary" routerLink="/terms-and-conditions"
               >terms & conditions/
