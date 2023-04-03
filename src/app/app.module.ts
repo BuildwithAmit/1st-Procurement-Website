@@ -22,6 +22,7 @@ import { TeamCarouselComponent } from './components/team-carousel/team-carousel.
 import { TermsConditionsComponent } from './pages/terms-conditions/terms-conditions.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoaderComponent } from './loader/loader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     TeamCarouselComponent,
     TermsConditionsComponent,
     PrivacyPolicyComponent,
+    LoaderComponent,
 
   ],
   imports: [

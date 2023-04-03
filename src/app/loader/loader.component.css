@@ -1,0 +1,31 @@
+.pre-loader{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #ffffffba;
+  backdrop-filter: blur(5px);
+  z-index: 100;
+  top: 0;
+  left: 0;
+}
+
+.loader {
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 3px solid #3E82FC;
+  border-right: 3px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  /* position: absolute; */
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
