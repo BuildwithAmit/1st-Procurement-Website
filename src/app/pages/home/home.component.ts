@@ -9,6 +9,7 @@ declare let Rellax:any;
 declare let $: any
 declare let AOS :any;
 declare let Typed:any;
+declare let Swal:any;
 
 @Component({
   selector: 'app-home',
@@ -125,6 +126,7 @@ export class HomeComponent {
   regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   formError: boolean = false;
   emailError: any;
+  buttonText: any = "Send";
   sendNewsletterInfo() {
     let email = $('#email').val();
     if(email == null || email == undefined || email == ''){
@@ -136,12 +138,27 @@ export class HomeComponent {
     this.emailError = 'please enter a valid email address';
     this.formError = true;
     } else {
+       this.buttonText = "Send..."
       $('#email').removeClass('error-b');
        this.emailError=''
-      alert('done')
+      var data={
+        'email': email
+      }
+      this.service.setSubscribed(data).subscribe((res:any)=>{
+        if(res.status === 200){
+          this.buttonText = "Send";
+          Swal.fire(
+            'Successfully',
+            res.message,
+            'success'
+          )
+        } else if (res.status == 400) {
+          this.buttonText = "Send";
+          this.formError = true
+          this.emailError = res.message.email[0]
+        }
 
-      this.service.setSubscribed(email).subscribe((res:any)=>{
-        console.log(res);
+
       })
   }
   }

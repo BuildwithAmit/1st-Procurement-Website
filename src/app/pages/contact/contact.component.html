@@ -31,7 +31,7 @@
             <p class="info-head">Address</p>
             <div class="flex gap-4 text-white text-sm font-light mt-5">
               <p>
-                Pune office - Radhakrishna Apartment, Sinhgad Road, Vadgaon,
+                Pune office - Radhakrishna Complex, Sinhgad Road, Vadgaon,
                 Pune- 411041
               </p>
               <p>
@@ -111,7 +111,7 @@
         inventore optio.
       </p>
 
-      <div class="form mt-5">
+      <form id="form" class="form mt-5">
         <div>
           <label for="name" class="text-sm text-zinc-400 font-light">Name</label
           ><br />
@@ -175,7 +175,7 @@
         </div>
         <div class="mt-3">
           <label for="message" class="text-sm text-zinc-400 font-light"
-            >Company Sector</label
+            >Message</label
           ><br />
           <textarea
             type="text"
@@ -191,12 +191,12 @@
         <div class="mt-6 flex justify-end">
           <button
             class="bg-secondary p-3 px-5 rounded-lg text-white"
-            (click)="sendContactInfo()"
+            (click)="sendContactInfo($event)"
           >
-            Submit
+            {{buttonText}}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>
@@ -208,7 +208,7 @@
       <p class="info-head">Address</p>
       <div class="flex gap-4 text-white text-sm font-light mt-5">
         <p>
-          Pune office - Radhakrishna Apartment, Sinhgad Road, Vadgaon,
+          Pune office - Radhakrishna Complex, Sinhgad Road, Vadgaon,
           Pune- 411041
         </p>
         <p>

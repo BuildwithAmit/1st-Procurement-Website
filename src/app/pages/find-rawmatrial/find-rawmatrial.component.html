@@ -213,7 +213,8 @@
             you can focus on what matters most - <b>your research</b>
           </p>
         </div>
-        <div class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:w-1/2">
+        <!-- form div -->
+        <form id="form" class="p-5 bg-white rounded-xl mt-5 mt:mt-0 lg:w-1/2">
           <p>Select Material</p>
 
           <div class="overflow-hidden">
@@ -226,6 +227,8 @@
                   id="select-{{ items.name }}"
                   name="select-material"
                   type="radio"
+                  value="{{ items.name }}"
+                  (click)="selectMatrial($event)"
                 />
                 <label
                   class="matrial-select-label text-sm rounded-full px-3 py-1"
@@ -365,12 +368,12 @@
           <div class="mt-5 flex justify-end">
             <button
               class="bg-secondary px-5 py-2 rounded-lg text-white text-sm"
-              (click)="sendRawMaterialInfo()"
+              (click)="sendRawMaterialInfo($event)"
             >
-              Submit
+             {{buttonText}}
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>

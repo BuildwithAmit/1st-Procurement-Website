@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ActivatedRoute } from '@angular/router';
+import { ServiceService } from '../services/service.service';
 declare let $: any
 declare let AOS: any;
+declare let Swal: any;
 
 @Component({
   selector: 'app-find-rawmatrial',
@@ -11,20 +13,20 @@ declare let AOS: any;
 })
 export class FindRawmatrialComponent {
 
-  constructor(public route:ActivatedRoute) { window.scrollTo(0, 0) }
+  constructor(public route: ActivatedRoute, private services: ServiceService) { window.scrollTo(0, 0) }
   ngOnInit(): void {
     $(document).ready(() => {
       AOS.init();
     })
-// *********************
-$(document).ready(()=>{
-  this.route.queryParams.subscribe(params => {
-    let sectionId = params['section'];
-    $('html, body').animate({
-      scrollTop: sectionId ? $('#' + sectionId).offset().top : 0
-    }, 1000);
-  });
-});
+    // *********************
+    $(document).ready(() => {
+      this.route.queryParams.subscribe(params => {
+        let sectionId = params['section'];
+        $('html, body').animate({
+          scrollTop: sectionId ? $('#' + sectionId).offset().top : 0
+        }, 1000);
+      });
+    });
   }
   scrollToSection() {
     $('html,body').animate({
@@ -84,7 +86,7 @@ $(document).ready(()=>{
     {
       name: 'Metals and Non metals',
       icon: '../../../assets/asserts/3dasserts/metals.png',
-      content:  'Explore the distinct characteristics and diverse applications of metals and non-metals, two essential classes of elements with vastly different physical and chemical properties.',
+      content: 'Explore the distinct characteristics and diverse applications of metals and non-metals, two essential classes of elements with vastly different physical and chemical properties.',
     }, {
       name: 'Chemicals',
       icon: '../../../assets/asserts/3dasserts/chemicals.png',
@@ -151,105 +153,115 @@ $(document).ready(()=>{
   regexName: any = /^[a-zA-Z ]*$/;
   regexPhoneNumber: any = /^([0|\+[0-9]{1,5})?([6-9][0-9]{9})$/;
 
-  formError:boolean = false;
+  formError: boolean = false;
 
-  nameError:any
-  emailError:any
-  phoneError:any
-  materialdescriptionError:any
-  materialrequirementError:any
-  cityError:any
-  termsError:any
+  nameError: any
+  emailError: any
+  phoneError: any
+  materialdescriptionError: any
+  materialrequirementError: any
+  cityError: any
+  termsError: any
   addressError: any
-  materialselectError:any
+  materialselectError: any
   selected: boolean = false;
+buttonText:any = "Submit";
+matrialSelected:any
 
-  sendRawMaterialInfo(){
+selectMatrial(e:any){
+  this.matrialSelected = e.target.value
+  console.log(this.matrialSelected);
+
+}
+
+  sendRawMaterialInfo(e:any) {
+    e.preventDefault();
     let material_description = $('#matrial-desc').val();
     let material_requirement = $('#matrial-requirement').val();
-  let name = $('#name').val();
-  let email = $('#email').val();
-  let phone = $('#phoneno').val();
-  let city = $('#city').val();
+    let name = $('#name').val();
+    let email = $('#email').val();
+    let phone = $('#phoneno').val();
+    let city = $('#city').val();
     let address = $('#address').val();
-     let terms = $('#terms-conditions');
+    let terms = $('#terms-conditions');
 
 
-      this.elements.forEach(element => {
-        let material_select = document.getElementById("select-" + element.name) as HTMLInputElement;
-        if (material_select.checked == true) {
-          this.selected = true
-        }
-      });
+    this.elements.forEach(element => {
+      let material_select = document.getElementById("select-" + element.name) as HTMLInputElement;
+      if (material_select.checked == true) {
+        this.selected = true
+      }
+    });
 
     if (!this.selected) {
-         this.materialselectError = 'Please select material';
-          this.formError = true;
-    }else if(material_description == null || material_description == undefined || material_description == ''){
-    $('#material_description').addClass('error-b');
-   this.materialdescriptionError = 'Material desciption is required';
-   this.materialselectError = '';
-    this.formError = true;
-  }else if(material_requirement == null || material_requirement == undefined || material_requirement == ''){
-    $('#material_requirement').addClass('error-b');
-   this.materialrequirementError = 'Please write your material requirements';
-   this.materialdescriptionError = '';
-    this.formError = true;
-  }else if(name == null || name == undefined || name == ''){
-    $('#material_requirement').removeClass('error-b');
-    $('#name').addClass('error-b');
-   this.formError = true;
-   this.materialrequirementError = '';
-    this.nameError = 'Name is required';
-  }else if(!this.regexName.test(name)){
-    $('#name').addClass('error-b');
-    this.nameError = 'please enter a valid name';
-    this.formError = true;
-  }else if(email == null || email == undefined || email == ''){
-    $('#name').removeClass('error-b');
-    this.nameError = '';
-    $('#email').addClass('error-b');
-    this.emailError = 'Email is required';
-    this.formError = true;
-  }else if(!this.regexEmail.test(email)){
-    $('#email').addClass('error-b');
-    this.emailError = 'please enter a valid email address';
-    this.formError = true;
-  }else if(phone == null || phone == undefined || phone == ''){
-    $('#email').removeClass('error-b');
-    this.emailError = '';
-
-    $('#phoneno').addClass('error-b');
-    this.phoneError = 'phone is required';
-    this.formError = true;
-  }else if(!this.regexPhoneNumber.test(phone)){
-    $('#phoneno').addClass('error-b');
-    this.phoneError = 'please enter a valid phone address';
-    this.formError = true;
-  }else if(city == null || city == undefined || city == ''){
-    $('#phoneno').removeClass('error-b');
-    this.phoneError = '';
-    $('#city').addClass('error-b');
-    this.cityError = 'city name is required';
-    this.formError = true;
-  }else if(address == null || address == undefined || address == ''){
-    $('#city').removeClass('error-b');
-    this.cityError = '';
-    $('#address').addClass('error-b');
-    this.addressError = 'Address is required';
-    this.formError = true;
-    }else if(!terms.is(':checked')){
-    $('#address').removeClass('error-b');
-    this.addressError = '';
-    $('#terms-conditions').addClass('error-b');
-    this.termsError = 'please agree to terms & conditions/ privacy policy';
-    this.formError = true;
-  } else {
-       $('#material_description').removeClass('error-b');
-       $('#material_requirement').removeClass('error-b');
+      this.materialselectError = 'Please select material';
+      this.formError = true;
+    } else if (material_description == null || material_description == undefined || material_description == '') {
+      $('#material_description').addClass('error-b');
+      this.materialdescriptionError = 'Material desciption is required';
+      this.materialselectError = '';
+      this.formError = true;
+    } else if (material_requirement == null || material_requirement == undefined || material_requirement == '') {
+      $('#material_requirement').addClass('error-b');
+      this.materialrequirementError = 'Please write your material requirements';
+      this.materialdescriptionError = '';
+      this.formError = true;
+    } else if (name == null || name == undefined || name == '') {
+      $('#material_requirement').removeClass('error-b');
+      $('#name').addClass('error-b');
+      this.formError = true;
+      this.materialrequirementError = '';
+      this.nameError = 'Name is required';
+    } else if (!this.regexName.test(name)) {
+      $('#name').addClass('error-b');
+      this.nameError = 'please enter a valid name';
+      this.formError = true;
+    } else if (email == null || email == undefined || email == '') {
       $('#name').removeClass('error-b');
-        $('#email').removeClass('error-b');
-       $('#phoneno').removeClass('error-b');
+      this.nameError = '';
+      $('#email').addClass('error-b');
+      this.emailError = 'Email is required';
+      this.formError = true;
+    } else if (!this.regexEmail.test(email)) {
+      $('#email').addClass('error-b');
+      this.emailError = 'please enter a valid email address';
+      this.formError = true;
+    } else if (phone == null || phone == undefined || phone == '') {
+      $('#email').removeClass('error-b');
+      this.emailError = '';
+
+      $('#phoneno').addClass('error-b');
+      this.phoneError = 'phone is required';
+      this.formError = true;
+    } else if (!this.regexPhoneNumber.test(phone)) {
+      $('#phoneno').addClass('error-b');
+      this.phoneError = 'please enter a valid phone address';
+      this.formError = true;
+    } else if (city == null || city == undefined || city == '') {
+      $('#phoneno').removeClass('error-b');
+      this.phoneError = '';
+      $('#city').addClass('error-b');
+      this.cityError = 'city name is required';
+      this.formError = true;
+    } else if (address == null || address == undefined || address == '') {
+      $('#city').removeClass('error-b');
+      this.cityError = '';
+      $('#address').addClass('error-b');
+      this.addressError = 'Address is required';
+      this.formError = true;
+    } else if (!terms.is(':checked')) {
+      $('#address').removeClass('error-b');
+      this.addressError = '';
+      $('#terms-conditions').addClass('error-b');
+      this.termsError = 'please agree to terms & conditions/ privacy policy';
+      this.formError = true;
+    } else {
+      this.buttonText = "Submit..."
+      $('#material_description').removeClass('error-b');
+      $('#material_requirement').removeClass('error-b');
+      $('#name').removeClass('error-b');
+      $('#email').removeClass('error-b');
+      $('#phoneno').removeClass('error-b');
       $('#city').removeClass('error-b');
       $('#adress').removeClass('error-b');
       $('#terms-conditions').removeClass('error-b');
@@ -262,9 +274,46 @@ $(document).ready(()=>{
       this.addressError = ""
       this.materialrequirementError = ""
       this.termsError = ""
-      alert('done')
+
+      var data ={
+        'name':name,
+        'email':email,
+        'phone_no':phone,
+        'material':this.matrialSelected,
+        'description':material_description,
+        'requirement_details': material_requirement,
+        'city':city,
+        'address':address,
+      }
+      this.services.setReqRawMatrial(data).subscribe((res:any)=>{
+        if (res.status === 200) {
+          console.log(res);
+          this.buttonText = "Submit"
+          Swal.fire({
+            title: res.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+          }).then((result: any) => {
+            if (result.isConfirmed) {
+              // this.router.navigateByUrl('/beta')
+              window.location.reload();
+              $('#form')[0].reset()
+            }
+          })
+        } else if (res.status == 400) {
+          this.buttonText = "Submit"
+          if (res.message.email[0] != '') {
+            this.emailError = res.message.email[0];
+            this.formError = true;
+            $('#email').addClass('error-b');
+          }
+        }
+      })
+
+
+
     }
 
-}
+  }
 
 }

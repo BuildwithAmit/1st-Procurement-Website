@@ -1,9 +1,7 @@
 <app-navbar></app-navbar>
 <!-- wrapper -->
 <div class="flex min-h-max md:h-[calc(100vh-5rem)] p-5 gap-8">
-  <div
-    class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden rounded-2xl"
-  >
+  <div class="w-1/2 h-full display-side relative lg:flex justify-center items-center hidden rounded-2xl">
     <div class="w-full">
       <div class="flex justify-center img-cover">
         <img class="logo" src="../../../assets/asserts/logo-white.png" alt="" />
@@ -13,78 +11,51 @@
         innovators/researchers/ entrepreneurs/builders
       </p>
     </div>
-    <div
-      class="absolute bottom-5 left-[50%] transform -translate-x-1/2 -translate-y-1/2"
-    >
+    <div class="absolute bottom-5 left-[50%] transform -translate-x-1/2 -translate-y-1/2">
       <ul class="flex gap-x-5">
         <li class="text-white">
-          <a
-            href="https://www.facebook.com/profile.php?id=100089632657358"
-            target="_blank"
-            ><i class="bi bi-facebook"></i
-          ></a>
+          <a href="https://www.facebook.com/profile.php?id=100089632657358" target="_blank"><i
+              class="bi bi-facebook"></i></a>
         </li>
         <li class="text-white">
-          <a
-            href="https://www.instagram.com/build_with_productry/"
-            target="_blank"
-            ><i class="bi bi-instagram"></i
-          ></a>
+          <a href="https://www.instagram.com/build_with_productry/" target="_blank"><i class="bi bi-instagram"></i></a>
         </li>
         <li class="text-white">
-          <a href="https://twitter.com/produc_try" target="_blank"
-            ><i class="bi bi-twitter"></i
-          ></a>
+          <a href="https://twitter.com/produc_try" target="_blank"><i class="bi bi-twitter"></i></a>
         </li>
         <li class="text-white">
           <a href="https://youtube.com/@productry" target="_blank"><i class="bi bi-youtube"></i></a>
         </li>
         <li class="text-white">
-          <a
-            href="https://www.linkedin.com/company/productryindia/"
-            target="_blank"
-            ><i class="bi bi-linkedin"></i
-          ></a>
+          <a href="https://www.linkedin.com/company/productryindia/" target="_blank"><i class="bi bi-linkedin"></i></a>
         </li>
       </ul>
     </div>
   </div>
   <div class="w-full lg:w-1/2 h-[auto] p-10 xl:p-24 xl:pt-10">
     <div class="">
-      <h1 class="text-2xl font-medium">Join Beta</h1>
+      <h1 class="text-2xl font-medium">Join Beta Waitlist</h1>
       <p class="mt-5 text-sm text-zinc-500">
         Optimize your project/product/research/ innovation with us by choosing
         the right raw materials and sourcing them.
       </p>
 
-      <div class="form mt-5" id="form">
+      <form class="form mt-5" id="form">
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
             <div class="w-full">
-              <label for="name" class="text-sm text-zinc-400 font-light"
-                >Name</label
-              ><br />
-              <input
-                type="text"
-                id="name"
-                class="w-full border-zinc-300 rounded-md border-2 p-2"
-                placeholder="Enter your name"
-              />
+              <label for="name" class="text-sm text-zinc-400 font-light">Name</label><br />
+              <input type="text" id="name" class="w-full border-zinc-300 rounded-md border-2 p-2"
+                placeholder="Enter your name" />
               <p *ngIf="formError" class="text-red-500 text-xs mt-1">
                 {{ nameError }}
               </p>
             </div>
           </div>
           <div class="w-full mt-3 md:mt-0">
-            <label for="companyname" class="text-sm text-zinc-400 font-light"
-              >Company Name</label
-            ><br />
-            <input
-              type="text"
-              id="companyname"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-              placeholder="Enter your company name"
-            />
+            <label for="companyname" class="text-sm text-zinc-400 font-light">Company Name</label><br />
+            <input type="text" id="companyname" class="w-full border-zinc-300 rounded-md border-2 p-2"
+              placeholder="Enter your company name" />
             <p *ngIf="formError" class="text-red-500 text-xs mt-1">
               {{ companynameError }}
             </p>
@@ -93,43 +64,33 @@
 
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
-            <label for="email" class="text-sm text-zinc-400 font-light"
-              >Email</label
-            ><br />
-            <input
-              type="email"
-              id="email"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-              placeholder="Enter your Email"
-            />
+            <label for="email" class="text-sm text-zinc-400 font-light">Email</label><br />
+            <input type="email" id="email" class="w-full border-zinc-300 rounded-md border-2 p-2"
+              placeholder="Enter your Email" />
             <p *ngIf="formError" class="text-red-500 text-xs mt-1">
               {{ emailError }}
             </p>
           </div>
           <div class="w-full">
-            <label for="sector" class="text-sm text-zinc-400 font-light"
-              >Select Company Sector</label
-            >
+            <label for="sector" class="text-sm text-zinc-400 font-light">Select Company Sector</label>
 
-            <select
-              id="sector"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-            >
+            <select id="sector" class="w-full border-zinc-300 rounded-md border-2 p-2">
               <option selected value="">Choose a sector</option>
-              <option value="sec-op1">Aerospace</option>
-              <option value="sec-op2">Agriculter</option>
-              <option value="sec-op3">Automotive</option>
-              <option value="sec-op4">Aviation and Aerospace</option>
-              <option value="sec-op5">Defense</option>
-              <option value="sec-op6">Energy</option>
-              <option value="sec-op7">Electric Vehicle</option>
-              <option value="sec-op8">FMCG</option>
-              <option value="sec-op9">Healthcare</option>
-              <option value="sec-op10">HVAC</option>
-              <option value="sec-op11">Medical Devices</option>
-              <option value="sec-op12">Oil and Energy</option>
-              <option value="sec-op13">Pharmaceuticals</option>
-              <option value="sec-op14">Solar</option>
+              <option value="Aerospace">Aerospace</option>
+              <option value="Agriculter">Agriculter</option>
+              <option value="Automotive">Automotive</option>
+              <option value="Aviation and Aerospace">Aviation and Aerospace</option>
+              <option value="Defense">Defense</option>
+              <option value="Energy">Energy</option>
+              <option value="Electric Vehicle">Electric Vehicle</option>
+              <option value="FMCG">FMCG</option>
+              <option value="Healthcare">Healthcare</option>
+              <option value="HVAC">HVAC</option>
+              <option value="Medical Devices">Medical Devices</option>
+              <option value="Oil and Energy">Oil and Energy</option>
+              <option value="Pharmaceuticals">Pharmaceuticals</option>
+              <option value="Solar">Solar</option>
+              <option value="Other">Other</option>
             </select>
             <p *ngIf="formError" class="text-red-500 text-xs mt-1">
               {{ sectorError }}
@@ -138,38 +99,25 @@
         </div>
         <div class="md:flex gap-x-5 mt-3">
           <div class="w-full">
-            <label for="phoneno" class="text-sm text-zinc-400 font-light"
-              >Phone Number</label
-            ><br />
-            <input
-              type="tel"
-              id="phoneno"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-              placeholder="Enter your Phone Number"
-              minlength="10"
-              maxlength="10"
-              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-            />
+            <label for="phoneno" class="text-sm text-zinc-400 font-light">Phone Number</label><br />
+            <input type="tel" id="phoneno" class="w-full border-zinc-300 rounded-md border-2 p-2"
+              placeholder="Enter your Phone Number" minlength="10" maxlength="10"
+              oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" />
             <p *ngIf="formError" class="text-red-500 text-xs mt-1">
               {{ phoneError }}
             </p>
           </div>
           <div class="w-full">
-            <label for="organization" class="text-sm text-zinc-400 font-light"
-              >Select Organization</label
-            >
+            <label for="organization" class="text-sm text-zinc-400 font-light">Select Organization</label>
 
-            <select
-              id="organization"
-              class="w-full border-zinc-300 rounded-md border-2 p-2"
-            >
+            <select id="organization" class="w-full border-zinc-300 rounded-md border-2 p-2">
               <option selected value="" disabled>Choose organization</option>
-              <option value="org-op1">Product Development Lab</option>
-              <option value="org-op2">Testing Lab</option>
-              <option value="org-op3">R&D Lab</option>
-              <option value="org-op4">Academia</option>
-              <option value="org-op5">Manufacturing Industry</option>
-              <option value="org-op6">Other</option>
+              <option value="Product Development Lab">Product Development Lab</option>
+              <option value="Testing Lab">Testing Lab</option>
+              <option value="R&D Lab">R&D Lab</option>
+              <option value="Academia">Academia</option>
+              <option value="Manufacturing Industry">Manufacturing Industry</option>
+              <option value="Other">Other</option>
             </select>
             <p *ngIf="formError" class="text-red-500 text-xs mt-1">
               {{ organizationError }}
@@ -179,22 +127,17 @@
 
         <div class="mt-3">
           <div class="w-full md:w-1/2">
-            <label for="profession" class="text-sm text-zinc-400 font-light"
-              >Select Profession</label
-            >
+            <label for="profession" class="text-sm text-zinc-400 font-light">Select Profession</label>
             <div class="wrapper">
-              <select
-                id="profession"
-                class="w-full border-zinc-300 rounded-md border-2 p-2"
-              >
+              <select id="profession" class="w-full border-zinc-300 rounded-md border-2 p-2">
                 <option selected value="">Choose profession</option>
-                <option value="prof-op1">Student</option>
-                <option value="prof-op2">
+                <option value="Student">Student</option>
+                <option value="Individual Innovator/researcher">
                   Individual Innovator/researcher
                 </option>
-                <option value="prof-op3">Working Professional</option>
-                <option value="prof-op4">Lab Incharge/technician</option>
-                <option value="prof-op5">Other</option>
+                <option value="Working Professional">Working Professional</option>
+                <option value="Lab Incharge/technician">Lab Incharge/technician</option>
+                <option value="Other">Other</option>
               </select>
               <p *ngIf="formError" class="text-red-500 text-xs mt-1">
                 {{ professionError }}
@@ -204,28 +147,20 @@
         </div>
         <div class="flex mt-6 items-center">
           <label for="terms-condition">
-            <input
-              class="w-4 h-4 mr-2 rounded-sm"
-              type="checkbox"
-              name="terms-conditions"
-              id="terms-conditions"
-            />
+            <input class="w-4 h-4 mr-2 rounded-sm" type="checkbox" name="terms-conditions" id="terms-conditions" />
             I agree to <a class="text-primary" routerLink="/terms-and-conditions">terms & conditions/ </a>
-              <a class="text-primary" routerLink="/privacy-policy">Privacy Policy</a>
+            <a class="text-primary" routerLink="/privacy-policy">Privacy Policy</a>
           </label>
         </div>
         <p *ngIf="formError" class="text-red-500 text-xs mt-1">
           {{ termsError }}
         </p>
         <div class="mt-6 flex justify-end">
-          <button
-            class="bg-secondary p-3 px-5 rounded-lg text-white"
-            (click)="sendBetaInfo()"
-          >
-            Submit
+          <button class="bg-secondary p-3 px-5 rounded-lg text-white" (click)="sendBetaInfo($event)">
+            {{buttonText}}
           </button>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </div>

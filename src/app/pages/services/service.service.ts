@@ -14,7 +14,7 @@ export class ServiceService {
   constructor(private http: HttpClient) { }
 
   setSubscribed(data:any) {
-    return this.http.post(`${this.apiUrl}/newsletter`, data);
+    return this.http.post<any>(this.apiUrl+'/newsletter', data)
   }
   setReqRawMatrial(data:any) {
     return this.http.post(`${this.apiUrl}/rawmetarial`, data);
@@ -22,11 +22,14 @@ export class ServiceService {
   contactUs(data:any) {
     return this.http.post(`${this.apiUrl}/contactus`, data);
   }
-  setReqPartner(data:any) {
-    return this.http.post(`${this.apiUrl}/partner`, data);
+  setReqPartner(data:any,headers:any) {
+    return this.http.post(`${this.apiUrl}/partner`, data,{
+      headers:headers
+    });
   }
   joinBeta(data:any) {
     return this.http.post(`${this.apiUrl}/beta`, data);
   }
+
 
 }

@@ -17,7 +17,7 @@
       <img class="h-[4.5rem]" src="../../../assets/asserts/3dasserts/lab-dynamic-color.png" alt="">
     </div>
 
-    <div class="absolute hidden lg:block z-20 top-[42%] right-[20%] rellax"  data-rellax-speed="-3">
+    <div class="absolute hidden lg:block z-20 top-[52%] right-[20%] rellax"  data-rellax-speed="-1">
       <img class="h-[5rem]" src="../../../assets/asserts/3dasserts/polegon-gold-4000x4000.png" alt="">
     </div>
 
@@ -191,7 +191,7 @@
         <div class="flex  gap-x-4">
         <input type="email" id="email" class="p-2 bg-zinc-200 border-0 rounded-md w-full " placeholder="Enter your email">
 
-        <button class="bg-secondary  text-white px-5 py-2 rounded-md" (click)="sendNewsletterInfo()">Send</button>
+        <button class="bg-secondary  text-white px-5 py-2 rounded-md" (click)="sendNewsletterInfo()">{{buttonText}}</button>
         </div>
         <p *ngIf="formError" class="text-red-500 text-xs mt-1">{{emailError}}</p>
       </div>

@@ -1,11 +1,15 @@
 import { Component } from '@angular/core';
+import { ServiceService } from '../services/service.service';
 declare let $:any;
+declare let Swal:any;
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
+
+constructor(private service:ServiceService){}
 
   regexEmail: any = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
   regexName: any = /^[a-zA-Z ]*$/;
@@ -17,7 +21,8 @@ export class ContactComponent {
   emailError:any
   phoneError:any
   messageError:any
-  companynameError:any
+  companynameError: any
+  buttonText:any = "Submit"
 
 ngOnInit(): void{
   $(document).ready(()=>{
@@ -26,7 +31,8 @@ ngOnInit(): void{
   })
 
 }
-sendContactInfo(){
+sendContactInfo(e:any){
+  e.preventDefault();
   let name = $('#name').val();
   let email = $('#email').val();
   let phone = $('#phoneno').val();
@@ -76,7 +82,9 @@ sendContactInfo(){
     $('#message').addClass('error-b');
     this.messageError = 'message is required';
     this.formError = true;
-  }else {
+  } else {
+    this.buttonText = "Submit..."
+    this.formError = false
     this.nameError = ''
     this.phoneError = ''
     this.emailError = ''
@@ -87,7 +95,37 @@ sendContactInfo(){
     $('#phoneno').removeClass('error-b');
     $('#companyname').removeClass('error-b');
     $('#message').removeClass('error-b');
-    alert('done')
+
+    var data = {
+      'name': name ,
+      'email': email,
+      'phone_no':phone,
+      'company_name':company_name,
+      'message':message,
+    }
+    this.service.contactUs(data).subscribe((res:any)=>{
+      if (res.status === 200) {
+        // console.log(res);
+        this.buttonText = "Submit"
+        Swal.fire({
+          title: res.message,
+          icon: 'success',
+          confirmButtonText: 'OK',
+        }).then((result: any) => {
+          if (result.isConfirmed) {
+            $('#form')[0].reset()
+          }
+        })
+      } else if (res.status == 400) {
+        this.buttonText = "Submit"
+        if (res.message.email[0] != '') {
+          this.emailError = res.message.email[0];
+          this.formError = true;
+          $('#email').addClass('error-b');
+        }
+      }
+    })
+
   }
 
 }
