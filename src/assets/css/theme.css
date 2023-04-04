@@ -56,5 +56,10 @@ ul{list-style: none;padding: 0;}
 @media only screen and (min-width: 1200px) {
 
 }
+
+.required:after {
+  content:" *";
+  color: red;
+}
 /* pre loader */
 

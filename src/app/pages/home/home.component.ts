@@ -30,6 +30,15 @@ loader:string = `<div role="status">
 </div>`
 
   ngOnInit(){
+
+    $('.pre-loader').fadeIn();
+    $(document).ready(function() {
+      $('.pre-loader').fadeIn();
+      setTimeout(function() {
+        $('.pre-loader').fadeOut();
+      }, 2000);
+    });
+
     const rellax = new Rellax('.rellax');
     $(document).ready(()=>{
       AOS.init();
