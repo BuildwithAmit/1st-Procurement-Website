@@ -167,7 +167,7 @@ loader:string = `<div role="status">
           Swal.fire({
             title: "Thank you for subscribing to our newsletter email.",
             icon: 'success',
-            confirmButtonText: 'OK'
+            confirmButtonText: 'OK',
           }
           )
         } else if (res.status == 400) {
