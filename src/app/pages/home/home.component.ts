@@ -164,10 +164,11 @@ loader:string = `<div role="status">
       this.service.setSubscribed(data).subscribe((res:any)=>{
         if(res.status === 200){
           this.buttonText = "Send";
-          Swal.fire(
-            'Successfully',
-            res.message,
-            'success'
+          Swal.fire({
+            title: "Thank you for subscribing to our newsletter email.",
+            icon: 'success',
+            confirmButtonText: 'OK',
+          }
           )
         } else if (res.status == 400) {
           this.buttonText = "Send";
